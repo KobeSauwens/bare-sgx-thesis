@@ -10,7 +10,7 @@ PHDRS
 SECTIONS
 {
 	. = 0;
-        __encl_base = .;
+        __enclave_base = .;
 	.tcs : {
 		*(.tcs*)
 	} : tcs

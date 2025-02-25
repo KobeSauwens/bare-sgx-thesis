@@ -21,4 +21,16 @@ struct encl_op_math {
         uint64_t *rv_pt;
 };
 
+//static void do_encl_op_add(void *_op);
+//static void do_encl_op_sub(void *_op);
+//
+//
+//static int is_inside_enclave(void *addr, size_t len);
+//static int is_outside_enclave(void *addr, size_t len);
+//
+//static inline void panic(void);
+//
+//static void *memcpy(void *dest, const void *src, size_t n)
+//static void *memset(void *dest, int c, size_t n)
+
 #endif

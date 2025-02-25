@@ -20,6 +20,18 @@
 
 	.text
 
+/* Based on https://lkml.org/lkml/2023/7/19/797 */
+	.global get_enclave_base
+get_enclave_base:
+	lea __enclave_base(%rip), %rax
+	ret
+
+	.global get_enclave_size
+get_enclave_size:
+	mov __enclave_size(%rip), %rax
+	ret
+
+
 encl_entry:
         lea     encl_stack(%rip), %rax
 	xchg	%rsp, %rax
@@ -48,6 +60,11 @@ encl_entry:
 	mov	$4, %rax
 	enclu
 
+/* This is filled in by the untrusted loader, contains total size of the loaded enclave how can we trust it then? --> Attestation? */
+	.global __enclave_size
+__enclave_size:
+	.quad 0x0
+	
 	.section ".data", "aw"
 
 encl_ssa_tcs1:
