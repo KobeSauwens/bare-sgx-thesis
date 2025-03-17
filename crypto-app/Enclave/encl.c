@@ -1,6 +1,7 @@
 #include "encl_t.h"
 #include "secret.h"
 #include <string.h>
+#include "hacl-star/portable-gcc-compatible/Hacl_HMAC.h"
 
 /*
  * NOTE: for demonstration purposes, we hard-code secrets at compile time and
@@ -13,49 +14,19 @@ int ecall_dummy(int i)
     return super_secret_constant + i;
 }
 
-void delay(void)
-{
-    volatile int i;
-    for (i=0; i<10000;i++);
-}
-
-int check_pwd(char *user)
-{
-    int i;
-    int user_len = strlen(user);
-
-    /* reject if incorrect length */
-    if (user_len != SECRET_LEN)
-        return 0;
-
-    #if DELAY
-        delay();
-    #endif
-    
-    /* reject on first byte mismatch */
-    for (i=0; i < user_len; i++)
-    {
-        if (user[i] != SECRET_PIN[i])
-            return 0;
-
-        #if DELAY
-            delay();
-        #endif
-    }
-
-    /* user password passed all the tests */
-    return 1;
-}
 
 /* =========================== START SOLUTION =========================== */
-int ecall_get_secret(int *secret_pt, char *password)
+int ecall_get_secret(uint8_t *digest, uint8_t *data, uint32_t data_len)
 {
-    if (check_pwd(password))
-    {
-        *secret_pt = super_secret_constant;
-        return 1;
-    }else{
-        return 0;
-    }
+
+    uint8_t *key = (uint8_t *) SECRET_KEY;
+    uint32_t key_len = SECRET_KEY_SIZE;
+    //if (check_pwd(password))
+    //{
+    Hacl_HMAC_compute_sha2_256(&digest, &key, key_len, &data, data_len);
+    return 1;
+    //}else{
+    //    return 0;
+    //}
 }
 /* ============================ END SOLUTION ============================ */

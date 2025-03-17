@@ -5,7 +5,8 @@ enclave {
         public int ecall_dummy(int i);
 
         /* =========================== START SOLUTION =========================== */
-        public int ecall_get_secret([out] int *secret, [in, string] char *str);
+        //public int ecall_get_secret([out] uint8_t *digest, [in] uint8_t *data, uint32_t data_len);
+        public int ecall_get_secret([out] uint8_t *digest, [in] uint8_t *data, uint32_t data_len);
         /* ============================ END SOLUTION ============================ */
     };
 	
