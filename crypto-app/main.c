@@ -55,26 +55,25 @@ int compare(const void * a, const void * b) {
    return ( *(uint64_t*)a - *(uint64_t*)b );
 }
 
+#define TAG_LEN 32  // 256 bits
+
 int main( int argc, char **argv )
 {
     sgx_enclave_id_t eid = create_enclave();
     int rv = 1, secret = 0;
     int j, tsc1, tsc2, med, allowed = 0;
 
-    uint8_t digest[32];
+    uint8_t digest[TAG_LEN] = {0x0};
 
-
-    const char *message = "Bare-SGX rocks!";
+    char *message = "Bare-SGX rocks!";
     uint32_t message_len = strlen(message);
-    uint8_t *message_int = (uint8_t*) message;
-
     
     /* =========================== START SOLUTION =========================== */
-    SGX_ASSERT(ecall_get_secret(eid, &allowed, &digest, message_int, message_len);
+    SGX_ASSERT(ecall_get_secret(eid, &allowed, digest, (uint8_t*) message, message_len));
     //printf("The return value was: %i \n",allowed);
     //#printf("The secret was 0x%08x \n",secret);
     /* ============================ END SOLUTION ============================ */
-
+    dump_hex("sha256sum", digest, TAG_LEN);
 
     info_event("destroying SGX enclave");
     SGX_ASSERT( sgx_destroy_enclave( eid ) );

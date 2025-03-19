@@ -16,19 +16,17 @@ int ecall_dummy(int i)
     return super_secret_constant + i;
 }
 
+#define KEY_LEN 16  // 128 bits
+#define TAG_LEN 32  // 256 bits
 
 /* =========================== START SOLUTION =========================== */
 int ecall_get_secret(uint8_t *digest, uint8_t *data, uint32_t data_len)
 {
-
-    uint8_t *key = (uint8_t *) SECRET_KEY;
-    uint32_t key_len = SECRET_KEY_SIZE;
-    //if (check_pwd(password))
-    //{
-    hmac(digest, key, key_len, data, data_len);
+    uint8_t key[KEY_LEN] = {
+        0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
+        0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F
+    };
+    hmac(digest, key, KEY_LEN, data, data_len);
     return 1;
-    //}else{
-    //    return 0;
-    //}
 }
 /* ============================ END SOLUTION ============================ */
