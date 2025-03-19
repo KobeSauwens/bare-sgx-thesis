@@ -66,11 +66,11 @@ int main( int argc, char **argv )
 
     const char *message = "Bare-SGX rocks!";
     uint32_t message_len = strlen(message);
-    uint8_t *message = (uint8_t*) message;
+    uint8_t *message_int = (uint8_t*) message;
 
     
     /* =========================== START SOLUTION =========================== */
-    SGX_ASSERT(ecall_get_secret(eid, &allowed, &digest, &message, message_len);
+    SGX_ASSERT(ecall_get_secret(eid, &allowed, &digest, message_int, message_len);
     //printf("The return value was: %i \n",allowed);
     //#printf("The secret was 0x%08x \n",secret);
     /* ============================ END SOLUTION ============================ */

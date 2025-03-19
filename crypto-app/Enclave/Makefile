@@ -3,7 +3,7 @@ AR		  = ar
 LD		  = gcc
 EDGER		  = sgx_edger8r
 SIGNER		  = sgx_sign
-INCLUDE       = -I$(SGX_SDK)/include/ -I$(SGX_SDK)/include/tlibc -I./hacl-star/include -I./hacl-star/minimal/
+INCLUDE       = -I$(SGX_SDK)/include/ -I$(SGX_SDK)/include/tlibc 
 T_CFLAGS	  = $(CFLAGS) -nostdinc -fvisibility=hidden -fpie -fstack-protector -g -Os
 U_CFLAGS	  = $(CFLAGS) -nostdinc -fvisibility=hidden -fpie -fstack-protector -g
 AR_FLAGS	  = rcs
@@ -22,14 +22,14 @@ ENCLAVE_CONFIG    = $(ENCLAVE).config.xml
 OUTPUT_T          = $(ENCLAVE).so
 OUTPUT_T_UNSIG    = $(ENCLAVE).unsigned.so
 OUTPUT_U          = lib$(ENCLAVE)_proxy.a
-LIB_DIRS          = -L $(SGX_SDK)/lib64
-LD_FLAGS	      = -Wl,--no-undefined -nostdlib -nodefaultlibs -nostartfiles \
-                    -Wl,--whole-archive -Wl,--start-group $(ENCLAVE_LIBS) -Wl,--end-group \
-                    -Wl,--no-whole-archive -Wl,--start-group $(ENCLAVE_LIB_PARTS) -Wl,--end-group \
-                    -Wl,-Bstatic -Wl,-Bsymbolic -Wl,--no-undefined \
-                    -Wl,-pie,-eenclave_entry -Wl,--export-dynamic  \
-                    -Wl,--defsym,__ImageBase=0
-TRUSTED_OBJECTS   = $(ENCLAVE)_t.o
+LIB_DIRS = -L $(SGX_SDK)/lib64 -L ./hacl-c
+LD_FLAGS = -Wl,--no-undefined -nostdlib -nodefaultlibs -nostartfiles \
+           -Wl,--whole-archive -Wl,--start-group $(ENCLAVE_LIBS) -Wl,--end-group \
+           -Wl,--no-whole-archive -Wl,--start-group $(ENCLAVE_LIB_PARTS) -lhacl -Wl,--end-group \
+           -Wl,-Bstatic -Wl,-Bsymbolic -Wl,--no-undefined \
+           -Wl,-pie,-eenclave_entry -Wl,--export-dynamic \
+           -Wl,--defsym,__ImageBase=0
+TRUSTED_OBJECTS   = $(ENCLAVE)_t.o 
 UNTRUSTED_OBJECTS = $(ENCLAVE)_u.o 
 TRUSTED_CODE      = $(ENCLAVE)_t.h $(ENCLAVE)_t.c
 UNTRUSTED_CODE    = $(ENCLAVE)_u.h $(ENCLAVE)_u.c
@@ -42,7 +42,7 @@ $(OUTPUT_T) : $(TRUSTED_OBJECTS) $(OBJECTS) $(PRIVATE_KEY)
 	$(LD) $(OBJECTS) $(TRUSTED_OBJECTS) $(LD_FLAGS) $(LIB_DIRS) -o $(OUTPUT_T_UNSIG) 
 	
 	echo "$(INDENT)[SGN]" $(OUTPUT_T_UNSIG)
-	$(SIGNER) sign -key $(PRIVATE_KEY) -enclave $(OUTPUT_T_UNSIG) -out $(OUTPUT_T) -config $(ENCLAVE_CONFIG) > /dev/null 2> /dev/null
+	$(SIGNER) sign -key $(PRIVATE_KEY) -enclave $(OUTPUT_T_UNSIG) -out $(OUTPUT_T) -config $(ENCLAVE_CONFIG)  #> /dev/null 2> /dev/null
 
 $(OUTPUT_U) : $(UNTRUSTED_OBJECTS) 
 	echo "$(INDENT)[AR]  " $(OUTPUT_U)

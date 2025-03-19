@@ -1,7 +1,9 @@
 #include "encl_t.h"
 #include "secret.h"
 #include <string.h>
-#include "hacl-star/portable-gcc-compatible/Hacl_HMAC.h"
+#include <stdint.h>  // Standard integer types
+
+#include "hacl-c/Hacl_HMAC_SHA2_256.h"
 
 /*
  * NOTE: for demonstration purposes, we hard-code secrets at compile time and
@@ -23,7 +25,7 @@ int ecall_get_secret(uint8_t *digest, uint8_t *data, uint32_t data_len)
     uint32_t key_len = SECRET_KEY_SIZE;
     //if (check_pwd(password))
     //{
-    Hacl_HMAC_compute_sha2_256(&digest, &key, key_len, &data, data_len);
+    hmac(digest, key, key_len, data, data_len);
     return 1;
     //}else{
     //    return 0;

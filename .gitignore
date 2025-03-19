@@ -2,5 +2,6 @@
 *.elf
 *.swp
 *.a
+*.d
 *.vscode
 app
