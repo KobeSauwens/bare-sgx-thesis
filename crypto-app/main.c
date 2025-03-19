@@ -1,5 +1,5 @@
 /* utility headers */
-#include "debug.h"
+#include "../common/debug.h"
 #include <cacheutils.h>
 
 /* SGX untrusted runtime */
@@ -68,10 +68,10 @@ int main( int argc, char **argv )
     uint32_t message_len = strlen(message);
     uint8_t *message_int = (uint8_t*) message;
 
-    
+    //SGX_ASSERT(ecall_dummy(eid, &allowed, rv) )
     /* =========================== START SOLUTION =========================== */
-    SGX_ASSERT(ecall_get_secret(eid, &allowed, &digest, message_int, message_len);
-    //printf("The return value was: %i \n",allowed);
+    SGX_ASSERT(ecall_get_secret(eid, &allowed, digest, message_int, message_len) );
+    //printf("The return value was: %i \n",digest);
     //#printf("The secret was 0x%08x \n",secret);
     /* ============================ END SOLUTION ============================ */
 

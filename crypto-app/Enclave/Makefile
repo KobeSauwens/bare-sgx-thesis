@@ -7,7 +7,7 @@ INCLUDE       = -I$(SGX_SDK)/include/ -I$(SGX_SDK)/include/tlibc
 T_CFLAGS	  = $(CFLAGS) -nostdinc -fvisibility=hidden -fpie -fstack-protector -g -Os
 U_CFLAGS	  = $(CFLAGS) -nostdinc -fvisibility=hidden -fpie -fstack-protector -g
 AR_FLAGS	  = rcs
-OBJECTS		  = encl.o
+OBJECTS		  = encl.o ./hacl-c/Hacl_HMAC_SHA2_256.o
 LIB_SGX_TRTS      = -lsgx_trts
 LIB_SGX_TSERVICE  = -lsgx_tservice
 
@@ -25,7 +25,7 @@ OUTPUT_U          = lib$(ENCLAVE)_proxy.a
 LIB_DIRS = -L $(SGX_SDK)/lib64 -L ./hacl-c
 LD_FLAGS = -Wl,--no-undefined -nostdlib -nodefaultlibs -nostartfiles \
            -Wl,--whole-archive -Wl,--start-group $(ENCLAVE_LIBS) -Wl,--end-group \
-           -Wl,--no-whole-archive -Wl,--start-group $(ENCLAVE_LIB_PARTS) -lhacl -Wl,--end-group \
+           -Wl,--no-whole-archive -Wl,--start-group $(ENCLAVE_LIB_PARTS) -Wl,--end-group \
            -Wl,-Bstatic -Wl,-Bsymbolic -Wl,--no-undefined \
            -Wl,-pie,-eenclave_entry -Wl,--export-dynamic \
            -Wl,--defsym,__ImageBase=0
@@ -42,7 +42,7 @@ $(OUTPUT_T) : $(TRUSTED_OBJECTS) $(OBJECTS) $(PRIVATE_KEY)
 	$(LD) $(OBJECTS) $(TRUSTED_OBJECTS) $(LD_FLAGS) $(LIB_DIRS) -o $(OUTPUT_T_UNSIG) 
 	
 	echo "$(INDENT)[SGN]" $(OUTPUT_T_UNSIG)
-	$(SIGNER) sign -key $(PRIVATE_KEY) -enclave $(OUTPUT_T_UNSIG) -out $(OUTPUT_T) -config $(ENCLAVE_CONFIG)  #> /dev/null 2> /dev/null
+	$(SIGNER) sign -key $(PRIVATE_KEY) -enclave $(OUTPUT_T_UNSIG) -out $(OUTPUT_T) -config $(ENCLAVE_CONFIG) > /dev/null 2> /dev/null
 
 $(OUTPUT_U) : $(UNTRUSTED_OBJECTS) 
 	echo "$(INDENT)[AR]  " $(OUTPUT_U)
