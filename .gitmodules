@@ -1,0 +1,3 @@
+[submodule "crypto-app/Enclave/hacl-c"]
+	path = crypto-app/Enclave/hacl-c
+	url = https://github.com/paparazzi/hacl-c.git

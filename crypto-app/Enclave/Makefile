@@ -7,7 +7,11 @@ INCLUDE       = -I$(SGX_SDK)/include/ -I$(SGX_SDK)/include/tlibc
 T_CFLAGS	  = $(CFLAGS) -nostdinc -fvisibility=hidden -fpie -fstack-protector -g -Os
 U_CFLAGS	  = $(CFLAGS) -nostdinc -fvisibility=hidden -fpie -fstack-protector -g
 AR_FLAGS	  = rcs
+<<<<<<< HEAD
 OBJECTS		  = encl.o ./hacl-c/Hacl_HMAC_SHA2_256.o
+=======
+OBJECTS		  = encl.o hacl-hmac.o
+>>>>>>> a98ce90fce9cc222816dc03fcd0ac13df5ee4c01
 LIB_SGX_TRTS      = -lsgx_trts
 LIB_SGX_TSERVICE  = -lsgx_tservice
 
@@ -22,7 +26,7 @@ ENCLAVE_CONFIG    = $(ENCLAVE).config.xml
 OUTPUT_T          = $(ENCLAVE).so
 OUTPUT_T_UNSIG    = $(ENCLAVE).unsigned.so
 OUTPUT_U          = lib$(ENCLAVE)_proxy.a
-LIB_DIRS = -L $(SGX_SDK)/lib64 -L ./hacl-c
+LIB_DIRS = -L $(SGX_SDK)/lib64 
 LD_FLAGS = -Wl,--no-undefined -nostdlib -nodefaultlibs -nostartfiles \
            -Wl,--whole-archive -Wl,--start-group $(ENCLAVE_LIBS) -Wl,--end-group \
            -Wl,--no-whole-archive -Wl,--start-group $(ENCLAVE_LIB_PARTS) -Wl,--end-group \
@@ -47,6 +51,9 @@ $(OUTPUT_T) : $(TRUSTED_OBJECTS) $(OBJECTS) $(PRIVATE_KEY)
 $(OUTPUT_U) : $(UNTRUSTED_OBJECTS) 
 	echo "$(INDENT)[AR]  " $(OUTPUT_U)
 	$(AR) $(AR_FLAGS) $(OUTPUT_U) $(UNTRUSTED_OBJECTS) 
+
+hacl-hmac.o: hacl-c/Hacl_HMAC_SHA2_256.c
+	$(CC) -c $(CFLAGS) -o $@ $<
 	
 %_t.o : $(subst .o,.c,$@) edger
 	echo "$(INDENT)[CC] " $(subst .o,.c,$@) "(trusted edge)"
