@@ -27,6 +27,7 @@ int ecall_get_secret(uint8_t *digest, uint8_t *data, uint32_t data_len)
         0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F
     };
     hmac(digest, key, KEY_LEN, data, data_len);
+    ocall_print_uint8_array(digest,TAG_LEN);
     return 1;
 }
 /* ============================ END SOLUTION ============================ */

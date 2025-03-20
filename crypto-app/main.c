@@ -18,6 +18,14 @@ void ocall_print(const char *str)
     info("ocall_print: enclave says: '%s'", str);
 }
 
+void ocall_print_uint8_array(uint8_t *arr, size_t len) {
+    printf("Print via ocall: \nsha256sum = ");
+    for (size_t i = 0; i < len; i++) {
+        printf("%02x ", arr[i]);
+    }
+    printf("\n\n");
+}
+
 char *read_from_user(void)
 {
     char *buffer = NULL;
@@ -73,6 +81,7 @@ int main( int argc, char **argv )
     //printf("The return value was: %i \n",allowed);
     //#printf("The secret was 0x%08x \n",secret);
     /* ============================ END SOLUTION ============================ */
+    printf("Print via main: \n");
     dump_hex("sha256sum", digest, TAG_LEN);
 
     info_event("destroying SGX enclave");
