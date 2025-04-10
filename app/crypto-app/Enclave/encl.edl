@@ -1,0 +1,18 @@
+enclave {
+	
+	trusted {
+        /* define ECALLs here. */
+        public int ecall_dummy(int i);
+        
+        #define TAG_LEN 32  // 256 bits
+        /* =========================== START SOLUTION =========================== */
+        public int ecall_get_secret([out,size=TAG_LEN] uint8_t *digest, [in,size=data_len] uint8_t *data, uint32_t data_len);
+        /* ============================ END SOLUTION ============================ */
+    };
+	
+	untrusted {
+        /* define OCALLs here. */
+        //void ocall_print([in,string] const char *str);
+        void ocall_print_uint8_array([in, size=len] uint8_t *arr, size_t len);
+	};
+};
