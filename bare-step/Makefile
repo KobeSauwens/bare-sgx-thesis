@@ -1,10 +1,10 @@
-LIBSGXSTEP_DIR          = ../../sgx-step/
+LIBSGXSTEP_DIR          = ../external/sgx-step/
 LIBSGXSTEP              = $(LIBSGXSTEP_DIR)/libsgxstep
 -include $(LIBSGXSTEP)/Makefile.config
 LIBSGXSTEP_SILENT       = 1
 
 BARESGX                 = ../../bare-sgx/urts
-ENCLAVE                 = enclave
+ENCLAVE                 = ../bare-crypto-app/ecall_ptr/enclave/
 
 
 SUBDIRS                 = $(ENCLAVE) $(BARESGX) $(LIBSGXSTEP)

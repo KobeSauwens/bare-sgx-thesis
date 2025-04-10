@@ -16,7 +16,11 @@
 #include "../bare-crypto-app/ecall_ptr/enclave/test_encl.h"
 
 #define ENCLAVE_PATH            "../bare-crypto-app/ecall_ptr/enclave/encl.elf"
+<<<<<<< HEAD
 #define DEBUG			1
+=======
+#define DEBUG			0
+>>>>>>> 2f78dc9c319f146c5fe6b68aa117956936386b62
 #define ENCLAVE_DBG             1
 
 void *encl_page = NULL;
@@ -25,17 +29,27 @@ int step_cnt = 0;
 
 void aep_cb_func(void)
 {
+<<<<<<< HEAD
     ucontext_t *uc = (ucontext_t *) ctx;
+=======
+>>>>>>> 2f78dc9c319f146c5fe6b68aa117956936386b62
     #if DEBUG
     	uint64_t erip = edbgrd_erip() - (uint64_t)get_enclave_base();
     	info("^^ enclave RIP=%#lx; ACCESSED=%lu", erip, ACCESSED(*pte_encl));
     #endif
+<<<<<<< HEAD
     step_cnt++;
     uc->uc_mcontext.gregs[REG_EFL] &= ~0x100;
+=======
+>>>>>>> 2f78dc9c319f146c5fe6b68aa117956936386b62
 }
 
 void handle_fault(int signo, siginfo_t * si, void  *ctx)
 {
+<<<<<<< HEAD
+=======
+    ucontext_t *uc = (ucontext_t *) ctx;
+>>>>>>> 2f78dc9c319f146c5fe6b68aa117956936386b62
 
     switch ( signo )
     {
@@ -51,7 +65,15 @@ void handle_fault(int signo, siginfo_t * si, void  *ctx)
             info("Caught single-step trap (RIP=%p)\n", si->si_addr);
         #endif
 
+<<<<<<< HEAD
         /* ensure RFLAGS.TF is clear to disable debug single-stepping */
+=======
+        if (si->si_addr == sgx_get_aep())
+            step_cnt++;
+
+        /* ensure RFLAGS.TF is clear to disable debug single-stepping */
+        uc->uc_mcontext.gregs[REG_EFL] &= ~0x100;
+>>>>>>> 2f78dc9c319f146c5fe6b68aa117956936386b62
         break;
 
       default:
@@ -81,7 +103,6 @@ void register_signal_handler(int signo)
 int main(void)
 {
     void *tcs;
-    uint64_t rv;
     struct encl_op_hmac arg_hmac;
 
     /************************************************************************/
@@ -103,8 +124,7 @@ int main(void)
     arg_hmac.message_len = message_len;
     arg_hmac.digest = digest;
 
-    rv = baresgx_enter_enclave(tcs, (uint64_t) &arg_hmac);
-    printf("\tL enclave returned %lx\n", rv);
+    baresgx_enter_enclave(tcs, (uint64_t) &arg_hmac);
 
     /************************************************************************/
     info_event("configuring attacker runtime");
@@ -127,6 +147,7 @@ int main(void)
     info_event("single-stepping baresgx enclave");
     baresgx_enter_enclave(tcs, (uint64_t) &arg_hmac);
     info("enclave returned; step_cnt=%d\n", step_cnt);
+    printf("hmac=");
     dump_hex(digest, DIGEST_LEN);
 
     return 0;
