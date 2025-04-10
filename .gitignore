@@ -2,5 +2,6 @@
 *.elf
 *.swp
 *.a
-app
-.vscode
+*.d
+*.vscode
+sgx-pin
