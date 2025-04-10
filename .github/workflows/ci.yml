@@ -30,7 +30,6 @@ jobs:
       - name: Build C programs
         working-directory: ./app/speed-test-bare
         run: |
-          make clean
           make
 
       - name: Check for output binary
