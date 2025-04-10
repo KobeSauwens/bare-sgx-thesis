@@ -1,3 +1,6 @@
 [submodule "crypto-app/Enclave/hacl-c"]
 	path = crypto-app/Enclave/hacl-c
 	url = https://github.com/paparazzi/hacl-c.git
+[submodule "sgx-step"]
+	path = sgx-step
+	url = https://github.com/jovanbulck/sgx-step.git
