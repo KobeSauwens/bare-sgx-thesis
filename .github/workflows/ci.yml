@@ -29,7 +29,7 @@ jobs:
 
       - name: Build and load /dev/sgx-step
         run: |
-          cd $GITHUB_WORKSPACE/kernel/
+          cd $GITHUB_WORKSPACE/external/sgx-step/kernel/
           #./install_SGX_driver.sh
           make clean load
 
