@@ -63,7 +63,7 @@ jobs:
           for dir in app/ecall_asm app/crypto-app app/speed-test-sdk app/bare-step app/ecall_ptr app/bare-crypto-app; do
             echo "Building in $dir"
             cd $dir
-            make CFLAGS="-fno-stack-protect"
+            make
             if [ -f "app" ]; then
               echo "Binary 'app' created in $dir"
             else
