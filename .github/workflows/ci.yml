@@ -25,6 +25,7 @@ jobs:
           echo "/opt/intel/sgxsdk" >> $GITHUB_PATH
           echo "/opt/intel/sgxsdk/bin/x64" >> $GITHUB_PATH
           echo "SGX_SDK=/opt/intel/sgxsdk" >> $GITHUB_ENV
+          source /opt/intel/sgxsdk/environment
       - name: Verify edger8r installation
         run: |
           which sgx_edger8r || { echo "sgx_edger8r not found"; exit 1; }
