@@ -28,7 +28,6 @@ jobs:
       - name: Verify edger8r installation
         run: |
           which sgx_edger8r || { echo "sgx_edger8r not found"; exit 1; }
-          sgx_edger8r --version
       - name: Debug repository structure
         run: |
           ls -la app
