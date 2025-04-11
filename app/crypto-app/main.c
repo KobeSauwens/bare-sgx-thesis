@@ -1,5 +1,5 @@
 /* utility headers */
-#include "../common/debug.h"
+#include "../../common/debug.h"
 #include <cacheutils.h>
 
 /* SGX untrusted runtime */
