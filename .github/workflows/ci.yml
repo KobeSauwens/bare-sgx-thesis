@@ -43,7 +43,7 @@ jobs:
 
       - name: Patch and install Intel SGX SDK
         run: |
-          cd $GITHUB_WORKSPACE/sdk/intel-sdk/
+          cd $GITHUB_WORKSPACE/external/sgx-step/sdk/intel-sdk/
           sudo apt-get update
           bash -x ./install_SGX_SDK.sh
           source /opt/intel/sgxsdk/environment
@@ -52,7 +52,7 @@ jobs:
       - name: Run Intel SGX SDK sample code in simulator
         run: |
           source /opt/intel/sgxsdk/environment
-          cd $GITHUB_WORKSPACE/sdk/intel-sdk/linux-sgx/SampleCode/LocalAttestation
+          cd $GITHUB_WORKSPACE/external/sgx-step/sdk/intel-sdk/linux-sgx/SampleCode/LocalAttestation
           make SGX_MODE=SIM
           cd bin
           ldd ./app
