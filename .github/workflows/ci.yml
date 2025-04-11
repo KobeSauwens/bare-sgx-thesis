@@ -25,26 +25,39 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential gcc make libssl-dev
-      - name: Install Intel SGX SDK and PSW
+          sudo apt-get -yqq install build-essential libelf-dev
+
+      - name: Build and load /dev/sgx-step
         run: |
-          wget https://download.01.org/intel-sgx/sgx-linux/2.17.1/distro/ubuntu20.04-server/sgx_linux_x64_sdk_2.17.101.1.bin
-          chmod +x sgx_linux_x64_sdk_2.17.101.1.bin
-          sudo ./sgx_linux_x64_sdk_2.17.101.1.bin --prefix=/opt/intel
-          sudo apt-get install -y libsgx-epid libsgx-quote-ex libsgx-dcap-ql
+          cd $GITHUB_WORKSPACE/kernel/
+          #./install_SGX_driver.sh
+          make clean load
+
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Fetch submodules
+        run: |
+          git submodule init
+          git submodule update
+
+      - name: Patch and install Intel SGX SDK
+        run: |
+          cd $GITHUB_WORKSPACE/sdk/intel-sdk/
+          sudo apt-get update
+          bash -x ./install_SGX_SDK.sh
           source /opt/intel/sgxsdk/environment
-      - name: Check aesmd service
+          sudo service aesmd status
+
+      - name: Run Intel SGX SDK sample code in simulator
         run: |
-          sudo service aesmd status || echo "aesmd not running (expected in CI)"
-      - name: Verify SGX tools
-        run: |
-          which sgx_edger8r || { echo "sgx_edger8r not found"; exit 1; }
-          which sgx_sign || { echo "sgx_sign not found"; exit 1; }
-          sgx_sign --version
-      - name: Build urts and sgx-step
-        run: |
-          make -C urts
-          make -C sgx-step
+          source /opt/intel/sgxsdk/environment
+          cd $GITHUB_WORKSPACE/sdk/intel-sdk/linux-sgx/SampleCode/LocalAttestation
+          make SGX_MODE=SIM
+          cd bin
+          ldd ./app
+          ./app
+          
       - name: Build C programs
         run: |
           for dir in app/ecall_asm app/crypto-app app/speed-test-sdk app/bare-step app/ecall_ptr app/bare-crypto-app; do
