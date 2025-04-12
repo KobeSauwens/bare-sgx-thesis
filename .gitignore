@@ -1,7 +1,15 @@
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
+
 *.o
 *.elf
 *.swp
 *.a
 *.d
 *.vscode
-sgx-pin

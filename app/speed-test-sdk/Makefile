@@ -1,5 +1,5 @@
 ENCLAVE              = Enclave
-SUBDIRS              = $(ENCLAVE)
+SUBDIRS              = $(ENCLAVE) ../../external/sgx-step/libsgxstep
 
 CC                   = gcc
 AS                   = gcc
