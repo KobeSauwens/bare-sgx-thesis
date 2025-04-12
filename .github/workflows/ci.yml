@@ -60,6 +60,7 @@ jobs:
           
       - name: Build C programs
         run: |
+          source /opt/intel/sgxsdk/environment
           for dir in app/ecall_asm app/crypto-app app/speed-test-sdk app/bare-step app/ecall_ptr app/bare-crypto-app; do
             echo "Building in $dir"
             cd $dir
