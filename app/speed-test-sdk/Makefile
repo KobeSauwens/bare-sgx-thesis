@@ -7,9 +7,9 @@ LD                   = gcc
 
 CFLAGS              += -fPIC -fno-stack-protector -fno-builtin -fno-jump-tables \
                        -fno-common -Wno-attributes -g -D_GNU_SOURCE -O0
-INCLUDE              = -I$(SGX_SDK)/include/ -I../../common/ -I../../sgx-step/libsgxstep/
+INCLUDE              = -I$(SGX_SDK)/include/ -I../../common/ -I../../external/sgx-step/libsgxstep/
 LDFLAGS             += -lencl_proxy -lsgx_urts \
-                       -lsgx_uae_service -pthread $(SUBDIRS:%=-L %) -L$(SGX_SDK)/lib64/ -L../../sgx-step/libsgxstep/ -lsgx-step
+                       -lsgx_uae_service -pthread $(SUBDIRS:%=-L %) -L$(SGX_SDK)/lib64/ -L../../external/sgx-step/libsgxstep/ -lsgx-step
 
 SOURCES              = $(shell ls *.c ../../common/*.c)
 OBJECTS              = $(SOURCES:.c=.o) #../../sgx-step/libsgxstep/sched.o ../../sgx-step/libsgxstep/cpu.o
