@@ -5,18 +5,18 @@
 #include <ucontext.h>
 #include <string.h>
 #include <sys/mman.h>
-#include "baresgx/urts.h"
-#include "libsgxstep/debug.h"
-#include "libsgxstep/enclave.h"
-#include "libsgxstep/cpu.h"
-#include "libsgxstep/pt.h"
-#include "libsgxstep/apic.h"
-#include "libsgxstep/cache.h"
-#include "libsgxstep/elf_parser.h"
+#include "../../urts/include/baresgx/urts.h"
+#include "../../external/sgx-step/libsgxstep/debug.h"
+#include "../../external/sgx-step/libsgxstep/enclave.h"
+#include "../../external/sgx-step/libsgxstep/cpu.h"
+#include "../../external/sgx-step/libsgxstep/pt.h"
+#include "../../external/sgx-step/libsgxstep/apic.h"
+#include "../../external/sgx-step/libsgxstep/cache.h"
+#include "../../external/sgx-step/libsgxstep/elf_parser.h"
 #include "../bare-crypto-app/enclave/test_encl.h"
 
 #define ENCLAVE_PATH            "../bare-crypto-app/enclave/encl.elf"
-#define DEBUG			0
+#define DEBUG			        0
 #define ENCLAVE_DBG             1
 
 void *encl_page = NULL;
@@ -118,6 +118,7 @@ int main(void)
     print_pte(pte_encl);
 
     *pte_encl = MARK_EXECUTE_DISABLE(*pte_encl);
+    print_pte(pte_encl);
 
     /* use hardware trap flag instead of timer IRQ */
     register_signal_handler( SIGTRAP );

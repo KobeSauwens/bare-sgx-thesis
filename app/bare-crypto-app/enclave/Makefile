@@ -11,7 +11,7 @@ CFLAGS  += -Wall -static-pie -nostdlib -ffreestanding -fPIE \
 	       -fno-stack-protector -mrdrnd $(INCLUDES)
 LDFLAGS := -z noexecstack -Wl,-T,test_encl.lds,--build-id=none
 
-encl.elf: test_encl_bootstrap.S test_encl.c hacl-hmac.o# test_encl_t.c
+encl.elf: test_encl_bootstrap.S test_encl.c hacl-hmac.o 
 	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
 
 clean:
@@ -22,6 +22,6 @@ clean:
 hacl-hmac.o: hacl-c/Hacl_HMAC_SHA2_256.c
 	$(CC) -c $(CFLAGS) -o $@ $<
 
-#edger: $(ENCLAVE).edl
-#	#echo "$(INDENT)[GEN]" $(EDGER) $(ENCLAVE_EDL)
-#	$(EDGER) $(ENCLAVE_EDL)
+edger: $(ENCLAVE).edl test_encl.c
+	#echo "$(INDENT)[GEN]" $(EDGER) $(ENCLAVE_EDL)
+	$(EDGER) $(ENCLAVE_EDL)
