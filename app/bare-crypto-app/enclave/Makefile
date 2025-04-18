@@ -7,8 +7,8 @@ EDGER		:= sgx_edger8r
 
 INCLUDE         := -I./hacl-c/
 LDFLAGS         := -z noexecstack -lbaresgx-urts -L$(BARESGX) -lcrypto -lhacl
-CFLAGS  += -Wall -static-pie -nostdlib -ffreestanding -fPIE \
-	       -fno-stack-protector -mrdrnd $(INCLUDES)
+CFLAGS  += -Wall -static-pie -nostdlib -ffreestanding -fPIE -D_FORTIFY_SOURCE=0\
+	       -fno-stack-protector -mrdrnd $(INCLUDES) -Os
 LDFLAGS := -z noexecstack -Wl,-T,test_encl.lds,--build-id=none
 
 encl.elf: test_encl_bootstrap.S test_encl.c hacl-hmac.o 

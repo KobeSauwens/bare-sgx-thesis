@@ -1,8 +1,22 @@
+# Ignore object files, binaries, temp files
 *.o
 *.elf
 *.swp
 *.a
 *.d
+
+# Ignore .vscode folder
 *.vscode
+
+# Ignore external folder
 external/
-app
+
+# Don't ignore app folder
+!app/
+
+# Ignore 'app' file inside any subdirectory (e.g., app/app)
+**/app
+
+# Ignore the build script
+local_build_test.sh
+

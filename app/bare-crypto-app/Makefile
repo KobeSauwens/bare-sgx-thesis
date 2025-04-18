@@ -5,7 +5,7 @@ SUBDIRS         = $(ENCLAVE) $(BARESGX)
 
 CC              := gcc
 LD              := gcc
-EDGER			:= sgx_edger8r
+EDGER		:= sgx_edger8r
 INCLUDE         := -I$(BARESGX)/include/ -I./enclave
 CFLAGS          := -Wall -Werror -g -fPIC $(CFLAGS)
 LDFLAGS         := -z noexecstack -lbaresgx-urts -L$(BARESGX) -lcrypto 
