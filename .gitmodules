@@ -4,3 +4,6 @@
 [submodule "external/sgx-step"]
 	path = external/sgx-step
 	url = https://github.com/jovanbulck/sgx-step.git
+[submodule "external/hacl-star"]
+	path = external/hacl-star
+	url = https://github.com/hacl-star/hacl-star.git
