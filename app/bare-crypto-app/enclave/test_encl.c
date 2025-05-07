@@ -1,73 +1,41 @@
 // SPDX-License-Identifier: GPL-2.0
 /*  Copyright(c) 2016-20 Intel Corporation. */
 
+#include "../../../trts/bare-trts/bare_trts.h"
 #include "test_encl.h"
-#include "hacl-c/Hacl_HMAC_SHA2_256.h"
+#include "../../../external/hacl-star/dist/portable-gcc-compatible/Hacl_HMAC.h"
+#include "../../../external/hacl-star/dist/portable-gcc-compatible/Hacl_AEAD_Chacha20Poly1305.h"
+#include "../../../trts/FreeRTOS/FreeRTOS.h"
 
-/* Based on the patches by Jo Van Bulck of the test-enclave in the Linux Kernel 
-	https://lkml.org/lkml/2023/7/19/798
-*/
+//#include "../../../trts/klibc-2.0.14/usr/include/malloc.h"
+//#include "../../../trts/klibc-2.0.14/usr/include/stdlib.h"
+//#include "../../../external/hacl-star/dist/portable-gcc-compatible/Lib_RandomBuffer_System.h"
+#define configAPPLICATION_ALLOCATED_HEAP 1
+uint8_t ucHeap[configTOTAL_HEAP_SIZE];
 
-uint64_t get_enclave_base(void);
-uint64_t get_enclave_size(void);
+uint8_t AEAD_key[KEY_LEN_AEAD] = {
+	0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
+	0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F,
+	0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
+	0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F
+};
 
-/*
-	Taken from the linux kernel sgx selftests
-	https://github.com/torvalds/linux/blob/master/tools/testing/selftests/sgx/test_encl.c
+// Dummy `stderr` symbol
+FILE *stderr = (void *)0;
 
-*/
-
-void *memcpy(void *dest, const void *src, size_t n)
-{
-	size_t i;
-
-	for (i = 0; i < n; i++)
-		((char *)dest)[i] = ((char *)src)[i];
-
-	return dest;
+// Dummy `exit` that halts or loops forever
+void exit(int status) {
+    (void)status;
+    while (1) { /* trap or halt */ }
 }
 
-void *memset(void *dest, int c, size_t n)
-{
-	size_t i;
-
-	for (i = 0; i < n; i++)
-		((char *)dest)[i] = c;
-
-	return dest;
- }
-
-static int is_outside_enclave(void *addr, size_t len)
-{
-	size_t start = (size_t) addr;
-	size_t end = start + len - 1;
-	size_t enclave_end = get_enclave_base() + get_enclave_size();
-
-	if (start > end)
-			return 0;
-
-	return (start > enclave_end) || (end < get_enclave_base());
+// Dummy `fprintf` that does nothing
+int fprintf(FILE *stream, const char *format, ...) {
+    (void)stream;
+    (void)format;
+    return 0;
 }
 
-/* Based on the patches by Jo Van Bulck of the test-enclave in the Linux Kernel 
-	https://lkml.org/lkml/2023/7/19/798
-*/
-
-#define SAFE_COPY_STRUCT(u_arg, t_cp)	do { 			\
-		if (!is_outside_enclave(u_arg, sizeof(t_cp)))	\
-		{												\
-			panic();									\
-		}												\
-		memcpy(t_cp,u_arg,sizeof(*t_cp));				\
-	} while(0)											\
-
-
-
-static inline void panic(void)
-{
-	//ud2 undefined instruction exception
-	asm("ud2\n\t");
-}
 
 static void do_encl_op_add(void *_op)
 {
@@ -91,36 +59,44 @@ static void do_encl_op_hmac(void *_op)
 {
 	struct encl_op_hmac *op = _op;
 
-    uint8_t key[KEY_LEN] = {
+    uint8_t key[KEY_LEN_HMAC] = {
         0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
         0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F
     };
-    hmac(op->digest, key, KEY_LEN, op->message, 0);//(*op).message_len);
+    Hacl_HMAC_compute_sha2_256(op->digest, key, KEY_LEN_HMAC, op->message, (*op).message_len);
 }
 
-
-static int is_inside_enclave(void *addr, size_t len)
+static void do_encl_op_AEAD_encrypt(void *_op)
 {
-	/*Cast to avoid undefined void pointer arithmetics in C */
-	size_t start = (size_t) addr;
-	size_t end = start + len - 1;
-	size_t enclave_end = get_enclave_base() + get_enclave_size();
+	struct encl_op_AEAD *op = _op;
 
-	if (start > end)
-			return 0;
-
-	return (start >= get_enclave_base() && end <= enclave_end);
+	Hacl_AEAD_Chacha20Poly1305_encrypt(
+		op->cipher,
+		op->mac,
+		op->m,
+		op->mlen,
+		op->aad,
+		op->aadlen,
+		AEAD_key,
+		op->n
+	);
 }
 
-
-
-static inline void assert_inside_enclave(void *u_arg, size_t size)
-{	
-	if(!is_inside_enclave((void *) (u_arg), size))
-	{
-		panic();
-	}
+static void do_encl_op_AEAD_decrypt(void *_op)
+{
+	struct encl_op_AEAD *op = _op;
+	Hacl_AEAD_Chacha20Poly1305_decrypt(
+		op->m,
+		op->cipher,
+		op->mlen,
+		op->aad,
+		op->aadlen,
+		AEAD_key,
+		op->n,
+		op->mac
+	);
 }
+
 
 
 /*
@@ -140,6 +116,8 @@ volatile encl_op_t encl_op_array[ENCL_OP_MAX] = {
 	do_encl_op_add,
 	do_encl_op_sub,
 	do_encl_op_hmac,
+	do_encl_op_AEAD_encrypt,
+	do_encl_op_AEAD_decrypt,
 };
 
 

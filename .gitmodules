@@ -7,3 +7,6 @@
 [submodule "external/hacl-star"]
 	path = external/hacl-star
 	url = https://github.com/hacl-star/hacl-star.git
+[submodule "external/FreeRTOS-Kernel"]
+	path = external/FreeRTOS-Kernel
+	url = https://github.com/FreeRTOS/FreeRTOS-Kernel.git

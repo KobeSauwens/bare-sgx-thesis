@@ -1,21 +1,26 @@
 BARESGX         = ../../urts
 ENCLAVE         = enclave
+HACL_STAR   	:= ../../external/hacl-star
+TRTS			:= ../../trts
 
-SUBDIRS         = $(ENCLAVE) $(BARESGX)
 
+SUBDIRS         = $(ENCLAVE) $(BARESGX) 
+#$(HACL_STAR)/dist/portable-gcc-compatible
 CC              := gcc
 LD              := gcc
-EDGER		:= sgx_edger8r
-INCLUDE         := -I$(BARESGX)/include/ -I./enclave
-CFLAGS          := -Wall -Werror -g -fPIC $(CFLAGS)
-LDFLAGS         := -z noexecstack -lbaresgx-urts -L$(BARESGX) -lcrypto 
+EDGER			:= sgx_edger8r
+INCLUDE         := -I$(BARESGX)/include/ #-I./enclave -I $(HACL_STAR)/dist/karamel/include/ -I $(HACL_STAR)/dist/karamel/krmllib/dist/minimal/
+CFLAGS          := -Wall -Werror -g -fPIC $(CFLAGS) 
+LDFLAGS         := -z noexecstack -lbaresgx-urts -L$(BARESGX) -lcrypto -L $(HACL_STAR)/dist/portable-gcc-compatible/ -levercrypt
+#-L \
+#					$(HACL_STAR)/dist/karamel/ #					-L $(HACL_STAR)/dist/portable-gcc-compatible/lib64/
 
 SOURCES         = $(shell ls *.c)
-OBJECTS         = $(SOURCES:.c=.o)
+OBJECTS         = $(SOURCES:.c=.o) 
 OUTPUT          = app
 
-BUILDDIRS       = $(SUBDIRS:%=build-%)
-CLEANDIRS       = $(SUBDIRS:%=clean-%)
+BUILDDIRS       = $(SUBDIRS:%=build-%) 
+CLEANDIRS       = $(SUBDIRS:%=clean-%) 
 
 PRIVATE_KEY       = private_key.pem
 PUBLIC_KEY        = public_key.pem
@@ -36,5 +41,3 @@ $(CLEANDIRS):
 
 clean: $(CLEANDIRS)
 	rm -f $(OBJECTS) $(OUTPUT)
-
-

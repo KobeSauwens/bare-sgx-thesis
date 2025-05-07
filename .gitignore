@@ -9,7 +9,7 @@
 *.vscode
 
 # Ignore external folder
-external/
+#external/
 
 # Don't ignore app folder
 !app/
