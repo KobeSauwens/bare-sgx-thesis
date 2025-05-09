@@ -4,6 +4,7 @@
 #include <openssl/rand.h>
 //#include "../../external/hacl-star/dist/portable-gcc-compatible/Lib_RandomBuffer_System.h"
 #include "../../trts/FreeRTOS/FreeRTOSConfig.h"
+
 #include "enclave/test_encl.h"
 //#include "enclave/test_encl_u.h"
 //#include "enclave/test_encl.h"
@@ -49,6 +50,12 @@ void print_hex_one_line(const char *label, uint8_t *data, uint32_t len) {
         if (i < len - 1) printf(" ");
     }
     printf("\n");
+}
+
+void print_encl_op_hmac(struct encl_op_hmac *op, uint32_t digest_len) {
+    printf("=== encl_op_HMAC ===\n");
+    print_hex_one_line("Message", op->message, op->message_len);
+    print_hex_one_line("Digest",  op->digest, digest_len);
 }
 
 // Main pretty printer
@@ -108,56 +115,62 @@ int main(void)
 
     baresgx_enter_enclave(tcs, (uint64_t) &arg_hmac);
     printf("\nBare SGX currently hashing: \"Bare-SGX rocks!\" \n");
-    dump_hex("sha256sum", digest, DIGEST_LEN);
+    print_encl_op_hmac(&arg_hmac, DIGEST_LEN);
 
 
 
-	uint8_t nonce[NONCE_LEN] = {0x0};
+	// uint8_t nonce[NONCE_LEN] = {0x0};
 
-    RAND_bytes(nonce,NONCE_LEN);
+    // RAND_bytes(nonce,NONCE_LEN);
 
-    char *aad = "TCB should be minimized!";
-    uint32_t aadlen = strlen(aad);
+    // char *aad = "TCB should be minimized!";
+    // uint32_t aadlen = strlen(aad);
    
 
-    char *m = "Bare-SGX rocks!";
-    uint32_t mlen = strlen(message);
+    // char *m = "Bare-SGX rocks!";
+    // uint32_t mlen = strlen(message);
 	
-	uint8_t mac[MAC_LEN] = {0x0};
-    uint8_t *ciphertext = (uint8_t *)malloc(mlen * sizeof(uint8_t));
-    if (ciphertext == NULL) {
-        fprintf(stderr, "Failed to allocate memory for ciphertext\n");
-        return -1;
-    }
+	// uint8_t mac[MAC_LEN] = {0x0};
+    // uint8_t *ciphertext = (uint8_t *)malloc(mlen * sizeof(uint8_t));
+    // if (ciphertext == NULL) {
+    //     fprintf(stderr, "Failed to allocate memory for ciphertext\n");
+    //     return -1;
+    // }
 
-    dump_hex("\nKey: ", key_for_dump, KEY_LEN_AEAD);
+    // dump_hex("\nKey: ", key_for_dump, KEY_LEN_AEAD);
 
-    arg_AEAD_ENC.header_AEAD.type = ENCL_OP_AEAD_ENC;
-    arg_AEAD_ENC.n = nonce;
-    arg_AEAD_ENC.aad = (uint8_t*) aad;
-    arg_AEAD_ENC.aadlen = aadlen;
-    arg_AEAD_ENC.m = (uint8_t*) m;
-    arg_AEAD_ENC.mlen = mlen;
-    arg_AEAD_ENC.cipher = (uint8_t*) ciphertext;
-    arg_AEAD_ENC.mac = mac;
+    // arg_AEAD_ENC.header_AEAD.type = ENCL_OP_AEAD_ENC;
+    // arg_AEAD_ENC.n = nonce;
+    // arg_AEAD_ENC.aad = (uint8_t*) aad;
+    // arg_AEAD_ENC.aadlen = aadlen;
+    // arg_AEAD_ENC.m = (uint8_t*) m;
+    // arg_AEAD_ENC.mlen = mlen;
+    // arg_AEAD_ENC.cipher = (uint8_t*) ciphertext;
+    // arg_AEAD_ENC.mac = mac;
 
-    baresgx_enter_enclave(tcs, (uint64_t) &arg_AEAD_ENC);
-    printf("\nBare SGX currently performing AEAD encryption using ChaCha20 and Poly1305: \"Bare-SGX rocks!\" \n");
-    print_encl_op_AEAD(&arg_AEAD_ENC);
+    // baresgx_enter_enclave(tcs, (uint64_t) &arg_AEAD_ENC);
+    // printf("\nBare SGX currently performing AEAD encryption using ChaCha20 and Poly1305: \"Bare-SGX rocks!\" \n");
+    // print_encl_op_AEAD(&arg_AEAD_ENC);
     
-    arg_AEAD_DEC.header_AEAD.type = ENCL_OP_AEAD_DEC;
-    arg_AEAD_DEC.n = nonce;
-    arg_AEAD_DEC.aad = (uint8_t*) aad;
-    arg_AEAD_DEC.aadlen = aadlen;
-    arg_AEAD_DEC.m = (uint8_t*) m;
-    arg_AEAD_DEC.mlen = mlen;
-    arg_AEAD_DEC.cipher = (uint8_t*) arg_AEAD_ENC.cipher;
-    arg_AEAD_DEC.mac = arg_AEAD_ENC.mac;
+    // baresgx_enter_enclave(tcs, (uint64_t) &arg_AEAD_ENC);
+    // printf("\nBare SGX currently performing AES encryption: \"Bare-SGX rocks!\" \n");
+    // print_encl_op_AEAD(&arg_AEAD_ENC);
 
-    print_encl_op_AEAD(&arg_AEAD_DEC);
+    // arg_AEAD_DEC.header_AEAD.type = ENCL_OP_AEAD_DEC;
+    // arg_AEAD_DEC.n = nonce;
+    // arg_AEAD_DEC.aad = (uint8_t*) aad;
+    // arg_AEAD_DEC.aadlen = aadlen;
+    // arg_AEAD_DEC.m = (uint8_t*) m;
+    // arg_AEAD_DEC.mlen = mlen;
+    // arg_AEAD_DEC.cipher = (uint8_t*) arg_AEAD_ENC.cipher;
+    // arg_AEAD_DEC.mac = arg_AEAD_ENC.mac;
 
-    printf("\nBare SGX currently performing AEAD decryption using ChaCha20 and Poly1305: \"Bare-SGX rocks!\" \n");
-    baresgx_enter_enclave(tcs, (uint64_t) &arg_AEAD_DEC);
+    // print_encl_op_AEAD(&arg_AEAD_DEC);
+
+    // printf("\nBare SGX currently performing AEAD decryption using ChaCha20 and Poly1305: \"Bare-SGX rocks!\" \n");
+    // baresgx_enter_enclave(tcs, (uint64_t) &arg_AEAD_DEC);
+
+
 
 
     return 0;

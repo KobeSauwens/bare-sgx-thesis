@@ -5,20 +5,28 @@
 #include "test_encl.h"
 #include "../../../external/hacl-star/dist/portable-gcc-compatible/Hacl_HMAC.h"
 #include "../../../external/hacl-star/dist/portable-gcc-compatible/Hacl_AEAD_Chacha20Poly1305.h"
+//#include "../../../external/hacl-star/dist/portable-gcc-compatible/Hacl_Spec.h"
+//#include "../../../external/hacl-star/dist/portable-gcc-compatible/EverCrypt_AEAD.h"
 #include "../../../trts/FreeRTOS/FreeRTOS.h"
 
 //#include "../../../trts/klibc-2.0.14/usr/include/malloc.h"
 //#include "../../../trts/klibc-2.0.14/usr/include/stdlib.h"
 //#include "../../../external/hacl-star/dist/portable-gcc-compatible/Lib_RandomBuffer_System.h"
 #define configAPPLICATION_ALLOCATED_HEAP 1
+
 uint8_t ucHeap[configTOTAL_HEAP_SIZE];
 
-uint8_t AEAD_key[KEY_LEN_AEAD] = {
+static uint8_t AEAD_key[KEY_LEN_AEAD] = {
 	0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
 	0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F,
 	0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
 	0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F
 };
+
+// static uint8_t AES_key[KEY_LEN_AES] = {
+// 	0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
+// 	0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F,
+// };
 
 // Dummy `stderr` symbol
 FILE *stderr = (void *)0;
@@ -55,7 +63,7 @@ static void do_encl_op_sub(void *_op)
 	*op.rv_pt = op.val1 - op.val2;
 }
 
-static void do_encl_op_hmac(void *_op)
+void do_encl_op_hmac(void *_op)
 {
 	struct encl_op_hmac *op = _op;
 
@@ -96,6 +104,28 @@ static void do_encl_op_AEAD_decrypt(void *_op)
 		op->mac
 	);
 }
+
+// static void do_encl_op_AES_GCM_128_encrypt(void *_op)
+// {
+	
+// 	struct encl_op_AEAD *op = _op;
+// 	EverCrypt_AEAD_state_s *dst;
+// 	EverCrypt_AEAD_create_in(Spec_Agile_AEAD_AES128_GCM, &dst, AES_key);
+
+// 	EverCrypt_AEAD_encrypt(
+// 		dst,
+// 		op->n,
+// 		NONCE_LEN,
+// 		op->aad,
+// 		op->aadlen,
+// 		op->m,
+// 		op->mlen,
+// 		op->cipher,
+// 		op->mac
+// 	);
+
+// 	EverCrypt_AEAD_free(dst);
+// }
 
 
 

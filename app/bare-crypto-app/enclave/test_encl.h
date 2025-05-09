@@ -8,6 +8,7 @@
 #define KEY_LEN_AEAD    32
 #define KEY_LEN_HMAC    16
 #define MAC_LEN         16
+#define KEY_LEN_AES     16
 #define NONCE_LEN       12
 
 
@@ -17,6 +18,7 @@ enum encl_op_type {
         ENCL_OP_HMAC,
         ENCL_OP_AEAD_ENC,
         ENCL_OP_AEAD_DEC,
+        ENCL_OP_AES_GCM_128_ENC,
         ENCL_OP_MAX,
 };
 

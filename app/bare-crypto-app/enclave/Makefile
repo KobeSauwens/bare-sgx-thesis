@@ -27,7 +27,7 @@ LDFLAGS := -z noexecstack  -nostdlib -nodefaultlibs \
 
 all: encl.elf
 
-encl.elf: heap_2.o test_encl_bootstrap.S test_encl.c bare_trts.o 
+encl.elf: heap_2.o test_encl_bootstrap.S test_encl.c bare_trts.o test_encl_t.o 
 	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
 
 clean:
@@ -40,6 +40,9 @@ heap_2.o: $(TRTS)/FreeRTOS/heap_2.c $(TRTS)/FreeRTOS/FreeRTOSConfig.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 bare_trts.o: $(TRTS)/bare-trts/bare_trts.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+test_encl_t.o: test_encl_t.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 #

@@ -3,17 +3,13 @@ enclave {
         include "test_encl.h"
         /* define ECALLs here. */
         
-        #define ENCL_OP_MATH_SIZE_LEN 32  // 256 bits
-        /* =========================== START SOLUTION =========================== */
-        public void encl_body([in, out, size=ENCL_OP_MATH_SIZE_LEN] void * rdi, [in,out,size=8] void * rsi );
-        //generates a way to difficult test_encl_t.c
-        //public void encl_body( size_t rdi, size_t rsi);
+        //#define ENCL_OP_MATH_SIZE_LEN 32  // 256 bits
+        public void do_encl_op_hmac([in, out] struct encl_op_hmac * op);
         
         
-        /* ============================ END SOLUTION ============================ */
         };
 	
-	untrusted {
+	//untrusted {
         /* define OCALLs here. */
-	};
+	//};
 };
