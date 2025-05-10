@@ -4,11 +4,7 @@
 #include <stddef.h>
 #include <stdint.h>
 
-/* Based on the patches by Jo Van Bulck of the test-enclave in the Linux Kernel 
-	https://lkml.org/lkml/2023/7/19/798
-*/
-uint64_t get_enclave_base(void);
-uint64_t get_enclave_size(void);
+
 
 /* Based on the patches by Jo Van Bulck of the test-enclave in the Linux Kernel 
 	https://lkml.org/lkml/2023/7/19/798
@@ -21,6 +17,13 @@ uint64_t get_enclave_size(void);
 		memcpy(t_cp,u_arg,sizeof(*t_cp));				\
 	} while(0)											\
 
+/* Based on the patches by Jo Van Bulck of the test-enclave in the Linux Kernel 
+	https://lkml.org/lkml/2023/7/19/798
+*/
+uint64_t get_enclave_base(void);
+uint64_t get_enclave_size(void);
+
+
 
 int is_inside_enclave(void *addr, size_t len);
 int is_outside_enclave(void *addr, size_t len);
@@ -29,6 +32,10 @@ void panic(void);
 
 void *memcpy(void *dest, const void *src, size_t n);
 void *memset(void *dest, int c, size_t n);
+
+
+void *malloc( size_t xWantedSize );
+void free( void * pv );
 
 void assert_inside_enclave(void *u_arg, size_t size);
 

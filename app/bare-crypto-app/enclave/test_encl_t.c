@@ -8,7 +8,7 @@
 //#include <stdlib.h> /* for malloc/free etc */
 
 #define SGX_CDECL
-#define SGX_EXTERNC extern // C++ is not suppported in Bare SGX
+#define SGX_EXTERNC //sextern // C++ is not suppported in Bare SGX
 
 typedef enum {
     SGX_SUCCESS = 0x00000000,
@@ -55,9 +55,9 @@ static sgx_status_t SGX_CDECL sgx_do_encl_op_hmac(void* pms)
 	ms_do_encl_op_hmac_t* ms = SGX_CAST(ms_do_encl_op_hmac_t*, pms);
 	ms_do_encl_op_hmac_t __in_ms;
 	//if (memcpy_s(&__in_ms, sizeof(ms_do_encl_op_hmac_t), ms, sizeof(ms_do_encl_op_hmac_t))) {
-	if (memcpy(&__in_ms, ms, sizeof(ms_do_encl_op_hmac_t))) {
-		return SGX_ERROR_UNEXPECTED;
-	}
+	memcpy(&__in_ms, ms, sizeof(ms_do_encl_op_hmac_t));
+	//	return SGX_ERROR_UNEXPECTED;
+	//}
 	sgx_status_t status = SGX_SUCCESS;
 	struct encl_op_hmac* _tmp_op = __in_ms.ms_op;
 	size_t _len_op = sizeof(struct encl_op_hmac);
@@ -78,19 +78,13 @@ static sgx_status_t SGX_CDECL sgx_do_encl_op_hmac(void* pms)
 		}
 
 		//if (memcpy_s(_in_op, _len_op, _tmp_op, _len_op)) { 
-		if (memcpy(_in_op, _tmp_op, _len_op)) { // used to be memcpy_s
-			status = SGX_ERROR_UNEXPECTED;
-			goto err;
-		}
+		memcpy(_in_op, _tmp_op, _len_op); // used to be memcpy_s
 
 	}
 	do_encl_op_hmac(_in_op);
 	if (_in_op) {
 		//if (memcpy_verw_s(_tmp_op, _len_op, _in_op, _len_op)) { // used to be memcpy_verw_s
-		if (memcpy(_tmp_op, _in_op, _len_op)) { // used to be memcpy_verw_s
-			status = SGX_ERROR_UNEXPECTED;
-			goto err;
-		}
+		memcpy(_tmp_op, _in_op, _len_op); // used to be memcpy_verw_s
 	}
 
 err:

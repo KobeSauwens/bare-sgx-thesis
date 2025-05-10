@@ -104,7 +104,7 @@ int main(void)
     arg_hmac.message_len = message_len;
     arg_hmac.digest = digest;
 
-    baresgx_enter_enclave(tcs, (uint64_t) &arg_hmac);
+    //baresgx_enter_enclave(tcs, (uint64_t) &arg_hmac);
 
     /************************************************************************/
     info_event("configuring attacker runtime");

@@ -82,8 +82,8 @@ void dump_hex(char *str, uint8_t *buf, int len)
 int main(void)
 {
     struct encl_op_hmac arg_hmac;
-    struct encl_op_AEAD arg_AEAD_ENC;
-    struct encl_op_AEAD arg_AEAD_DEC;
+    //struct encl_op_AEAD arg_AEAD_ENC;
+    //struct encl_op_AEAD arg_AEAD_DEC;
 
 
     uint8_t key_for_dump[KEY_LEN_AEAD] = {
@@ -137,7 +137,7 @@ int main(void)
     //     return -1;
     // }
 
-    // dump_hex("\nKey: ", key_for_dump, KEY_LEN_AEAD);
+    dump_hex("\nKey: ", key_for_dump, KEY_LEN_AEAD);
 
     // arg_AEAD_ENC.header_AEAD.type = ENCL_OP_AEAD_ENC;
     // arg_AEAD_ENC.n = nonce;

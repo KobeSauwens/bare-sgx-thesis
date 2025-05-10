@@ -44,6 +44,16 @@ int fprintf(FILE *stream, const char *format, ...) {
     return 0;
 }
 
+extern const struct {
+    size_t nr_ecall;
+    struct {
+        void* ecall_addr;
+        uint8_t is_priv;
+        uint8_t is_switchless;
+    } ecall_table[];
+} g_ecall_table;
+
+
 
 static void do_encl_op_add(void *_op)
 {
@@ -158,10 +168,11 @@ void encl_body(void *rdi, void *rsi)
 
 	/*TODO *insecure* ptr dereference: needs a check */
 	
-	// if(!is_outside_enclave(header,sizeof(encl_op_header)))
-	// {
-	// 	panic();
-	// }
+	if(!is_outside_enclave(header,sizeof(struct encl_op_header)))
+	{
+	 	panic();
+	}
+
 	if (header->type >= ENCL_OP_MAX)
 		return;
 
@@ -170,7 +181,10 @@ void encl_body(void *rdi, void *rsi)
 	 * *cannot be* made rip-relative by the compiler, or fixed up by
 	 * any other possible means.
 	 */
-	op = ((uint64_t)&__enclave_base) + encl_op_array[header->type];
+	//op = ((uint64_t)&__enclave_base) + encl_op_array[header->type];
+	op = ((uint64_t)&__enclave_base) + g_ecall_table.ecall_table[0].ecall_addr;
+
+
 	(*op)(header);
 }
 
