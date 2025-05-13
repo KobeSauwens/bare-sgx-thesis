@@ -3,8 +3,8 @@
 
 #include "../../../trts/bare-trts/bare_trts.h"
 #include "test_encl.h"
-#include "../../../external/hacl-star/dist/portable-gcc-compatible/Hacl_HMAC.h"
-#include "../../../external/hacl-star/dist/portable-gcc-compatible/Hacl_AEAD_Chacha20Poly1305.h"
+#include "dist/portable-gcc-compatible/Hacl_HMAC.h"
+#include "dist/portable-gcc-compatible/Hacl_AEAD_Chacha20Poly1305.h"
 //#include "../../../external/hacl-star/dist/portable-gcc-compatible/Hacl_Spec.h"
 //#include "../../../external/hacl-star/dist/portable-gcc-compatible/EverCrypt_AEAD.h"
 #include "../../../trts/FreeRTOS/FreeRTOS.h"

@@ -16,7 +16,7 @@
 #include "../bare-crypto-app/enclave/test_encl.h"
 
 #define ENCLAVE_PATH            "../bare-crypto-app/enclave/encl.elf"
-#define DEBUG			        0
+#define DEBUG			        1
 #define ENCLAVE_DBG             1
 
 void *encl_page = NULL;
@@ -40,6 +40,10 @@ void handle_fault(int signo, siginfo_t * si, void  *ctx)
       case SIGSEGV:
         info("caught SIGSEGV; restoring trigger page access rights");
     	*pte_encl = MARK_EXECUTABLE(*pte_encl);
+
+        if (sgx_step_do_trap) {
+            exit(0);
+        }
 
         sgx_step_do_trap = 1;
 	break;
@@ -112,7 +116,7 @@ int main(void)
     register_signal_handler( SIGSEGV );
 
     encl_page = get_symbol_offset("encl_entry") + get_enclave_base();
-    info("entry page at %p", encl_page);
+    printf("entry page at %p with value: %x \n",encl_page, *((uint64_t*) encl_page));
     ASSERT(pte_encl = remap_page_table_level(encl_page, PTE));
     ASSERT(PRESENT(*pte_encl));
     print_pte(pte_encl);

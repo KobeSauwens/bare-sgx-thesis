@@ -11,11 +11,12 @@
 # Ignore external folder
 #external/
 
-# Don't ignore app folder
-!app/
 
 # Ignore 'app' file inside any subdirectory (e.g., app/app)
 **/app
+
+# Don't ignore app folder
+!app/
 
 # Ignore the build script
 local_build_test.sh

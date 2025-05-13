@@ -4,7 +4,7 @@ ENCLAVE     := test_encl
 ENCLAVE_EDL := test_encl.edl
 EDGER       := sgx_edger8r
 HACL_STAR   := .#../../../external/hacl-star
-KLIBC       := ../../../trts/klibc-2.0.14/usr
+#KLIBC       := ../../../trts/klibc-2.0.14/usr
 TRTS        := ../../../trts
 
 INCLUDES := -I $(HACL_STAR)/dist/portable-gcc-compatible/ \

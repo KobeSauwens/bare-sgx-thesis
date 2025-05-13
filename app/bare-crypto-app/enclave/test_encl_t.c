@@ -3,7 +3,7 @@
 //#include "sgx_trts.h" /* for sgx_ocalloc, sgx_is_outside_enclave */
 //#include "sgx_lfence.h" /* for sgx_lfence */
 
-#include <errno.h>
+//#include <errno.h>
 //#include <mbusafecrt.h> /* for memcpy_s etc */
 //#include <stdlib.h> /* for malloc/free etc */
 

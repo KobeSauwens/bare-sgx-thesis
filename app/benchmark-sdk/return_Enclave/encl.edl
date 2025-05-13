@@ -1,0 +1,10 @@
+enclave {
+	
+	trusted {
+        
+        public void ecall_return();
+    };
+	
+	untrusted {
+	};
+};
