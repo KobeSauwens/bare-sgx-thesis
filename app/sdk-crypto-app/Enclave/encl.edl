@@ -5,10 +5,14 @@ enclave {
         public int ecall_dummy(int i);
         
         #define TAG_LEN 32  // 256 bits
+        #define NONCE_LEN 12 
         /* =========================== START SOLUTION =========================== */
-        public int ecall_get_secret([out,size=TAG_LEN] uint8_t *digest, [in,size=data_len] uint8_t *data, uint32_t data_len);
+        public int encl_op_hmac([out,size=TAG_LEN] uint8_t *digest, [in,size=data_len] uint8_t *data, uint32_t data_len);
+
+        public int encl_op_chacha20poly1305_enc([out,size=pt_len] uint8_t  *ciphertext, [out,size=TAG_LEN] uint8_t *tag, [in,size=pt_len] uint8_t *plaintext, uint32_t pt_len, [in,size=aad_len] uint8_t *aad, uint32_t aad_len, [in,size=NONCE_LEN] uint8_t *nonce);
+        public int encl_op_chacha20poly1305_dec([in,size=pt_len] uint8_t  *ciphertext, [in,size=TAG_LEN] uint8_t *tag, [out,size=pt_len] uint8_t *plaintext, uint32_t pt_len, [in,size=aad_len] uint8_t *aad, uint32_t aad_len, [in,size=NONCE_LEN] uint8_t *nonce);
         /* ============================ END SOLUTION ============================ */
-    };
+        };
 	
 	untrusted {
         /* define OCALLs here. */

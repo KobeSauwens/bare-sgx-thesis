@@ -35,8 +35,9 @@
  * See heap_1.c, heap_3.c and heap_4.c for alternative implementations, and the
  * memory management pages of https://www.FreeRTOS.org for more information.
  */
-#include <stdlib.h>
+//#include <stdlib.h>
 #include <string.h>
+//#include "../bare-trts/bare_trts.h"
 
 /* Defining MPU_WRAPPERS_INCLUDED_FROM_API_FILE prevents task.h from redefining
  * all the API functions to use the MPU wrappers.  That should only be done when
@@ -383,12 +384,19 @@ void *calloc( size_t xNum,
 }
 /*-----------------------------------------------------------*/
 
+//static uint8_t *get_RIP_relative_ucHeap(void)
+//{
+//    return (uint8_t *) ( (uint64_t) get_enclave_base() + (uint64_t) ucHeap );
+//}
+
 static void prvHeapInit( void ) /* PRIVILEGED_FUNCTION */
 {
     BlockLink_t * pxFirstFreeBlock;
     uint8_t * pucAlignedHeap;
 
     /* Ensure the heap starts on a correctly aligned boundary. */
+
+
     pucAlignedHeap = ( uint8_t * ) ( ( ( portPOINTER_SIZE_TYPE ) & ucHeap[ portBYTE_ALIGNMENT - 1 ] ) & ( ~( ( portPOINTER_SIZE_TYPE ) portBYTE_ALIGNMENT_MASK ) ) );
 
     /* xStart is used to hold a pointer to the first item in the list of free

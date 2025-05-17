@@ -1,5 +1,4 @@
 #include "test_encl_t.h"
-
 //#include "sgx_trts.h" /* for sgx_ocalloc, sgx_is_outside_enclave */
 //#include "sgx_lfence.h" /* for sgx_lfence */
 
