@@ -11,7 +11,7 @@ SUBDIRS                 = $(ENCLAVE) $(BARESGX) $(LIBSGXSTEP)
 
 CC                      := gcc
 LD                      := gcc
-INCLUDE                 := -I$(BARESGX)/include/ -I$(LIBSGXSTEP_DIR) 
+INCLUDE                 := -I$(BARESGX)/include/ -I$(LIBSGXSTEP_DIR) -I../../trts/bare-trts/
 CFLAGS                  := -Wall -g -fPIC 
 LDFLAGS                 := -z noexecstack -pthread -lbaresgx-urts -lsgx-step -L$(BARESGX) -L$(LIBSGXSTEP) -lcrypto -lelf
 

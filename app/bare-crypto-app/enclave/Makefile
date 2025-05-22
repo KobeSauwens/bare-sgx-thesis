@@ -9,7 +9,8 @@ TRTS        := ../../../trts
 
 INCLUDES := -I $(HACL_STAR)/dist/portable-gcc-compatible/ \
 			-I $(HACL_STAR)/dist/karamel/krmllib/dist/minimal \
-			-I $(HACL_STAR)/dist/karamel/include/
+			-I $(HACL_STAR)/dist/karamel/include/ \
+			-I $(TRTS)/bare-trts/
 # Optional KLIBC includes (uncomment if needed)
 #INCLUDES += -I $(KLIBC)/include/ \
 #            -I $(KLIBC)/include/bits64/ \
@@ -27,7 +28,7 @@ LDFLAGS := -z noexecstack  -nostdlib -nodefaultlibs \
 
 all: encl.elf
 
-encl.elf: heap_2.o test_encl_bootstrap.S test_encl.c bare_trts.o test_encl_t.o 
+encl.elf: heap_2.o test_encl_bootstrap.S test_encl.c sgx_trts.o test_encl_t.o 
 	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
 
 clean:
@@ -39,12 +40,14 @@ edger: $(ENCLAVE_EDL)
 heap_2.o: $(TRTS)/FreeRTOS/heap_2.c $(TRTS)/FreeRTOS/FreeRTOSConfig.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
-bare_trts.o: $(TRTS)/bare-trts/bare_trts.c
+sgx_trts.o: $(TRTS)/bare-trts/sgx_trts.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 test_encl_t.o: test_encl_t.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+test_encl_u.o: test_encl_u.c
+	$(CC) $(CFLAGS) -c $< -o $@
 #
 #hacl-hmac.o: hacl-c/Hacl_HMAC_SHA2_256.c$(HACL_STAR)/dist/portable-gcc-compatible/Lib_RandomBuffer_System.o 
 #	$(CC) $(CFLAGS) -c $< -o $@

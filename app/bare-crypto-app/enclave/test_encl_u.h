@@ -17,7 +17,7 @@ extern "C" {
 #endif
 
 
-sgx_status_t do_encl_op_hmac(sgx_enclave_id_t eid, struct encl_op_hmac* op);
+sgx_status_t do_encl_op_hmac(sgx_enclave_id_t eid, uint8_t* digest, uint8_t* message, uint32_t message_len);
 
 #ifdef __cplusplus
 }

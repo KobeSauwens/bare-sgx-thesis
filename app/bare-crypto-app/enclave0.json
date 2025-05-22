@@ -1,0 +1,69 @@
+[
+{"entry_type": 0,
+"size": 32768,
+"base": 140458879614976,
+"ssa_frame_size": 1,
+"miscselect": 0,
+"attributes": 4,
+"xfrm": 3
+},{
+"entry_type": 2,
+"src": 140458879729664,
+"offset": 0,
+"length": 4096,
+"secinfo": 140734436657920,
+"flags": 1,
+"measured": 1,
+"count": 0,
+"permissions": "---",
+"type": "PT_TCS"
+}
+,{
+"entry_type": 1,
+"state": 0,
+"flags": 0,
+"ssa_offset": 12288,
+"ssa_index": 0,
+"ssa_num": 1,
+"entry_offset": 4112,
+"exit_addr": 0,
+"fs_base": 0,
+"gs_base": 0
+}
+,{
+"entry_type": 2,
+"src": 140458879733760,
+"offset": 4096,
+"length": 8192,
+"secinfo": 140734436657920,
+"flags": 1,
+"measured": 1,
+"count": 4096,
+"permissions": "R-X",
+"type": "PT_REG"
+}
+,{
+"entry_type": 2,
+"src": 140458879741952,
+"offset": 12288,
+"length": 12288,
+"secinfo": 140734436657920,
+"flags": 1,
+"measured": 1,
+"count": 8192,
+"permissions": "RW-",
+"type": "PT_REG"
+}
+,{
+"entry_type": 2,
+"src": 140458879721472,
+"offset": 24576,
+"length": 4096,
+"secinfo": 140734436657920,
+"flags": 0,
+"measured": 0,
+"count": 12288,
+"permissions": "RW-",
+"type": "PT_REG"
+}
+]

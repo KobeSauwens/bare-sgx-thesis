@@ -4,6 +4,11 @@
 *.swp
 *.a
 *.d
+*.dump
+
+map_rips
+run
+
 
 # Ignore .vscode folder
 *.vscode

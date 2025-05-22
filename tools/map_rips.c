@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 #define MAX_LINE 1024
 #define MAX_RIPS 8192
@@ -8,7 +9,8 @@
 
 typedef struct {
     unsigned int rip;
-    char line[MAX_LINE];
+    char instr[MAX_LINE];
+    char func[MAX_LINE];
 } Instr;
 
 Instr disasm[MAX_INSTR];
@@ -25,17 +27,24 @@ void load_disasm(const char *filename) {
     }
 
     char line[MAX_LINE];
+    char current_func[MAX_LINE] = "unknown";
+
     while (fgets(line, sizeof(line), f)) {
         unsigned int addr;
-        char *instr_ptr = strchr(line, ':');
-        if (!instr_ptr || instr_ptr - line < 4) continue;
+        if (sscanf(line, "%x <%[^>]>:", &addr, current_func) == 2) {
+            continue;  // It's a function label
+        }
 
-        line[instr_ptr - line] = '\0';
+        char *colon = strchr(line, ':');
+        if (!colon || colon - line < 1) continue;
+
+        *colon = '\0';
         addr = (unsigned int)strtoul(line, NULL, 16);
-        instr_ptr++; // skip space after colon
+        char *instr_ptr = colon + 1;
 
         disasm[disasm_count].rip = addr;
-        strncpy(disasm[disasm_count].line, instr_ptr, MAX_LINE - 1);
+        strncpy(disasm[disasm_count].instr, instr_ptr, MAX_LINE - 1);
+        strncpy(disasm[disasm_count].func, current_func, MAX_LINE - 1);
         disasm_count++;
     }
 
@@ -60,13 +69,13 @@ void load_rips(const char *filename) {
     fclose(f);
 }
 
-const char *lookup_instr(unsigned int rip) {
+Instr *lookup_instr(unsigned int rip) {
     for (int i = 0; i < disasm_count; i++) {
         if (disasm[i].rip == rip) {
-            return disasm[i].line;
+            return &disasm[i];
         }
     }
-    return "UNKNOWN";
+    return NULL;
 }
 
 int main(int argc, char *argv[]) {
@@ -78,11 +87,23 @@ int main(int argc, char *argv[]) {
     load_disasm(argv[2]);
     load_rips(argv[1]);
 
-    printf("%-10s  %s", "RIP", "Instruction");
-    printf("\n-----------  ------------------------\n");
+    printf("%-10s  %-30s  %s\n", "RIP", "Function", "Instruction");
+    printf("----------  ------------------------------  -------------------------\n");
 
+    char last_func[MAX_LINE] = "";
     for (int i = 0; i < rip_count; i++) {
-        printf("0x%04x     %s", rips[i], lookup_instr(rips[i]));
+        Instr *instr = lookup_instr(rips[i]);
+        if (!instr) {
+            printf("0x%04x     %-30s  %s\n", rips[i], "(unknown)", "UNKNOWN");
+            continue;
+        }
+
+        if (strcmp(last_func, instr->func) != 0) {
+            printf("\n== Entering function: %s ==\n\n", instr->func);
+            strncpy(last_func, instr->func, MAX_LINE);
+        }
+
+        printf("0x%04x     %-30s  %s", rips[i], instr->func, instr->instr);
     }
 
     return 0;

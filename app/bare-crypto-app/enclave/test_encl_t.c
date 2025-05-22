@@ -1,36 +1,24 @@
 #include "test_encl_t.h"
-//#include "sgx_trts.h" /* for sgx_ocalloc, sgx_is_outside_enclave */
-//#include "sgx_lfence.h" /* for sgx_lfence */
 
-//#include <errno.h>
-//#include <mbusafecrt.h> /* for memcpy_s etc */
-//#include <stdlib.h> /* for malloc/free etc */
+#include "sgx_trts.h" /* for sgx_ocalloc, sgx_is_outside_enclave */
+#include "sgx_lfence.h" /* for sgx_lfence */
 
-#define SGX_CDECL
-#define SGX_EXTERNC //sextern // C++ is not suppported in Bare SGX
+#include <errno.h>
+#include <mbusafecrt.h> /* for memcpy_s etc */
+#include <stdlib.h> /* for malloc/free etc */
 
-typedef enum {
-    SGX_SUCCESS = 0x00000000,
-    SGX_ERROR_UNEXPECTED = 0x00010001,
-    SGX_ERROR_INVALID_PARAMETER = 0x00010003,
-    SGX_ERROR_OUT_OF_MEMORY = 0x00010005,
-} sgx_status_t;
-
-// used to be sgx_is_outside_enclave
 #define CHECK_REF_POINTER(ptr, siz) do {	\
-	if (!(ptr) || ! is_outside_enclave((ptr), (siz)))	\
+	if (!(ptr) || ! sgx_is_outside_enclave((ptr), (siz)))	\
 		return SGX_ERROR_INVALID_PARAMETER;\
 } while (0)
 
-// used to be sgx_is_outside_enclave
 #define CHECK_UNIQUE_POINTER(ptr, siz) do {	\
-	if ((ptr) && ! is_outside_enclave((ptr), (siz)))	\
+	if ((ptr) && ! sgx_is_outside_enclave((ptr), (siz)))	\
 		return SGX_ERROR_INVALID_PARAMETER;\
 } while (0)
 
-// used to be sgx_is_within_enclave
 #define CHECK_ENCLAVE_POINTER(ptr, siz) do {	\
-	if ((ptr) && ! is_inside_enclave((ptr), (siz)))	\
+	if ((ptr) && ! sgx_is_within_enclave((ptr), (siz)))	\
 		return SGX_ERROR_INVALID_PARAMETER;\
 } while (0)
 
@@ -39,9 +27,10 @@ typedef enum {
 )
 
 
-
 typedef struct ms_do_encl_op_hmac_t {
-	struct encl_op_hmac* ms_op;
+	uint8_t* ms_digest;
+	uint8_t* ms_message;
+	uint32_t ms_message_len;
 } ms_do_encl_op_hmac_t;
 
 static sgx_status_t SGX_CDECL sgx_do_encl_op_hmac(void* pms)
@@ -50,44 +39,71 @@ static sgx_status_t SGX_CDECL sgx_do_encl_op_hmac(void* pms)
 	//
 	// fence after pointer checks
 	//
-	//sgx_lfence();
+	sgx_lfence();
 	ms_do_encl_op_hmac_t* ms = SGX_CAST(ms_do_encl_op_hmac_t*, pms);
 	ms_do_encl_op_hmac_t __in_ms;
-	//if (memcpy_s(&__in_ms, sizeof(ms_do_encl_op_hmac_t), ms, sizeof(ms_do_encl_op_hmac_t))) {
-	memcpy(&__in_ms, ms, sizeof(ms_do_encl_op_hmac_t));
-	//	return SGX_ERROR_UNEXPECTED;
-	//}
+	if (memcpy_s(&__in_ms, sizeof(ms_do_encl_op_hmac_t), ms, sizeof(ms_do_encl_op_hmac_t))) {
+		return SGX_ERROR_UNEXPECTED;
+	}
 	sgx_status_t status = SGX_SUCCESS;
-	struct encl_op_hmac* _tmp_op = __in_ms.ms_op;
-	size_t _len_op = sizeof(struct encl_op_hmac);
-	struct encl_op_hmac* _in_op = NULL;
+	uint8_t* _tmp_digest = __in_ms.ms_digest;
+	size_t _len_digest = 32;
+	uint8_t* _in_digest = NULL;
+	uint8_t* _tmp_message = __in_ms.ms_message;
+	uint32_t _tmp_message_len = __in_ms.ms_message_len;
+	size_t _len_message = _tmp_message_len;
+	uint8_t* _in_message = NULL;
 
-	CHECK_UNIQUE_POINTER(_tmp_op, _len_op);
+	CHECK_UNIQUE_POINTER(_tmp_digest, _len_digest);
+	CHECK_UNIQUE_POINTER(_tmp_message, _len_message);
 
 	//
 	// fence after pointer checks
 	//
-	//sgx_lfence();
+	sgx_lfence();
 
-	if (_tmp_op != NULL && _len_op != 0) {
-		_in_op = (struct encl_op_hmac*)malloc(_len_op);
-		if (_in_op == NULL) {
+	if (_tmp_digest != NULL && _len_digest != 0) {
+		if ( _len_digest % sizeof(*_tmp_digest) != 0)
+		{
+			status = SGX_ERROR_INVALID_PARAMETER;
+			goto err;
+		}
+		if ((_in_digest = (uint8_t*)malloc(_len_digest)) == NULL) {
 			status = SGX_ERROR_OUT_OF_MEMORY;
 			goto err;
 		}
 
-		//if (memcpy_s(_in_op, _len_op, _tmp_op, _len_op)) { 
-		memcpy(_in_op, _tmp_op, _len_op); // used to be memcpy_s
+		memset((void*)_in_digest, 0, _len_digest);
+	}
+	if (_tmp_message != NULL && _len_message != 0) {
+		if ( _len_message % sizeof(*_tmp_message) != 0)
+		{
+			status = SGX_ERROR_INVALID_PARAMETER;
+			goto err;
+		}
+		_in_message = (uint8_t*)malloc(_len_message);
+		if (_in_message == NULL) {
+			status = SGX_ERROR_OUT_OF_MEMORY;
+			goto err;
+		}
+
+		if (memcpy_s(_in_message, _len_message, _tmp_message, _len_message)) {
+			status = SGX_ERROR_UNEXPECTED;
+			goto err;
+		}
 
 	}
-	do_encl_op_hmac(_in_op);
-	if (_in_op) {
-		//if (memcpy_verw_s(_tmp_op, _len_op, _in_op, _len_op)) { // used to be memcpy_verw_s
-		memcpy(_tmp_op, _in_op, _len_op); // used to be memcpy_verw_s
+	do_encl_op_hmac(_in_digest, _in_message, _tmp_message_len);
+	if (_in_digest) {
+		if (memcpy_verw_s(_tmp_digest, _len_digest, _in_digest, _len_digest)) {
+			status = SGX_ERROR_UNEXPECTED;
+			goto err;
+		}
 	}
 
 err:
-	if (_in_op) free(_in_op);
+	if (_in_digest) free(_in_digest);
+	if (_in_message) free(_in_message);
 	return status;
 }
 

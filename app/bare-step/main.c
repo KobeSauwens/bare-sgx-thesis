@@ -14,6 +14,8 @@
 #include "../../external/sgx-step/libsgxstep/cache.h"
 #include "../../external/sgx-step/libsgxstep/elf_parser.h"
 #include "../bare-crypto-app/enclave/test_encl.h"
+#include "../bare-crypto-app/enclave/test_encl_u.h"
+#include "../../trts/bare-trts/sgx_edger8r.h"
 
 #define ENCLAVE_PATH            "../bare-crypto-app/enclave/encl.elf"
 #define DEBUG			        1
@@ -25,9 +27,13 @@ int step_cnt = 0;
 
 void aep_cb_func(void)
 {
+    gprsgx_region_t gprsgx = {0};
     #if DEBUG
     	uint64_t erip = edbgrd_erip() - (uint64_t)get_enclave_base();
     	info("^^ enclave RIP=%#lx; ACCESSED=%lu", erip, ACCESSED(*pte_encl));
+        edbgrd(get_enclave_ssa_gprsgx_adrs(), &gprsgx, sizeof(gprsgx_region_t));
+        dump_gprsgx_region(&gprsgx);
+        print_enclave_info();
     #endif
 }
 
@@ -130,7 +136,7 @@ int main(void)
 
     /************************************************************************/
     info_event("single-stepping baresgx enclave");
-    baresgx_enter_enclave(tcs, (uint64_t) &arg_hmac);
+    baresgx_enter_enclave(tcs, (uint64_t) &arg_hmac, 0);
     info("enclave returned; step_cnt=%d\n", step_cnt);
     printf("hmac=");
     dump_hex(digest, DIGEST_LEN);

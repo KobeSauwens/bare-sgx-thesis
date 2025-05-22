@@ -3,20 +3,16 @@ ENCLAVE         = enclave
 HACL_STAR   	:= ../../external/hacl-star
 TRTS			:= ../../trts
 
-
 SUBDIRS         = $(ENCLAVE) $(BARESGX) 
-#$(HACL_STAR)/dist/portable-gcc-compatible
 CC              := gcc
 LD              := gcc
 EDGER			:= sgx_edger8r
-INCLUDE         := -I$(BARESGX)/include/ #-I./enclave -I $(HACL_STAR)/dist/karamel/include/ -I $(HACL_STAR)/dist/karamel/krmllib/dist/minimal/
-CFLAGS          := -Wall -Werror -g -fPIC $(CFLAGS) 
-LDFLAGS         := -z noexecstack -lbaresgx-urts -L$(BARESGX) -lcrypto -L $(HACL_STAR)/dist/portable-gcc-compatible/ -levercrypt
-#-L \
-#					$(HACL_STAR)/dist/karamel/ #					-L $(HACL_STAR)/dist/portable-gcc-compatible/lib64/
+INCLUDE         += -I$(BARESGX)/include/ -I../../trts/bare-trts/ #VRAGEN AAN JO#-I./enclave -I $(HACL_STAR)/dist/karamel/include/ -I $(HACL_STAR)/dist/karamel/krmllib/dist/minimal/
+CFLAGS          := -Wall -g -fPIC $(CFLAGS) 
+LDFLAGS         := -z noexecstack -lbaresgx-urts -L$(BARESGX) -lcrypto #-L $(HACL_STAR)/dist/portable-gcc-compatible/ -levercrypt
 
 SOURCES         = $(shell ls *.c)
-OBJECTS         = $(SOURCES:.c=.o) 
+OBJECTS         = $(SOURCES:.c=.o) enclave/test_encl_u.o
 OUTPUT          = app
 
 BUILDDIRS       = $(SUBDIRS:%=build-%) 

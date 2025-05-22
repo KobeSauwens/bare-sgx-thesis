@@ -1,4 +1,4 @@
-#include "bare_trts.h"
+#include "sgx_trts.h"
 
 
 void *memcpy(void *dest, const void *src, size_t n)
@@ -9,6 +9,18 @@ void *memcpy(void *dest, const void *src, size_t n)
 		((char *)dest)[i] = ((char *)src)[i];
 
 	return dest;
+}
+
+void *memcpy_s(void* dest, size_t n, const void* src, size_t l)
+{
+	memcpy(dest, src, l);
+	return NULL;
+}
+
+void *memcpy_verw_s(void* dest, size_t n, const void* src, size_t l)
+{
+	memcpy(dest, src, l);
+	return NULL;
 }
 
 void *memset(void *dest, int c, size_t n)
@@ -26,7 +38,7 @@ void *memset(void *dest, int c, size_t n)
 	https://github.com/torvalds/linux/blob/master/tools/testing/selftests/sgx/test_encl.c
 
 */
-int is_outside_enclave(void *addr, size_t len)
+int sgx_is_outside_enclave(void *addr, size_t len)
 {
 	size_t start = (size_t) addr;
 	size_t end = start + len - 1;
@@ -38,7 +50,7 @@ int is_outside_enclave(void *addr, size_t len)
 	return (start > enclave_end) || (end < get_enclave_base());
 }
 
-int is_inside_enclave(void *addr, size_t len)
+int sgx_is_within_enclave(void *addr, size_t len)
 {
 	/*Cast to avoid undefined void pointer arithmetics in C */
 	size_t start = (size_t) addr;
@@ -59,7 +71,7 @@ void panic(void)
 
 void assert_inside_enclave(void *u_arg, size_t size)
 {	
-	if(!is_inside_enclave((void *) (u_arg), size))
+	if(!sgx_is_within_enclave((void *) (u_arg), size))
 	{
 		panic();
 	}

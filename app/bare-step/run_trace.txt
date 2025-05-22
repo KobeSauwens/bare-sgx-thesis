@@ -1,0 +1,380 @@
+[+] Compiling map_rips from ../../tools/
+[+] Running app and capturing output to debug_info.txt
+[+] Disassembling ../bare-crypto-app/enclave/encl.elf to enclave_dump.txt
+[+] Running map_rips to analyze RIP trace
+RIP         Function                        Instruction
+----------  ------------------------------  -------------------------
+
+== Entering function: encl_entry ==
+
+0x1211     encl_entry                      	48 8d 05 e8 4d 02 00 	lea    0x24de8(%rip),%rax        # 26000 <AEAD_key>
+0x1218     encl_entry                      	48 94                	xchg   %rax,%rsp
+0x121a     encl_entry                      	50                   	push   %rax
+0x121a     encl_entry                      	50                   	push   %rax
+0x121b     encl_entry                      	51                   	push   %rcx
+0x121c     encl_entry                      	48 89 f7             	mov    %rsi,%rdi
+0x121f     encl_entry                      	48 89 d6             	mov    %rdx,%rsi
+0x1222     encl_entry                      	e8 5f 01 00 00       	call   1386 <encl_body>
+
+== Entering function: encl_body ==
+
+0x1386     encl_body                       	f3 0f 1e fa          	endbr64 
+0x138a     encl_body                       	53                   	push   %rbx
+0x138b     encl_body                       	be 08 00 00 00       	mov    $0x8,%esi
+0x1390     encl_body                       	48 89 fb             	mov    %rdi,%rbx
+0x1393     encl_body                       	e8 59 00 00 00       	call   13f1 <is_outside_enclave>
+
+== Entering function: is_outside_enclave ==
+
+0x13f1     is_outside_enclave              	f3 0f 1e fa          	endbr64 
+0x13f5     is_outside_enclave              	41 55                	push   %r13
+0x13f7     is_outside_enclave              	48 ff ce             	dec    %rsi
+0x13fa     is_outside_enclave              	41 54                	push   %r12
+0x13fc     is_outside_enclave              	48 01 fe             	add    %rdi,%rsi
+0x13ff     is_outside_enclave              	55                   	push   %rbp
+0x1400     is_outside_enclave              	41 0f 92 c5          	setb   %r13b
+0x1404     is_outside_enclave              	49 89 f4             	mov    %rsi,%r12
+0x1407     is_outside_enclave              	53                   	push   %rbx
+0x1408     is_outside_enclave              	48 89 fb             	mov    %rdi,%rbx
+0x140b     is_outside_enclave              	45 0f b6 ed          	movzbl %r13b,%r13d
+0x140f     is_outside_enclave              	51                   	push   %rcx
+0x1410     is_outside_enclave              	e8 ec fd ff ff       	call   1201 <get_enclave_base>
+
+== Entering function: get_enclave_base ==
+
+0x1201     get_enclave_base                	48 8d 05 f8 ed ff ff 	lea    -0x1208(%rip),%rax        # 0 <__enclave_base>
+0x1208     get_enclave_base                	c3                   	ret    
+
+== Entering function: is_outside_enclave ==
+
+0x1415     is_outside_enclave              	48 89 c5             	mov    %rax,%rbp
+0x1418     is_outside_enclave              	e8 ec fd ff ff       	call   1209 <get_enclave_size>
+
+== Entering function: get_enclave_size ==
+
+0x1209     get_enclave_size                	48 8b 05 26 00 00 00 	mov    0x26(%rip),%rax        # 1236 <__enclave_size>
+0x1210     get_enclave_size                	c3                   	ret    
+
+== Entering function: is_outside_enclave ==
+
+0x141d     is_outside_enclave              	48 89 c2             	mov    %rax,%rdx
+0x1420     is_outside_enclave              	31 c0                	xor    %eax,%eax
+0x1422     is_outside_enclave              	4d 85 ed             	test   %r13,%r13
+0x1425     is_outside_enclave              	75 1b                	jne    1442 <is_outside_enclave+0x51>
+0x1427     is_outside_enclave              	48 01 d5             	add    %rdx,%rbp
+0x142a     is_outside_enclave              	b8 01 00 00 00       	mov    $0x1,%eax
+0x142f     is_outside_enclave              	48 39 dd             	cmp    %rbx,%rbp
+0x1432     is_outside_enclave              	72 0e                	jb     1442 <is_outside_enclave+0x51>
+0x1442     is_outside_enclave              	5a                   	pop    %rdx
+0x1443     is_outside_enclave              	5b                   	pop    %rbx
+0x1444     is_outside_enclave              	5d                   	pop    %rbp
+0x1445     is_outside_enclave              	41 5c                	pop    %r12
+0x1447     is_outside_enclave              	41 5d                	pop    %r13
+0x1449     is_outside_enclave              	c3                   	ret    
+
+== Entering function: encl_body ==
+
+0x1398     encl_body                       	85 c0                	test   %eax,%eax
+0x139a     encl_body                       	75 05                	jne    13a1 <encl_body+0x1b>
+0x13a1     encl_body                       	48 83 3b 05          	cmpq   $0x5,(%rbx)
+0x13a5     encl_body                       	77 14                	ja     13bb <encl_body+0x35>
+0x13a7     encl_body                       	48 8d 05 52 ec ff ff 	lea    -0x13ae(%rip),%rax        # 0 <__enclave_base>
+0x13ae     encl_body                       	48 89 df             	mov    %rbx,%rdi
+0x13b1     encl_body                       	5b                   	pop    %rbx
+0x13b2     encl_body                       	48 03 05 9f 4c 02 00 	add    0x24c9f(%rip),%rax        # 26058 <g_ecall_table+0x8>
+0x13b2     encl_body                       	48 03 05 9f 4c 02 00 	add    0x24c9f(%rip),%rax        # 26058 <g_ecall_table+0x8>
+0x13b9     encl_body                       	ff e0                	jmp    *%rax
+
+== Entering function: sgx_do_encl_op_hmac ==
+
+0x14bf     sgx_do_encl_op_hmac             	f3 0f 1e fa          	endbr64 
+0x14c3     sgx_do_encl_op_hmac             	48 85 ff             	test   %rdi,%rdi
+0x14c6     sgx_do_encl_op_hmac             	0f 84 ab 00 00 00    	je     1577 <sgx_do_encl_op_hmac+0xb8>
+0x14cc     sgx_do_encl_op_hmac             	55                   	push   %rbp
+0x14cd     sgx_do_encl_op_hmac             	be 08 00 00 00       	mov    $0x8,%esi
+0x14d2     sgx_do_encl_op_hmac             	53                   	push   %rbx
+0x14d3     sgx_do_encl_op_hmac             	48 89 fb             	mov    %rdi,%rbx
+0x14d6     sgx_do_encl_op_hmac             	48 83 ec 18          	sub    $0x18,%rsp
+0x14da     sgx_do_encl_op_hmac             	e8 12 ff ff ff       	call   13f1 <is_outside_enclave>
+
+== Entering function: is_outside_enclave ==
+
+0x13f1     is_outside_enclave              	f3 0f 1e fa          	endbr64 
+0x13f5     is_outside_enclave              	41 55                	push   %r13
+0x13f7     is_outside_enclave              	48 ff ce             	dec    %rsi
+0x13fa     is_outside_enclave              	41 54                	push   %r12
+0x13fc     is_outside_enclave              	48 01 fe             	add    %rdi,%rsi
+0x13ff     is_outside_enclave              	55                   	push   %rbp
+0x1400     is_outside_enclave              	41 0f 92 c5          	setb   %r13b
+0x1404     is_outside_enclave              	49 89 f4             	mov    %rsi,%r12
+0x1407     is_outside_enclave              	53                   	push   %rbx
+0x1408     is_outside_enclave              	48 89 fb             	mov    %rdi,%rbx
+0x140b     is_outside_enclave              	45 0f b6 ed          	movzbl %r13b,%r13d
+0x140f     is_outside_enclave              	51                   	push   %rcx
+0x1410     is_outside_enclave              	e8 ec fd ff ff       	call   1201 <get_enclave_base>
+
+== Entering function: get_enclave_base ==
+
+0x1201     get_enclave_base                	48 8d 05 f8 ed ff ff 	lea    -0x1208(%rip),%rax        # 0 <__enclave_base>
+0x1208     get_enclave_base                	c3                   	ret    
+
+== Entering function: is_outside_enclave ==
+
+0x1415     is_outside_enclave              	48 89 c5             	mov    %rax,%rbp
+0x1418     is_outside_enclave              	e8 ec fd ff ff       	call   1209 <get_enclave_size>
+
+== Entering function: get_enclave_size ==
+
+0x1209     get_enclave_size                	48 8b 05 26 00 00 00 	mov    0x26(%rip),%rax        # 1236 <__enclave_size>
+0x1210     get_enclave_size                	c3                   	ret    
+
+== Entering function: is_outside_enclave ==
+
+0x141d     is_outside_enclave              	48 89 c2             	mov    %rax,%rdx
+0x1420     is_outside_enclave              	31 c0                	xor    %eax,%eax
+0x1422     is_outside_enclave              	4d 85 ed             	test   %r13,%r13
+0x1425     is_outside_enclave              	75 1b                	jne    1442 <is_outside_enclave+0x51>
+0x1427     is_outside_enclave              	48 01 d5             	add    %rdx,%rbp
+0x142a     is_outside_enclave              	b8 01 00 00 00       	mov    $0x1,%eax
+0x142f     is_outside_enclave              	48 39 dd             	cmp    %rbx,%rbp
+0x1432     is_outside_enclave              	72 0e                	jb     1442 <is_outside_enclave+0x51>
+0x1442     is_outside_enclave              	5a                   	pop    %rdx
+0x1443     is_outside_enclave              	5b                   	pop    %rbx
+0x1444     is_outside_enclave              	5d                   	pop    %rbp
+0x1445     is_outside_enclave              	41 5c                	pop    %r12
+0x1447     is_outside_enclave              	41 5d                	pop    %r13
+0x1449     is_outside_enclave              	c3                   	ret    
+
+== Entering function: sgx_do_encl_op_hmac ==
+
+0x14df     sgx_do_encl_op_hmac             	85 c0                	test   %eax,%eax
+0x14e1     sgx_do_encl_op_hmac             	75 0a                	jne    14ed <sgx_do_encl_op_hmac+0x2e>
+0x14ed     sgx_do_encl_op_hmac             	48 8d 7c 24 08       	lea    0x8(%rsp),%rdi
+0x14f2     sgx_do_encl_op_hmac             	ba 08 00 00 00       	mov    $0x8,%edx
+0x14f2     sgx_do_encl_op_hmac             	ba 08 00 00 00       	mov    $0x8,%edx
+0x14f7     sgx_do_encl_op_hmac             	48 89 de             	mov    %rbx,%rsi
+0x14fa     sgx_do_encl_op_hmac             	e8 be fe ff ff       	call   13bd <memcpy>
+
+== Entering function: memcpy ==
+
+0x13bd     memcpy                          	f3 0f 1e fa          	endbr64 
+0x13c1     memcpy                          	48 89 f8             	mov    %rdi,%rax
+0x13c4     memcpy                          	31 c9                	xor    %ecx,%ecx
+0x13c6     memcpy                          	48 39 d1             	cmp    %rdx,%rcx
+0x13c9     memcpy                          	74 0d                	je     13d8 <memcpy+0x1b>
+0x13cb     memcpy                          	40 8a 3c 0e          	mov    (%rsi,%rcx,1),%dil
+0x13cf     memcpy                          	40 88 3c 08          	mov    %dil,(%rax,%rcx,1)
+0x13d3     memcpy                          	48 ff c1             	inc    %rcx
+0x13d6     memcpy                          	eb ee                	jmp    13c6 <memcpy+0x9>
+0x13c6     memcpy                          	48 39 d1             	cmp    %rdx,%rcx
+0x13c9     memcpy                          	74 0d                	je     13d8 <memcpy+0x1b>
+0x13cb     memcpy                          	40 8a 3c 0e          	mov    (%rsi,%rcx,1),%dil
+0x13cf     memcpy                          	40 88 3c 08          	mov    %dil,(%rax,%rcx,1)
+0x13d3     memcpy                          	48 ff c1             	inc    %rcx
+0x13d6     memcpy                          	eb ee                	jmp    13c6 <memcpy+0x9>
+0x13c6     memcpy                          	48 39 d1             	cmp    %rdx,%rcx
+0x13c9     memcpy                          	74 0d                	je     13d8 <memcpy+0x1b>
+0x13cb     memcpy                          	40 8a 3c 0e          	mov    (%rsi,%rcx,1),%dil
+0x13cf     memcpy                          	40 88 3c 08          	mov    %dil,(%rax,%rcx,1)
+0x13d3     memcpy                          	48 ff c1             	inc    %rcx
+0x13d6     memcpy                          	eb ee                	jmp    13c6 <memcpy+0x9>
+0x13c6     memcpy                          	48 39 d1             	cmp    %rdx,%rcx
+0x13c9     memcpy                          	74 0d                	je     13d8 <memcpy+0x1b>
+0x13cb     memcpy                          	40 8a 3c 0e          	mov    (%rsi,%rcx,1),%dil
+0x13cf     memcpy                          	40 88 3c 08          	mov    %dil,(%rax,%rcx,1)
+0x13d3     memcpy                          	48 ff c1             	inc    %rcx
+0x13d6     memcpy                          	eb ee                	jmp    13c6 <memcpy+0x9>
+0x13c6     memcpy                          	48 39 d1             	cmp    %rdx,%rcx
+0x13c9     memcpy                          	74 0d                	je     13d8 <memcpy+0x1b>
+0x13cb     memcpy                          	40 8a 3c 0e          	mov    (%rsi,%rcx,1),%dil
+0x13cf     memcpy                          	40 88 3c 08          	mov    %dil,(%rax,%rcx,1)
+0x13d3     memcpy                          	48 ff c1             	inc    %rcx
+0x13d6     memcpy                          	eb ee                	jmp    13c6 <memcpy+0x9>
+0x13c6     memcpy                          	48 39 d1             	cmp    %rdx,%rcx
+0x13c9     memcpy                          	74 0d                	je     13d8 <memcpy+0x1b>
+0x13cb     memcpy                          	40 8a 3c 0e          	mov    (%rsi,%rcx,1),%dil
+0x13cf     memcpy                          	40 88 3c 08          	mov    %dil,(%rax,%rcx,1)
+0x13d3     memcpy                          	48 ff c1             	inc    %rcx
+0x13d6     memcpy                          	eb ee                	jmp    13c6 <memcpy+0x9>
+0x13c6     memcpy                          	48 39 d1             	cmp    %rdx,%rcx
+0x13c9     memcpy                          	74 0d                	je     13d8 <memcpy+0x1b>
+0x13cb     memcpy                          	40 8a 3c 0e          	mov    (%rsi,%rcx,1),%dil
+0x13cf     memcpy                          	40 88 3c 08          	mov    %dil,(%rax,%rcx,1)
+0x13d3     memcpy                          	48 ff c1             	inc    %rcx
+0x13d6     memcpy                          	eb ee                	jmp    13c6 <memcpy+0x9>
+0x13c6     memcpy                          	48 39 d1             	cmp    %rdx,%rcx
+0x13c9     memcpy                          	74 0d                	je     13d8 <memcpy+0x1b>
+0x13cb     memcpy                          	40 8a 3c 0e          	mov    (%rsi,%rcx,1),%dil
+0x13cf     memcpy                          	40 88 3c 08          	mov    %dil,(%rax,%rcx,1)
+0x13d3     memcpy                          	48 ff c1             	inc    %rcx
+0x13d6     memcpy                          	eb ee                	jmp    13c6 <memcpy+0x9>
+0x13c6     memcpy                          	48 39 d1             	cmp    %rdx,%rcx
+0x13c9     memcpy                          	74 0d                	je     13d8 <memcpy+0x1b>
+0x13d8     memcpy                          	c3                   	ret    
+
+== Entering function: sgx_do_encl_op_hmac ==
+
+0x14ff     sgx_do_encl_op_hmac             	48 8b 6c 24 08       	mov    0x8(%rsp),%rbp
+0x1504     sgx_do_encl_op_hmac             	48 85 ed             	test   %rbp,%rbp
+0x1507     sgx_do_encl_op_hmac             	74 3a                	je     1543 <sgx_do_encl_op_hmac+0x84>
+0x1509     sgx_do_encl_op_hmac             	be 20 00 00 00       	mov    $0x20,%esi
+0x150e     sgx_do_encl_op_hmac             	48 89 ef             	mov    %rbp,%rdi
+0x1511     sgx_do_encl_op_hmac             	e8 db fe ff ff       	call   13f1 <is_outside_enclave>
+
+== Entering function: is_outside_enclave ==
+
+0x13f1     is_outside_enclave              	f3 0f 1e fa          	endbr64 
+0x13f5     is_outside_enclave              	41 55                	push   %r13
+0x13f7     is_outside_enclave              	48 ff ce             	dec    %rsi
+0x13fa     is_outside_enclave              	41 54                	push   %r12
+0x13fc     is_outside_enclave              	48 01 fe             	add    %rdi,%rsi
+0x13ff     is_outside_enclave              	55                   	push   %rbp
+0x1400     is_outside_enclave              	41 0f 92 c5          	setb   %r13b
+0x1404     is_outside_enclave              	49 89 f4             	mov    %rsi,%r12
+0x1407     is_outside_enclave              	53                   	push   %rbx
+0x1408     is_outside_enclave              	48 89 fb             	mov    %rdi,%rbx
+0x140b     is_outside_enclave              	45 0f b6 ed          	movzbl %r13b,%r13d
+0x140f     is_outside_enclave              	51                   	push   %rcx
+0x1410     is_outside_enclave              	e8 ec fd ff ff       	call   1201 <get_enclave_base>
+
+== Entering function: get_enclave_base ==
+
+0x1201     get_enclave_base                	48 8d 05 f8 ed ff ff 	lea    -0x1208(%rip),%rax        # 0 <__enclave_base>
+0x1208     get_enclave_base                	c3                   	ret    
+
+== Entering function: is_outside_enclave ==
+
+0x1415     is_outside_enclave              	48 89 c5             	mov    %rax,%rbp
+0x1418     is_outside_enclave              	e8 ec fd ff ff       	call   1209 <get_enclave_size>
+
+== Entering function: get_enclave_size ==
+
+0x1209     get_enclave_size                	48 8b 05 26 00 00 00 	mov    0x26(%rip),%rax        # 1236 <__enclave_size>
+0x1210     get_enclave_size                	c3                   	ret    
+
+== Entering function: is_outside_enclave ==
+
+0x141d     is_outside_enclave              	48 89 c2             	mov    %rax,%rdx
+0x1420     is_outside_enclave              	31 c0                	xor    %eax,%eax
+0x1422     is_outside_enclave              	4d 85 ed             	test   %r13,%r13
+0x1425     is_outside_enclave              	75 1b                	jne    1442 <is_outside_enclave+0x51>
+0x1427     is_outside_enclave              	48 01 d5             	add    %rdx,%rbp
+0x142a     is_outside_enclave              	b8 01 00 00 00       	mov    $0x1,%eax
+0x142f     is_outside_enclave              	48 39 dd             	cmp    %rbx,%rbp
+0x1432     is_outside_enclave              	72 0e                	jb     1442 <is_outside_enclave+0x51>
+0x1434     is_outside_enclave              	e8 c8 fd ff ff       	call   1201 <get_enclave_base>
+
+== Entering function: get_enclave_base ==
+
+0x1201     get_enclave_base                	48 8d 05 f8 ed ff ff 	lea    -0x1208(%rip),%rax        # 0 <__enclave_base>
+0x1208     get_enclave_base                	c3                   	ret    
+
+== Entering function: is_outside_enclave ==
+
+0x1439     is_outside_enclave              	49 39 c4             	cmp    %rax,%r12
+0x143c     is_outside_enclave              	0f 92 c0             	setb   %al
+0x143f     is_outside_enclave              	0f b6 c0             	movzbl %al,%eax
+0x1442     is_outside_enclave              	5a                   	pop    %rdx
+0x1443     is_outside_enclave              	5b                   	pop    %rbx
+0x1444     is_outside_enclave              	5d                   	pop    %rbp
+0x1445     is_outside_enclave              	41 5c                	pop    %r12
+0x1447     is_outside_enclave              	41 5d                	pop    %r13
+0x1449     is_outside_enclave              	c3                   	ret    
+
+== Entering function: sgx_do_encl_op_hmac ==
+
+0x1516     sgx_do_encl_op_hmac             	85 c0                	test   %eax,%eax
+0x1518     sgx_do_encl_op_hmac             	74 c9                	je     14e3 <sgx_do_encl_op_hmac+0x24>
+0x151a     sgx_do_encl_op_hmac             	bf 20 00 00 00       	mov    $0x20,%edi
+0x151f     sgx_do_encl_op_hmac             	e8 dc fa ff ff       	call   1000 <malloc>
+
+== Entering function: malloc ==
+
+0x1000     malloc                          	f3 0f 1e fa          	endbr64 
+0x1004     malloc                          	48 8d 47 ff          	lea    -0x1(%rdi),%rax
+0x1008     malloc                          	31 d2                	xor    %edx,%edx
+0x100a     malloc                          	48 83 f8 ee          	cmp    $0xffffffffffffffee,%rax
+0x100e     malloc                          	77 2e                	ja     103e <malloc+0x3e>
+0x1010     malloc                          	48 89 f8             	mov    %rdi,%rax
+0x1013     malloc                          	48 8d 57 10          	lea    0x10(%rdi),%rdx
+0x1017     malloc                          	83 e0 03             	and    $0x3,%eax
+0x101a     malloc                          	74 15                	je     1031 <malloc+0x31>
+0x1031     malloc                          	48 81 fa fc 4f 00 00 	cmp    $0x4ffc,%rdx
+0x1038     malloc                          	76 04                	jbe    103e <malloc+0x3e>
+0x103e     malloc                          	80 3d 2b 50 02 00 00 	cmpb   $0x0,0x2502b(%rip)        # 26070 <xHeapHasBeenInitialised>
+0x1045     malloc                          	75 48                	jne    108f <malloc+0x8f>
+0x1047     malloc                          	31 f6                	xor    %esi,%esi
+0x1049     malloc                          	31 c9                	xor    %ecx,%ecx
+0x104b     malloc                          	48 8d 05 71 50 02 00 	lea    0x25071(%rip),%rax        # 260c3 <ucHeap+0x3>
+0x1052     malloc                          	48 c7 05 2b 50 02 00 	movq   $0x4ffc,0x2502b(%rip)        # 26088 <xEnd+0x8>
+0x105d     malloc                          	48 83 e0 fc          	and    $0xfffffffffffffffc,%rax
+0x1061     malloc                          	48 89 35 18 50 02 00 	mov    %rsi,0x25018(%rip)        # 26080 <xEnd>
+0x1068     malloc                          	48 8d 35 11 50 02 00 	lea    0x25011(%rip),%rsi        # 26080 <xEnd>
+0x106f     malloc                          	48 89 05 1a 50 02 00 	mov    %rax,0x2501a(%rip)        # 26090 <xStart>
+0x1076     malloc                          	48 89 0d 1b 50 02 00 	mov    %rcx,0x2501b(%rip)        # 26098 <xStart+0x8>
+0x107d     malloc                          	48 c7 40 08 fc 4f 00 	movq   $0x4ffc,0x8(%rax)
+0x1085     malloc                          	48 89 30             	mov    %rsi,(%rax)
+0x1088     malloc                          	c6 05 e1 4f 02 00 01 	movb   $0x1,0x24fe1(%rip)        # 26070 <xHeapHasBeenInitialised>
+0x108f     malloc                          	31 c9                	xor    %ecx,%ecx
+0x1091     malloc                          	48 85 d2             	test   %rdx,%rdx
+0x1094     malloc                          	0f 84 a0 00 00 00    	je     113a <malloc+0x13a>
+0x109a     malloc                          	48 8b 3d 5f 1f 02 00 	mov    0x21f5f(%rip),%rdi        # 23000 <xFreeBytesRemaining>
+0x109a     malloc                          	48 8b 3d 5f 1f 02 00 	mov    0x21f5f(%rip),%rdi        # 23000 <xFreeBytesRemaining>
+0x10a1     malloc                          	48 8b 05 e8 4f 02 00 	mov    0x24fe8(%rip),%rax        # 26090 <xStart>
+0x10a8     malloc                          	4c 8d 05 e1 4f 02 00 	lea    0x24fe1(%rip),%r8        # 26090 <xStart>
+0x10af     malloc                          	48 39 d7             	cmp    %rdx,%rdi
+0x10b2     malloc                          	0f 82 82 00 00 00    	jb     113a <malloc+0x13a>
+0x10b8     malloc                          	48 8b 70 08          	mov    0x8(%rax),%rsi
+0x10bc     malloc                          	48 39 d6             	cmp    %rdx,%rsi
+0x10bf     malloc                          	73 10                	jae    10d1 <malloc+0xd1>
+0x10d1     malloc                          	4c 8d 0d a8 4f 02 00 	lea    0x24fa8(%rip),%r9        # 26080 <xEnd>
+0x10d8     malloc                          	31 c9                	xor    %ecx,%ecx
+0x10da     malloc                          	4c 39 c8             	cmp    %r9,%rax
+0x10dd     malloc                          	74 5b                	je     113a <malloc+0x13a>
+0x10df     malloc                          	49 8b 08             	mov    (%r8),%rcx
+0x10e2     malloc                          	4c 8b 08             	mov    (%rax),%r9
+0x10e5     malloc                          	48 29 d6             	sub    %rdx,%rsi
+0x10e8     malloc                          	4d 89 08             	mov    %r9,(%r8)
+0x10eb     malloc                          	48 83 c1 10          	add    $0x10,%rcx
+0x10ef     malloc                          	48 83 fe 20          	cmp    $0x20,%rsi
+0x10f3     malloc                          	76 29                	jbe    111e <malloc+0x11e>
+0x10f5     malloc                          	4c 8d 04 10          	lea    (%rax,%rdx,1),%r8
+0x10f9     malloc                          	49 89 70 08          	mov    %rsi,0x8(%r8)
+0x10fd     malloc                          	48 89 50 08          	mov    %rdx,0x8(%rax)
+0x1101     malloc                          	4d 8b 48 08          	mov    0x8(%r8),%r9
+0x1105     malloc                          	48 8d 15 84 4f 02 00 	lea    0x24f84(%rip),%rdx        # 26090 <xStart>
+0x110c     malloc                          	48 89 d6             	mov    %rdx,%rsi
+0x110f     malloc                          	48 8b 12             	mov    (%rdx),%rdx
+0x1112     malloc                          	4c 39 4a 08          	cmp    %r9,0x8(%rdx)
+0x1116     malloc                          	72 f4                	jb     110c <malloc+0x10c>
+0x1118     malloc                          	49 89 10             	mov    %rdx,(%r8)
+0x111b     malloc                          	4c 89 06             	mov    %r8,(%rsi)
+0x111e     malloc                          	48 8b 50 08          	mov    0x8(%rax),%rdx
+0x1122     malloc                          	48 29 d7             	sub    %rdx,%rdi
+0x1125     malloc                          	48 0f ba ea 3f       	bts    $0x3f,%rdx
+0x112a     malloc                          	48 89 50 08          	mov    %rdx,0x8(%rax)
+0x112e     malloc                          	31 d2                	xor    %edx,%edx
+0x1130     malloc                          	48 89 3d c9 1e 02 00 	mov    %rdi,0x21ec9(%rip)        # 23000 <xFreeBytesRemaining>
+0x1137     malloc                          	48 89 10             	mov    %rdx,(%rax)
+0x113a     malloc                          	48 89 c8             	mov    %rcx,%rax
+0x113d     malloc                          	c3                   	ret    
+
+== Entering function: sgx_do_encl_op_hmac ==
+
+0x1524     sgx_do_encl_op_hmac             	48 89 c3             	mov    %rax,%rbx
+0x1527     sgx_do_encl_op_hmac             	b8 05 00 01 00       	mov    $0x10005,%eax
+0x152c     sgx_do_encl_op_hmac             	48 85 db             	test   %rbx,%rbx
+0x152f     sgx_do_encl_op_hmac             	74 3f                	je     1570 <sgx_do_encl_op_hmac+0xb1>
+0x1531     sgx_do_encl_op_hmac             	ba 20 00 00 00       	mov    $0x20,%edx
+0x1536     sgx_do_encl_op_hmac             	48 89 ee             	mov    %rbp,%rsi
+0x1539     sgx_do_encl_op_hmac             	48 89 df             	mov    %rbx,%rdi
+0x153c     sgx_do_encl_op_hmac             	e8 7c fe ff ff       	call   13bd <memcpy>
+
+== Entering function: memcpy ==
+
+0x13bd     memcpy                          	f3 0f 1e fa          	endbr64 
+0x13c1     memcpy                          	48 89 f8             	mov    %rdi,%rax
+0x13c4     memcpy                          	31 c9                	xor    %ecx,%ecx
+0x13c6     memcpy                          	48 39 d1             	cmp    %rdx,%rcx
+0x13c9     memcpy                          	74 0d                	je     13d8 <memcpy+0x1b>
+0x13cb     memcpy                          	40 8a 3c 0e          	mov    (%rsi,%rcx,1),%dil

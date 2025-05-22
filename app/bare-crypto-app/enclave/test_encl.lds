@@ -26,6 +26,7 @@ SECTIONS
 	.data : {
 		*(.data.encl_buffer)
 		*(.data*)
+		*(.bss*)
 	} : data
 
 	/DISCARD/ : {

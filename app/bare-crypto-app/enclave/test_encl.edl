@@ -4,7 +4,7 @@ enclave {
         /* define ECALLs here. */
         
         //#define ENCL_OP_MATH_SIZE_LEN 32  // 256 bits
-        public void do_encl_op_hmac([in, out] struct encl_op_hmac * op);
+        public void do_encl_op_hmac([out, size=32] uint8_t* digest, [in,size=message_len] uint8_t* message, uint32_t message_len);
         
         
         };

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0
 /*  Copyright(c) 2016-20 Intel Corporation. */
 
-#include "../../../trts/bare-trts/bare_trts.h"
+#include "sgx_trts.h"
 #include "test_encl.h"
 #include "dist/portable-gcc-compatible/Hacl_HMAC.h"
 #include "dist/portable-gcc-compatible/Hacl_AEAD_Chacha20Poly1305.h"
@@ -75,7 +75,17 @@ static void do_encl_op_sub(void *_op)
 	*op.rv_pt = op.val1 - op.val2;
 }
 
-void do_encl_op_hmac(void *_op)
+void do_encl_op_hmac(uint8_t *digest, uint8_t *message, uint32_t message_len)
+{
+    uint8_t key[KEY_LEN_HMAC] = {
+        0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
+        0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F
+    };
+    Hacl_HMAC_compute_sha2_256(digest, key, KEY_LEN_HMAC, message, message_len);
+}
+
+/*
+void do_encl_op_hmac(void * op)
 {
 	struct encl_op_hmac *op = _op;
 
@@ -85,6 +95,7 @@ void do_encl_op_hmac(void *_op)
     };
     Hacl_HMAC_compute_sha2_256(op->digest, key, KEY_LEN_HMAC, op->message, (*op).message_len);
 }
+*/
 
 static void do_encl_op_AEAD_encrypt(void *_op)
 {
@@ -154,6 +165,7 @@ typedef void (*encl_op_t)(void *);
 
 /* NOTE: need to declare this volatile to preven the compiler from inlining the
  * accesses in encl_body and breaking the manual relocation.. */
+/*
 volatile encl_op_t encl_op_array[ENCL_OP_MAX] = {
 	do_encl_op_add,
 	do_encl_op_sub,
@@ -161,21 +173,23 @@ volatile encl_op_t encl_op_array[ENCL_OP_MAX] = {
 	do_encl_op_AEAD_encrypt,
 	do_encl_op_AEAD_decrypt,
 };
+*/
 
 
-void encl_body(void *rdi, void *rsi)
+void encl_body(void *rdi, void *rsi, uint64_t ecall_id)
 {
 	struct encl_op_header *header = (struct encl_op_header *)rdi;
 	encl_op_t op;
 
 	/*TODO *insecure* ptr dereference: needs a check */
 	
-	if(!is_outside_enclave(header,sizeof(struct encl_op_header)))
+	if(!sgx_is_outside_enclave(header,sizeof(struct encl_op_header)))
 	{
 	 	panic();
 	}
 
-	if (header->type >= ENCL_OP_MAX)
+	//if (header->type >= ENCL_OP_MAX)
+	if (ecall_id >= ENCL_OP_MAX)
 		return;
 
 	/*
@@ -184,7 +198,7 @@ void encl_body(void *rdi, void *rsi)
 	 * any other possible means.
 	 */
 	//op = ((uint64_t)&__enclave_base) + encl_op_array[header->type];
-	op = ((uint64_t)&__enclave_base) + g_ecall_table.ecall_table[0].ecall_addr;
+	op = ((uint64_t)&__enclave_base) + g_ecall_table.ecall_table[ecall_id].ecall_addr;
 
 
 	(*op)(header);

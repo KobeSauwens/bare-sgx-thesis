@@ -42,7 +42,7 @@
  */
 void* baresgx_load_elf_enclave(const char* path, int debug);
 
-uint64_t baresgx_enter_enclave(void* tcs, uint64_t arg1);
+uint64_t baresgx_enter_enclave(void* tcs, void *ms, uint64_t arg1);
 
 /* Custom AEP get/set functions for SGX-Step */
 void* sgx_get_aep(void);

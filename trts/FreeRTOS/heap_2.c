@@ -288,7 +288,7 @@ void *malloc( size_t xWantedSize )
             }
         }
 
-        traceMALLOC( pvReturn, xAllocatedBlockSize );
+        //traceMALLOC( pvReturn, xAllocatedBlockSize );
 
         /* Prevent compiler warnings when trace macros are not used. */
         ( void ) xAllocatedBlockSize;

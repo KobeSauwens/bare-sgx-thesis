@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include "../../urts/include/baresgx/urts.h"
@@ -5,7 +6,7 @@
 //#include "../../external/hacl-star/dist/portable-gcc-compatible/Lib_RandomBuffer_System.h"
 
 #include "enclave/test_encl.h"
-//#include "enclave/test_encl_u.h"
+#include "enclave/test_encl_u.h"
 //#include "enclave/test_encl.h"
 
 #define ENCLAVE_PATH    "enclave/encl.elf"
@@ -76,7 +77,7 @@ void dump_hex(char *str, uint8_t *buf, int len)
     printf("\n");
 }
 
-void run_hmac(void *tcs) {
+void run_hmac(sgx_enclave_id_t tcs) {
     struct encl_op_hmac arg_hmac;
     uint8_t digest[DIGEST_LEN] = {0};
 
@@ -89,7 +90,8 @@ void run_hmac(void *tcs) {
     arg_hmac.digest = digest;
 
     baresgx_info("Running HMAC operation");
-    baresgx_enter_enclave(tcs, (uint64_t)&arg_hmac);
+    do_encl_op_hmac(tcs, digest, (uint8_t*)message, message_len);
+    //baresgx_enter_enclave(tcs, (uint64_t)&arg_hmac);
     printf("\nBare SGX currently hashing: \"%s\"\n", message);
     print_encl_op_hmac(&arg_hmac, DIGEST_LEN);
 }
@@ -113,7 +115,6 @@ void run_aead(void *tcs) {
 
     if (!ciphertext || !decrypted) {
         fprintf(stderr, "Memory allocation failed\n");
-        exit(EXIT_FAILURE);
     }
 
     uint8_t key_for_dump[KEY_LEN_AEAD] = {
@@ -135,7 +136,7 @@ void run_aead(void *tcs) {
     arg_AEAD_ENC.mac = mac;
 
     printf("\nBare SGX currently performing AEAD encryption using ChaCha20 and Poly1305\n");
-    baresgx_enter_enclave(tcs, (uint64_t)&arg_AEAD_ENC);
+    //baresgx_enter_enclave(tcs, (uint64_t)&arg_AEAD_ENC);
     print_encl_op_AEAD(&arg_AEAD_ENC);
 
     // Decryption setup
@@ -149,7 +150,7 @@ void run_aead(void *tcs) {
     arg_AEAD_DEC.mac = mac;
 
     printf("\nBare SGX currently performing AEAD decryption using ChaCha20 and Poly1305\n");
-    baresgx_enter_enclave(tcs, (uint64_t)&arg_AEAD_DEC);
+    //baresgx_enter_enclave(tcs, (uint64_t)&arg_AEAD_DEC);
     print_encl_op_AEAD(&arg_AEAD_DEC);
 
     decrypted[mlen] = '\0';
@@ -168,7 +169,7 @@ int main(void) {
 
     baresgx_info("Calling enclave TCS..");
 
-    run_hmac(tcs);
+    run_hmac((sgx_enclave_id_t) tcs);
     //run_aead(tcs);
 
     return 0;
