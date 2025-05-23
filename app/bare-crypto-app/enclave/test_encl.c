@@ -75,7 +75,7 @@ static void do_encl_op_sub(void *_op)
 	*op.rv_pt = op.val1 - op.val2;
 }
 
-void do_encl_op_hmac(uint8_t *digest, uint8_t *message, uint32_t message_len)
+void encl_HMAC(uint8_t *digest, uint8_t *message, uint32_t message_len)
 {
     uint8_t key[KEY_LEN_HMAC] = {
         0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
@@ -97,23 +97,53 @@ void do_encl_op_hmac(void * op)
 }
 */
 
-static void do_encl_op_AEAD_encrypt(void *_op)
+void encl_AEAD_enc(
+  uint8_t *ciphertext,
+  uint8_t *tag,
+  uint8_t *plaintext,
+  uint32_t plaintext_len,
+  uint8_t *data,
+  uint32_t data_len,
+  uint8_t *nonce
+)
 {
-	struct encl_op_AEAD *op = _op;
 
 	Hacl_AEAD_Chacha20Poly1305_encrypt(
-		op->cipher,
-		op->mac,
-		op->m,
-		op->mlen,
-		op->aad,
-		op->aadlen,
-		AEAD_key,
-		op->n
+ ciphertext,
+ tag,
+ plaintext,
+ plaintext_len,
+ data,
+ data_len,
+ AEAD_key,
+ nonce
 	);
 }
 
-static void do_encl_op_AEAD_decrypt(void *_op)
+void encl_AEAD_dec(
+  uint8_t *plaintext,
+  uint8_t *ciphertext,
+  uint32_t ciphertext_len,
+  uint8_t *data,
+  uint32_t data_len,
+  uint8_t *nonce,
+  uint8_t *tag
+)
+{
+	Hacl_AEAD_Chacha20Poly1305_decrypt(
+		plaintext,
+		ciphertext,
+		ciphertext_len,
+		data,
+		data_len,
+		AEAD_key,
+		nonce,
+		tag
+	);
+}
+
+/*
+static void encl_AEAD_dec(void *_op)
 {
 	struct encl_op_AEAD *op = _op;
 	Hacl_AEAD_Chacha20Poly1305_decrypt(
@@ -127,6 +157,7 @@ static void do_encl_op_AEAD_decrypt(void *_op)
 		op->mac
 	);
 }
+*/
 
 // static void do_encl_op_AES_GCM_128_encrypt(void *_op)
 // {
@@ -178,18 +209,19 @@ volatile encl_op_t encl_op_array[ENCL_OP_MAX] = {
 
 void encl_body(void *rdi, void *rsi, uint64_t ecall_id)
 {
-	struct encl_op_header *header = (struct encl_op_header *)rdi;
+	//struct encl_op_header *header = (struct encl_op_header *)rdi;
 	encl_op_t op;
-
-	/*TODO *insecure* ptr dereference: needs a check */
-	
-	if(!sgx_is_outside_enclave(header,sizeof(struct encl_op_header)))
-	{
-	 	panic();
-	}
+	//void* op;
+//
+	///*TODO *insecure* ptr dereference: needs a check */
+	//
+	//if(!sgx_is_outside_enclave(header,sizeof(struct encl_op_header)))
+	//{
+	// 	panic();
+	//}
 
 	//if (header->type >= ENCL_OP_MAX)
-	if (ecall_id >= ENCL_OP_MAX)
+	if (ecall_id >= g_ecall_table.nr_ecall)
 		return;
 
 	/*
@@ -201,7 +233,7 @@ void encl_body(void *rdi, void *rsi, uint64_t ecall_id)
 	op = ((uint64_t)&__enclave_base) + g_ecall_table.ecall_table[ecall_id].ecall_addr;
 
 
-	(*op)(header);
+	(*op)(rdi);
 }
 
 // void encl_body(void *rdi, void *rsi)

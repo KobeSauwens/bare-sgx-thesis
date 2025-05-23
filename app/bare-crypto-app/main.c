@@ -90,13 +90,13 @@ void run_hmac(sgx_enclave_id_t tcs) {
     arg_hmac.digest = digest;
 
     baresgx_info("Running HMAC operation");
-    do_encl_op_hmac(tcs, digest, (uint8_t*)message, message_len);
+    encl_HMAC(tcs, digest, (uint8_t*)message, message_len);
     //baresgx_enter_enclave(tcs, (uint64_t)&arg_hmac);
     printf("\nBare SGX currently hashing: \"%s\"\n", message);
     print_encl_op_hmac(&arg_hmac, DIGEST_LEN);
 }
 
-void run_aead(void *tcs) {
+void run_aead(sgx_enclave_id_t tcs) {
     struct encl_op_AEAD arg_AEAD_ENC;
     struct encl_op_AEAD arg_AEAD_DEC;
 
@@ -137,6 +137,7 @@ void run_aead(void *tcs) {
 
     printf("\nBare SGX currently performing AEAD encryption using ChaCha20 and Poly1305\n");
     //baresgx_enter_enclave(tcs, (uint64_t)&arg_AEAD_ENC);
+    encl_AEAD_enc(tcs, ciphertext, mac,(uint8_t*) message, mlen, (uint8_t*) aad, aadlen, nonce);
     print_encl_op_AEAD(&arg_AEAD_ENC);
 
     // Decryption setup
@@ -150,6 +151,7 @@ void run_aead(void *tcs) {
     arg_AEAD_DEC.mac = mac;
 
     printf("\nBare SGX currently performing AEAD decryption using ChaCha20 and Poly1305\n");
+    encl_AEAD_dec(tcs, decrypted, ciphertext, mlen, (uint8_t*)aad, aadlen, nonce, mac);
     //baresgx_enter_enclave(tcs, (uint64_t)&arg_AEAD_DEC);
     print_encl_op_AEAD(&arg_AEAD_DEC);
 
@@ -170,7 +172,7 @@ int main(void) {
     baresgx_info("Calling enclave TCS..");
 
     run_hmac((sgx_enclave_id_t) tcs);
-    //run_aead(tcs);
+    run_aead(tcs);
 
     return 0;
 }

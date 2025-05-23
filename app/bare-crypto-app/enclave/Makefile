@@ -32,9 +32,9 @@ encl.elf: heap_2.o test_encl_bootstrap.S test_encl.c sgx_trts.o test_encl_t.o
 	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
 
 clean:
-	rm -f *.elf *.o
+	rm -f *.elf *.o test_encl_u.c test_encl_u.h test_encl_t.c test_encl_t.h
 
-edger: $(ENCLAVE_EDL)
+test_encl_t.c: $(ENCLAVE_EDL)
 	$(EDGER) $(ENCLAVE_EDL)
 
 heap_2.o: $(TRTS)/FreeRTOS/heap_2.c $(TRTS)/FreeRTOS/FreeRTOSConfig.h

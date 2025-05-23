@@ -27,13 +27,13 @@ int step_cnt = 0;
 
 void aep_cb_func(void)
 {
-    gprsgx_region_t gprsgx = {0};
+    //gprsgx_region_t gprsgx = {0};
     #if DEBUG
     	uint64_t erip = edbgrd_erip() - (uint64_t)get_enclave_base();
     	info("^^ enclave RIP=%#lx; ACCESSED=%lu", erip, ACCESSED(*pte_encl));
-        edbgrd(get_enclave_ssa_gprsgx_adrs(), &gprsgx, sizeof(gprsgx_region_t));
-        dump_gprsgx_region(&gprsgx);
-        print_enclave_info();
+        //edbgrd(get_enclave_ssa_gprsgx_adrs(), &gprsgx, sizeof(gprsgx_region_t));
+        //dump_gprsgx_region(&gprsgx);
+        //print_enclave_info();
     #endif
 }
 
