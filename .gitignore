@@ -9,6 +9,8 @@
 map_rips
 run
 
+analyze_text_section
+
 
 # Ignore .vscode folder
 *.vscode

@@ -1,0 +1,3652 @@
+[
+  {
+    "name": ".interp",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": ".note.gnu.property",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": ".note.gnu.build-id",
+    "is_hacl": false,
+    "size_bytes": 40
+  },
+  {
+    "name": ".gnu.hash",
+    "is_hacl": false,
+    "size_bytes": 1424
+  },
+  {
+    "name": ".dynsym",
+    "is_hacl": false,
+    "size_bytes": 4608
+  },
+  {
+    "name": ".dynstr",
+    "is_hacl": false,
+    "size_bytes": 4736
+  },
+  {
+    "name": ".rela.dyn",
+    "is_hacl": false,
+    "size_bytes": 608
+  },
+  {
+    "name": ".plt",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "_Z9pcl_entryPvS_@plt",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "ippcpSetCpuFeatures@plt",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "trts_access_version_dummy1",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "tstdc_access_version_dummy1",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "tcrypto_access_version_dummy1",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "tservice_access_version_dummy1",
+    "is_hacl": false,
+    "size_bytes": 19
+  },
+  {
+    "name": "ecall_dummy",
+    "is_hacl": false,
+    "size_bytes": 13
+  },
+  {
+    "name": "exit",
+    "is_hacl": false,
+    "size_bytes": 6
+  },
+  {
+    "name": "fprintf",
+    "is_hacl": false,
+    "size_bytes": 7
+  },
+  {
+    "name": "printf",
+    "is_hacl": false,
+    "size_bytes": 7
+  },
+  {
+    "name": "encl_op_hmac",
+    "is_hacl": false,
+    "size_bytes": 124
+  },
+  {
+    "name": "encl_op_chacha20poly1305_enc",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "encl_op_chacha20poly1305_dec",
+    "is_hacl": false,
+    "size_bytes": 49
+  },
+  {
+    "name": "sgx_encl_op_chacha20poly1305_dec",
+    "is_hacl": false,
+    "size_bytes": 940
+  },
+  {
+    "name": "sgx_encl_op_chacha20poly1305_enc",
+    "is_hacl": false,
+    "size_bytes": 961
+  },
+  {
+    "name": "sgx_encl_op_hmac",
+    "is_hacl": false,
+    "size_bytes": 428
+  },
+  {
+    "name": "sgx_ecall_dummy",
+    "is_hacl": false,
+    "size_bytes": 131
+  },
+  {
+    "name": "ocall_print_uint8_array",
+    "is_hacl": false,
+    "size_bytes": 259
+  },
+  {
+    "name": "register_value_select",
+    "is_hacl": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "ct_decode",
+    "is_hacl": false,
+    "size_bytes": 4432
+  },
+  {
+    "name": "_ZL22init_rts_contexts_emasP9_layout_tS0_m",
+    "is_hacl": false,
+    "size_bytes": 528
+  },
+  {
+    "name": "init_rts_emas",
+    "is_hacl": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "sgx_mm_alloc_ocall",
+    "is_hacl": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "sgx_mm_modify_ocall",
+    "is_hacl": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "sgx_mm_register_pfhandler",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "sgx_mm_unregister_pfhandler",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "sgx_mm_mutex_create",
+    "is_hacl": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "sgx_mm_mutex_lock",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "sgx_mm_mutex_unlock",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "sgx_mm_mutex_destroy",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "sgx_mm_is_within_enclave",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "init_optimized_libs",
+    "is_hacl": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "sgx_is_within_enclave",
+    "is_hacl": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "sgx_is_outside_enclave",
+    "is_hacl": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "sgx_ocalloc",
+    "is_hacl": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "sgx_ocfree",
+    "is_hacl": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "sgx_read_rand",
+    "is_hacl": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "check_static_stack_canary",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "sgx_rdpkru",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "sgx_wrpkru",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "_ZL25check_dynamic_entry_rangePvmtmP24dynamic_flags_attributes.constprop.0",
+    "is_hacl": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "_ZL19check_dynamic_rangePvmPmP24dynamic_flags_attributes.constprop.0",
+    "is_hacl": false,
+    "size_bytes": 480
+  },
+  {
+    "name": "_Z24get_dynamic_layout_by_idt",
+    "is_hacl": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "is_dynamic_thread",
+    "is_hacl": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "is_dynamic_thread_exist",
+    "is_hacl": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "get_dynamic_stack_max_page",
+    "is_hacl": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "do_add_thread",
+    "is_hacl": false,
+    "size_bytes": 448
+  },
+  {
+    "name": "sgx_set_ssa_aexnotify",
+    "is_hacl": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "sgx_register_aex_handler",
+    "is_hacl": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "sgx_unregister_aex_handler",
+    "is_hacl": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "sgx_apply_mitigations",
+    "is_hacl": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "_pthread_thread_run",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "_ZL11do_save_tcsPv",
+    "is_hacl": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "_ZL18add_static_threadsPVK9_layout_tS1_m",
+    "is_hacl": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "_ZL10trts_ecalljPv",
+    "is_hacl": false,
+    "size_bytes": 448
+  },
+  {
+    "name": "_Z30_random_stack_noinline_wrapperI9_status_tJjPvEJRiRS1_EET_PFS4_DpT0_EDpOT1_.constprop.0.isra.0",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "_Z16_pthread_enabledv",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "_Z24_pthread_tls_store_state9_status_t",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "_Z22_pthread_tls_get_statev",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "_Z26_pthread_tls_store_contextPv",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "_Z20_pthread_wakeup_joinPv",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "_Z24_pthread_tls_destructorsv",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "tc_set_idle",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "do_init_thread",
+    "is_hacl": false,
+    "size_bytes": 608
+  },
+  {
+    "name": "do_ecall",
+    "is_hacl": false,
+    "size_bytes": 608
+  },
+  {
+    "name": "do_ecall_add_thread",
+    "is_hacl": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "do_uninit_enclave",
+    "is_hacl": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "sgx_ocall",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "update_ocall_lastsp",
+    "is_hacl": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "do_oret",
+    "is_hacl": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "get_enclave_size",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "get_enclave_end",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "get_heap_base",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "get_heap_size",
+    "is_hacl": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "get_heap_min_size",
+    "is_hacl": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "get_rsrv_base",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "get_rsrv_end",
+    "is_hacl": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "get_rsrv_size",
+    "is_hacl": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "get_rsrv_min_size",
+    "is_hacl": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "get_errno_addr",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "feature_supported",
+    "is_hacl": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "is_stack_addr",
+    "is_hacl": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "is_valid_sp",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "is_utility_thread",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "get_max_tcs_num",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "is_pkru_enabled",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "is_tcs_binding_mode",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "get_xsave_size",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "get_ssa_aexnotify",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "internal_handle_exception",
+    "is_hacl": false,
+    "size_bytes": 1008
+  },
+  {
+    "name": "sgx_register_exception_handler",
+    "is_hacl": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "sgx_unregister_exception_handler",
+    "is_hacl": false,
+    "size_bytes": 176
+  },
+  {
+    "name": "trts_handle_exception",
+    "is_hacl": false,
+    "size_bytes": 944
+  },
+  {
+    "name": "get_xfeature_state",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "has_text_relo",
+    "is_hacl": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "do_relocs",
+    "is_hacl": false,
+    "size_bytes": 480
+  },
+  {
+    "name": "relocate_enclave",
+    "is_hacl": false,
+    "size_bytes": 560
+  },
+  {
+    "name": "elf_tls_info",
+    "is_hacl": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "elf_get_init_array",
+    "is_hacl": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "elf_get_uninit_array",
+    "is_hacl": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "change_protection",
+    "is_hacl": false,
+    "size_bytes": 480
+  },
+  {
+    "name": "init_segment_emas",
+    "is_hacl": false,
+    "size_bytes": 256
+  },
+  {
+    "name": "__cxa_atexit",
+    "is_hacl": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "atexit",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "init_global_object",
+    "is_hacl": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "uninit_global_object",
+    "is_hacl": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "__tls_get_addr",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "bit_array_new",
+    "is_hacl": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "bit_array_new_set",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "bit_array_new_reset",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "bit_array_delete",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "bit_array_test",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "set_mask",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "bit_array_test_range",
+    "is_hacl": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "bit_array_test_range_any",
+    "is_hacl": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "bit_array_set",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "bit_array_set_range",
+    "is_hacl": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "bit_array_set_all",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "clear_mask",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "bit_array_reset_range",
+    "is_hacl": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "bit_array_reset_all",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "bit_array_reattach",
+    "is_hacl": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "bit_array_split",
+    "is_hacl": false,
+    "size_bytes": 576
+  },
+  {
+    "name": "ema_do_uncommit_real",
+    "is_hacl": false,
+    "size_bytes": 480
+  },
+  {
+    "name": "get_ema_alloc_flags",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "get_ema_si_flags",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "ema_fault_handler",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "ema_set_eaccept_full",
+    "is_hacl": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "ema_clear_eaccept_full",
+    "is_hacl": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "ema_set_eaccept",
+    "is_hacl": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "ema_page_committed",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "search_ema",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "insert_ema",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "push_back_ema",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "search_ema_range",
+    "is_hacl": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "ema_split",
+    "is_hacl": false,
+    "size_bytes": 400
+  },
+  {
+    "name": "ema_split_ex",
+    "is_hacl": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "find_free_region",
+    "is_hacl": false,
+    "size_bytes": 784
+  },
+  {
+    "name": "find_free_region_at",
+    "is_hacl": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "ema_new",
+    "is_hacl": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "ema_destroy",
+    "is_hacl": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "destroy_ema_root",
+    "is_hacl": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "do_commit",
+    "is_hacl": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "ema_do_commit",
+    "is_hacl": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "ema_do_commit_loop",
+    "is_hacl": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "ema_change_to_tcs",
+    "is_hacl": false,
+    "size_bytes": 368
+  },
+  {
+    "name": "ema_modify_permissions",
+    "is_hacl": false,
+    "size_bytes": 576
+  },
+  {
+    "name": "ema_do_uncommit",
+    "is_hacl": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "ema_do_dealloc",
+    "is_hacl": false,
+    "size_bytes": 256
+  },
+  {
+    "name": "ema_do_dealloc_loop",
+    "is_hacl": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "ema_do_uncommit_loop",
+    "is_hacl": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "ema_modify_permissions_loop",
+    "is_hacl": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "ema_do_commit_data",
+    "is_hacl": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "ema_do_commit_data_loop",
+    "is_hacl": false,
+    "size_bytes": 384
+  },
+  {
+    "name": "ema_realloc_from_reserve_range",
+    "is_hacl": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "ema_do_alloc",
+    "is_hacl": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "add_reserve",
+    "is_hacl": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "remove_from_list",
+    "is_hacl": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "put_free_block",
+    "is_hacl": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "neighbor_right",
+    "is_hacl": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "payload_to_block",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "block_to_payload",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "is_alloced",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "block_size",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "block_end",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "emalloc_init_with_reserved_mem",
+    "is_hacl": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "emalloc",
+    "is_hacl": false,
+    "size_bytes": 560
+  },
+  {
+    "name": "can_erealloc",
+    "is_hacl": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "efree",
+    "is_hacl": false,
+    "size_bytes": 512
+  },
+  {
+    "name": "mm_init_ema",
+    "is_hacl": false,
+    "size_bytes": 256
+  },
+  {
+    "name": "mm_alloc",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "mm_commit",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "mm_uncommit",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "mm_dealloc",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "mm_commit_data",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "mm_modify_type",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "mm_modify_permissions",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "sgx_mm_enclave_pfhandler",
+    "is_hacl": false,
+    "size_bytes": 448
+  },
+  {
+    "name": "mm_alloc_internal",
+    "is_hacl": false,
+    "size_bytes": 768
+  },
+  {
+    "name": "sgx_mm_alloc",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "mm_commit_internal",
+    "is_hacl": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "sgx_mm_commit",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "mm_uncommit_internal",
+    "is_hacl": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "sgx_mm_uncommit",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "mm_dealloc_internal",
+    "is_hacl": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "sgx_mm_dealloc",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "mm_commit_data_internal",
+    "is_hacl": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "sgx_mm_commit_data",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "mm_modify_type_internal",
+    "is_hacl": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "sgx_mm_modify_type",
+    "is_hacl": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "mm_modify_permissions_internal",
+    "is_hacl": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "sgx_mm_modify_permissions",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "sgx_mm_init",
+    "is_hacl": false,
+    "size_bytes": 92
+  },
+  {
+    "name": "__uint64_identity",
+    "is_hacl": false,
+    "size_bytes": 14
+  },
+  {
+    "name": "store64",
+    "is_hacl": false,
+    "size_bytes": 26
+  },
+  {
+    "name": "FStar_UInt64_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 73
+  },
+  {
+    "name": "FStar_UInt64_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 114
+  },
+  {
+    "name": "FStar_UInt32_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 57
+  },
+  {
+    "name": "FStar_UInt32_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 88
+  },
+  {
+    "name": "FStar_UInt16_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 75
+  },
+  {
+    "name": "FStar_UInt16_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 117
+  },
+  {
+    "name": "FStar_UInt8_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 66
+  },
+  {
+    "name": "FStar_UInt8_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 101
+  },
+  {
+    "name": "FStar_UInt128_add",
+    "is_hacl": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "FStar_UInt128_uint64_to_uint128",
+    "is_hacl": false,
+    "size_bytes": 19
+  },
+  {
+    "name": "Hacl_HMAC_compute_md5",
+    "is_hacl": true,
+    "size_bytes": 1327
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha1",
+    "is_hacl": true,
+    "size_bytes": 1337
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha2_224",
+    "is_hacl": true,
+    "size_bytes": 2014
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha2_256",
+    "is_hacl": true,
+    "size_bytes": 2014
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha2_384",
+    "is_hacl": true,
+    "size_bytes": 2385
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha2_512",
+    "is_hacl": true,
+    "size_bytes": 2385
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha3_224",
+    "is_hacl": true,
+    "size_bytes": 2981
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha3_256",
+    "is_hacl": true,
+    "size_bytes": 2981
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha3_384",
+    "is_hacl": true,
+    "size_bytes": 2969
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha3_512",
+    "is_hacl": true,
+    "size_bytes": 2969
+  },
+  {
+    "name": "Hacl_HMAC_compute_blake2s_32",
+    "is_hacl": true,
+    "size_bytes": 1790
+  },
+  {
+    "name": "Hacl_HMAC_compute_blake2b_32",
+    "is_hacl": true,
+    "size_bytes": 1959
+  },
+  {
+    "name": "__uint32_identity",
+    "is_hacl": false,
+    "size_bytes": 12
+  },
+  {
+    "name": "__uint64_identity",
+    "is_hacl": false,
+    "size_bytes": 14
+  },
+  {
+    "name": "load32",
+    "is_hacl": false,
+    "size_bytes": 61
+  },
+  {
+    "name": "store32",
+    "is_hacl": false,
+    "size_bytes": 23
+  },
+  {
+    "name": "store64",
+    "is_hacl": false,
+    "size_bytes": 26
+  },
+  {
+    "name": "FStar_UInt64_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 73
+  },
+  {
+    "name": "FStar_UInt64_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 114
+  },
+  {
+    "name": "FStar_UInt32_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 57
+  },
+  {
+    "name": "FStar_UInt32_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 88
+  },
+  {
+    "name": "FStar_UInt16_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 75
+  },
+  {
+    "name": "FStar_UInt16_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 117
+  },
+  {
+    "name": "FStar_UInt8_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 66
+  },
+  {
+    "name": "FStar_UInt8_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 101
+  },
+  {
+    "name": "Hacl_Hash_MD5_init",
+    "is_hacl": true,
+    "size_bytes": 202
+  },
+  {
+    "name": "update",
+    "is_hacl": false,
+    "size_bytes": 14198
+  },
+  {
+    "name": "pad",
+    "is_hacl": false,
+    "size_bytes": 162
+  },
+  {
+    "name": "Hacl_Hash_MD5_finish",
+    "is_hacl": true,
+    "size_bytes": 262
+  },
+  {
+    "name": "Hacl_Hash_MD5_update_multi",
+    "is_hacl": true,
+    "size_bytes": 94
+  },
+  {
+    "name": "Hacl_Hash_MD5_update_last",
+    "is_hacl": true,
+    "size_bytes": 544
+  },
+  {
+    "name": "Hacl_Hash_MD5_hash_oneshot",
+    "is_hacl": true,
+    "size_bytes": 268
+  },
+  {
+    "name": "Hacl_Hash_MD5_malloc",
+    "is_hacl": true,
+    "size_bytes": 438
+  },
+  {
+    "name": "Hacl_Hash_MD5_reset",
+    "is_hacl": true,
+    "size_bytes": 125
+  },
+  {
+    "name": "Hacl_Hash_MD5_update",
+    "is_hacl": true,
+    "size_bytes": 1645
+  },
+  {
+    "name": "Hacl_Hash_MD5_digest",
+    "is_hacl": true,
+    "size_bytes": 347
+  },
+  {
+    "name": "Hacl_Hash_MD5_free",
+    "is_hacl": true,
+    "size_bytes": 98
+  },
+  {
+    "name": "Hacl_Hash_MD5_copy",
+    "is_hacl": true,
+    "size_bytes": 534
+  },
+  {
+    "name": "Hacl_Hash_MD5_hash",
+    "is_hacl": true,
+    "size_bytes": 48
+  },
+  {
+    "name": "__bswap_32",
+    "is_hacl": false,
+    "size_bytes": 14
+  },
+  {
+    "name": "__bswap_64",
+    "is_hacl": false,
+    "size_bytes": 17
+  },
+  {
+    "name": "load32",
+    "is_hacl": false,
+    "size_bytes": 61
+  },
+  {
+    "name": "store32",
+    "is_hacl": false,
+    "size_bytes": 23
+  },
+  {
+    "name": "store64",
+    "is_hacl": false,
+    "size_bytes": 26
+  },
+  {
+    "name": "FStar_UInt64_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 73
+  },
+  {
+    "name": "FStar_UInt64_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 114
+  },
+  {
+    "name": "FStar_UInt32_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 57
+  },
+  {
+    "name": "FStar_UInt32_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 88
+  },
+  {
+    "name": "FStar_UInt16_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 75
+  },
+  {
+    "name": "FStar_UInt16_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 117
+  },
+  {
+    "name": "FStar_UInt8_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 66
+  },
+  {
+    "name": "FStar_UInt8_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 101
+  },
+  {
+    "name": "Hacl_Hash_SHA1_init",
+    "is_hacl": true,
+    "size_bytes": 247
+  },
+  {
+    "name": "update",
+    "is_hacl": false,
+    "size_bytes": 1168
+  },
+  {
+    "name": "pad",
+    "is_hacl": false,
+    "size_bytes": 162
+  },
+  {
+    "name": "Hacl_Hash_SHA1_finish",
+    "is_hacl": true,
+    "size_bytes": 320
+  },
+  {
+    "name": "Hacl_Hash_SHA1_update_multi",
+    "is_hacl": true,
+    "size_bytes": 94
+  },
+  {
+    "name": "Hacl_Hash_SHA1_update_last",
+    "is_hacl": true,
+    "size_bytes": 544
+  },
+  {
+    "name": "Hacl_Hash_SHA1_hash_oneshot",
+    "is_hacl": true,
+    "size_bytes": 275
+  },
+  {
+    "name": "Hacl_Hash_SHA1_malloc",
+    "is_hacl": true,
+    "size_bytes": 438
+  },
+  {
+    "name": "Hacl_Hash_SHA1_reset",
+    "is_hacl": true,
+    "size_bytes": 125
+  },
+  {
+    "name": "Hacl_Hash_SHA1_update",
+    "is_hacl": true,
+    "size_bytes": 1645
+  },
+  {
+    "name": "Hacl_Hash_SHA1_digest",
+    "is_hacl": true,
+    "size_bytes": 349
+  },
+  {
+    "name": "Hacl_Hash_SHA1_free",
+    "is_hacl": true,
+    "size_bytes": 98
+  },
+  {
+    "name": "Hacl_Hash_SHA1_copy",
+    "is_hacl": true,
+    "size_bytes": 536
+  },
+  {
+    "name": "Hacl_Hash_SHA1_hash",
+    "is_hacl": true,
+    "size_bytes": 48
+  },
+  {
+    "name": "__bswap_32",
+    "is_hacl": false,
+    "size_bytes": 14
+  },
+  {
+    "name": "__bswap_64",
+    "is_hacl": false,
+    "size_bytes": 17
+  },
+  {
+    "name": "load32",
+    "is_hacl": false,
+    "size_bytes": 61
+  },
+  {
+    "name": "load64",
+    "is_hacl": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "store32",
+    "is_hacl": false,
+    "size_bytes": 23
+  },
+  {
+    "name": "store64",
+    "is_hacl": false,
+    "size_bytes": 26
+  },
+  {
+    "name": "FStar_UInt64_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 73
+  },
+  {
+    "name": "FStar_UInt64_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 114
+  },
+  {
+    "name": "FStar_UInt32_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 57
+  },
+  {
+    "name": "FStar_UInt32_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 88
+  },
+  {
+    "name": "FStar_UInt16_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 75
+  },
+  {
+    "name": "FStar_UInt16_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 117
+  },
+  {
+    "name": "FStar_UInt8_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 66
+  },
+  {
+    "name": "FStar_UInt8_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 101
+  },
+  {
+    "name": "store128_be",
+    "is_hacl": false,
+    "size_bytes": 108
+  },
+  {
+    "name": "FStar_UInt128_add",
+    "is_hacl": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "FStar_UInt128_shift_left",
+    "is_hacl": false,
+    "size_bytes": 62
+  },
+  {
+    "name": "FStar_UInt128_uint64_to_uint128",
+    "is_hacl": false,
+    "size_bytes": 19
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha256_init",
+    "is_hacl": true,
+    "size_bytes": 494
+  },
+  {
+    "name": "sha256_update",
+    "is_hacl": false,
+    "size_bytes": 56912
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha256_update_nblocks",
+    "is_hacl": true,
+    "size_bytes": 103
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha256_update_last",
+    "is_hacl": true,
+    "size_bytes": 593
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha256_finish",
+    "is_hacl": true,
+    "size_bytes": 596
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha224_init",
+    "is_hacl": true,
+    "size_bytes": 494
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha224_update_nblocks",
+    "is_hacl": true,
+    "size_bytes": 47
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha224_update_last",
+    "is_hacl": true,
+    "size_bytes": 53
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha224_finish",
+    "is_hacl": true,
+    "size_bytes": 585
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha512_init",
+    "is_hacl": true,
+    "size_bytes": 632
+  },
+  {
+    "name": "sha512_update",
+    "is_hacl": false,
+    "size_bytes": 83577
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha512_update_nblocks",
+    "is_hacl": true,
+    "size_bytes": 103
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha512_update_last",
+    "is_hacl": true,
+    "size_bytes": 838
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha512_finish",
+    "is_hacl": true,
+    "size_bytes": 697
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha384_init",
+    "is_hacl": true,
+    "size_bytes": 632
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha384_update_nblocks",
+    "is_hacl": true,
+    "size_bytes": 47
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha384_update_last",
+    "is_hacl": true,
+    "size_bytes": 82
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha384_finish",
+    "is_hacl": true,
+    "size_bytes": 649
+  },
+  {
+    "name": "Hacl_Hash_SHA2_malloc_256",
+    "is_hacl": true,
+    "size_bytes": 438
+  },
+  {
+    "name": "Hacl_Hash_SHA2_copy_256",
+    "is_hacl": true,
+    "size_bytes": 536
+  },
+  {
+    "name": "Hacl_Hash_SHA2_reset_256",
+    "is_hacl": true,
+    "size_bytes": 125
+  },
+  {
+    "name": "update_224_256",
+    "is_hacl": false,
+    "size_bytes": 1633
+  },
+  {
+    "name": "Hacl_Hash_SHA2_update_256",
+    "is_hacl": true,
+    "size_bytes": 47
+  },
+  {
+    "name": "Hacl_Hash_SHA2_digest_256",
+    "is_hacl": true,
+    "size_bytes": 393
+  },
+  {
+    "name": "Hacl_Hash_SHA2_free_256",
+    "is_hacl": true,
+    "size_bytes": 98
+  },
+  {
+    "name": "Hacl_Hash_SHA2_hash_256",
+    "is_hacl": true,
+    "size_bytes": 217
+  },
+  {
+    "name": "Hacl_Hash_SHA2_malloc_224",
+    "is_hacl": true,
+    "size_bytes": 438
+  },
+  {
+    "name": "Hacl_Hash_SHA2_reset_224",
+    "is_hacl": true,
+    "size_bytes": 125
+  },
+  {
+    "name": "Hacl_Hash_SHA2_update_224",
+    "is_hacl": true,
+    "size_bytes": 47
+  },
+  {
+    "name": "Hacl_Hash_SHA2_digest_224",
+    "is_hacl": true,
+    "size_bytes": 393
+  },
+  {
+    "name": "Hacl_Hash_SHA2_free_224",
+    "is_hacl": true,
+    "size_bytes": 31
+  },
+  {
+    "name": "Hacl_Hash_SHA2_hash_224",
+    "is_hacl": true,
+    "size_bytes": 217
+  },
+  {
+    "name": "Hacl_Hash_SHA2_malloc_512",
+    "is_hacl": true,
+    "size_bytes": 438
+  },
+  {
+    "name": "Hacl_Hash_SHA2_copy_512",
+    "is_hacl": true,
+    "size_bytes": 536
+  },
+  {
+    "name": "Hacl_Hash_SHA2_reset_512",
+    "is_hacl": true,
+    "size_bytes": 125
+  },
+  {
+    "name": "update_384_512",
+    "is_hacl": false,
+    "size_bytes": 1626
+  },
+  {
+    "name": "Hacl_Hash_SHA2_update_512",
+    "is_hacl": true,
+    "size_bytes": 47
+  },
+  {
+    "name": "Hacl_Hash_SHA2_digest_512",
+    "is_hacl": true,
+    "size_bytes": 546
+  },
+  {
+    "name": "Hacl_Hash_SHA2_free_512",
+    "is_hacl": true,
+    "size_bytes": 98
+  },
+  {
+    "name": "Hacl_Hash_SHA2_hash_512",
+    "is_hacl": true,
+    "size_bytes": 292
+  },
+  {
+    "name": "Hacl_Hash_SHA2_malloc_384",
+    "is_hacl": true,
+    "size_bytes": 438
+  },
+  {
+    "name": "Hacl_Hash_SHA2_reset_384",
+    "is_hacl": true,
+    "size_bytes": 125
+  },
+  {
+    "name": "Hacl_Hash_SHA2_update_384",
+    "is_hacl": true,
+    "size_bytes": 47
+  },
+  {
+    "name": "Hacl_Hash_SHA2_digest_384",
+    "is_hacl": true,
+    "size_bytes": 546
+  },
+  {
+    "name": "Hacl_Hash_SHA2_free_384",
+    "is_hacl": true,
+    "size_bytes": 31
+  },
+  {
+    "name": "Hacl_Hash_SHA2_hash_384",
+    "is_hacl": true,
+    "size_bytes": 292
+  },
+  {
+    "name": "__uint64_identity",
+    "is_hacl": false,
+    "size_bytes": 14
+  },
+  {
+    "name": "load64",
+    "is_hacl": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "store64",
+    "is_hacl": false,
+    "size_bytes": 26
+  },
+  {
+    "name": "FStar_UInt64_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 73
+  },
+  {
+    "name": "FStar_UInt64_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 114
+  },
+  {
+    "name": "FStar_UInt32_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 57
+  },
+  {
+    "name": "FStar_UInt32_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 88
+  },
+  {
+    "name": "FStar_UInt16_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 75
+  },
+  {
+    "name": "FStar_UInt16_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 117
+  },
+  {
+    "name": "FStar_UInt8_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 66
+  },
+  {
+    "name": "FStar_UInt8_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 101
+  },
+  {
+    "name": "absorb_inner_32",
+    "is_hacl": false,
+    "size_bytes": 10899
+  },
+  {
+    "name": "block_len",
+    "is_hacl": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "hash_len",
+    "is_hacl": false,
+    "size_bytes": 133
+  },
+  {
+    "name": "Hacl_Hash_SHA3_init_",
+    "is_hacl": true,
+    "size_bytes": 46
+  },
+  {
+    "name": "Hacl_Hash_SHA3_update_multi_sha3",
+    "is_hacl": true,
+    "size_bytes": 651
+  },
+  {
+    "name": "Hacl_Hash_SHA3_update_last_sha3",
+    "is_hacl": true,
+    "size_bytes": 24215
+  },
+  {
+    "name": "squeeze",
+    "is_hacl": false,
+    "size_bytes": 10337
+  },
+  {
+    "name": "Hacl_Hash_SHA3_get_alg",
+    "is_hacl": true,
+    "size_bytes": 37
+  },
+  {
+    "name": "Hacl_Hash_SHA3_malloc",
+    "is_hacl": true,
+    "size_bytes": 549
+  },
+  {
+    "name": "Hacl_Hash_SHA3_free",
+    "is_hacl": true,
+    "size_bytes": 122
+  },
+  {
+    "name": "Hacl_Hash_SHA3_copy",
+    "is_hacl": true,
+    "size_bytes": 793
+  },
+  {
+    "name": "Hacl_Hash_SHA3_reset",
+    "is_hacl": true,
+    "size_bytes": 185
+  },
+  {
+    "name": "Hacl_Hash_SHA3_update",
+    "is_hacl": true,
+    "size_bytes": 2518
+  },
+  {
+    "name": "digest_",
+    "is_hacl": false,
+    "size_bytes": 949
+  },
+  {
+    "name": "Hacl_Hash_SHA3_digest",
+    "is_hacl": true,
+    "size_bytes": 93
+  },
+  {
+    "name": "Hacl_Hash_SHA3_squeeze",
+    "is_hacl": true,
+    "size_bytes": 99
+  },
+  {
+    "name": "Hacl_Hash_SHA3_block_len",
+    "is_hacl": true,
+    "size_bytes": 44
+  },
+  {
+    "name": "Hacl_Hash_SHA3_hash_len",
+    "is_hacl": true,
+    "size_bytes": 44
+  },
+  {
+    "name": "Hacl_Hash_SHA3_is_shake",
+    "is_hacl": true,
+    "size_bytes": 60
+  },
+  {
+    "name": "Hacl_Hash_SHA3_absorb_inner_32",
+    "is_hacl": true,
+    "size_bytes": 10905
+  },
+  {
+    "name": "Hacl_Hash_SHA3_shake128",
+    "is_hacl": true,
+    "size_bytes": 11823
+  },
+  {
+    "name": "Hacl_Hash_SHA3_shake256",
+    "is_hacl": true,
+    "size_bytes": 11823
+  },
+  {
+    "name": "Hacl_Hash_SHA3_sha3_224",
+    "is_hacl": true,
+    "size_bytes": 11814
+  },
+  {
+    "name": "Hacl_Hash_SHA3_sha3_256",
+    "is_hacl": true,
+    "size_bytes": 11814
+  },
+  {
+    "name": "Hacl_Hash_SHA3_sha3_384",
+    "is_hacl": true,
+    "size_bytes": 11814
+  },
+  {
+    "name": "Hacl_Hash_SHA3_sha3_512",
+    "is_hacl": true,
+    "size_bytes": 11814
+  },
+  {
+    "name": "Hacl_Hash_SHA3_state_malloc",
+    "is_hacl": true,
+    "size_bytes": 37
+  },
+  {
+    "name": "Hacl_Hash_SHA3_state_free",
+    "is_hacl": true,
+    "size_bytes": 31
+  },
+  {
+    "name": "Hacl_Hash_SHA3_shake128_absorb_nblocks",
+    "is_hacl": true,
+    "size_bytes": 558
+  },
+  {
+    "name": "Hacl_Hash_SHA3_shake128_absorb_final",
+    "is_hacl": true,
+    "size_bytes": 2700
+  },
+  {
+    "name": "Hacl_Hash_SHA3_shake128_squeeze_nblocks",
+    "is_hacl": true,
+    "size_bytes": 9817
+  },
+  {
+    "name": "__uint32_identity",
+    "is_hacl": false,
+    "size_bytes": 12
+  },
+  {
+    "name": "load32",
+    "is_hacl": false,
+    "size_bytes": 61
+  },
+  {
+    "name": "store32",
+    "is_hacl": false,
+    "size_bytes": 23
+  },
+  {
+    "name": "FStar_UInt64_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 73
+  },
+  {
+    "name": "FStar_UInt64_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 114
+  },
+  {
+    "name": "FStar_UInt32_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 57
+  },
+  {
+    "name": "FStar_UInt32_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 88
+  },
+  {
+    "name": "FStar_UInt16_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 75
+  },
+  {
+    "name": "FStar_UInt16_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 117
+  },
+  {
+    "name": "FStar_UInt8_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 66
+  },
+  {
+    "name": "FStar_UInt8_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 101
+  },
+  {
+    "name": "update_block",
+    "is_hacl": false,
+    "size_bytes": 166371
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_init",
+    "is_hacl": true,
+    "size_bytes": 1445
+  },
+  {
+    "name": "update_key",
+    "is_hacl": false,
+    "size_bytes": 268
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_update_multi",
+    "is_hacl": true,
+    "size_bytes": 141
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_update_last",
+    "is_hacl": true,
+    "size_bytes": 278
+  },
+  {
+    "name": "update_blocks",
+    "is_hacl": false,
+    "size_bytes": 191
+  },
+  {
+    "name": "update",
+    "is_hacl": false,
+    "size_bytes": 146
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_finish",
+    "is_hacl": true,
+    "size_bytes": 658
+  },
+  {
+    "name": "malloc_raw",
+    "is_hacl": false,
+    "size_bytes": 2476
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_malloc_with_params_and_key",
+    "is_hacl": true,
+    "size_bytes": 156
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_malloc_with_key",
+    "is_hacl": true,
+    "size_bytes": 241
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_malloc",
+    "is_hacl": true,
+    "size_bytes": 25
+  },
+  {
+    "name": "index_of_state",
+    "is_hacl": false,
+    "size_bytes": 122
+  },
+  {
+    "name": "reset_raw",
+    "is_hacl": false,
+    "size_bytes": 2070
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_reset_with_key_and_params",
+    "is_hacl": true,
+    "size_bytes": 109
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_reset_with_key",
+    "is_hacl": true,
+    "size_bytes": 320
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_reset",
+    "is_hacl": true,
+    "size_bytes": 36
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_update",
+    "is_hacl": true,
+    "size_bytes": 2309
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_digest",
+    "is_hacl": true,
+    "size_bytes": 1119
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_info",
+    "is_hacl": true,
+    "size_bytes": 122
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_free",
+    "is_hacl": true,
+    "size_bytes": 175
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_copy",
+    "is_hacl": true,
+    "size_bytes": 985
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_hash_with_key",
+    "is_hacl": true,
+    "size_bytes": 283
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_hash_with_key_and_params",
+    "is_hacl": true,
+    "size_bytes": 1607
+  },
+  {
+    "name": "__uint64_identity",
+    "is_hacl": false,
+    "size_bytes": 14
+  },
+  {
+    "name": "load64",
+    "is_hacl": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "store64",
+    "is_hacl": false,
+    "size_bytes": 26
+  },
+  {
+    "name": "FStar_UInt64_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 73
+  },
+  {
+    "name": "FStar_UInt64_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 114
+  },
+  {
+    "name": "FStar_UInt32_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 57
+  },
+  {
+    "name": "FStar_UInt32_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 88
+  },
+  {
+    "name": "FStar_UInt16_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 75
+  },
+  {
+    "name": "FStar_UInt16_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 117
+  },
+  {
+    "name": "FStar_UInt8_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 66
+  },
+  {
+    "name": "FStar_UInt8_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 101
+  },
+  {
+    "name": "FStar_UInt128_add_mod",
+    "is_hacl": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "FStar_UInt128_shift_right",
+    "is_hacl": false,
+    "size_bytes": 62
+  },
+  {
+    "name": "FStar_UInt128_uint64_to_uint128",
+    "is_hacl": false,
+    "size_bytes": 19
+  },
+  {
+    "name": "FStar_UInt128_uint128_to_uint64",
+    "is_hacl": false,
+    "size_bytes": 27
+  },
+  {
+    "name": "update_block",
+    "is_hacl": false,
+    "size_bytes": 209519
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_init",
+    "is_hacl": true,
+    "size_bytes": 1725
+  },
+  {
+    "name": "update_key",
+    "is_hacl": false,
+    "size_bytes": 437
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_update_multi",
+    "is_hacl": true,
+    "size_bytes": 182
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_update_last",
+    "is_hacl": true,
+    "size_bytes": 438
+  },
+  {
+    "name": "update_blocks",
+    "is_hacl": false,
+    "size_bytes": 212
+  },
+  {
+    "name": "update",
+    "is_hacl": false,
+    "size_bytes": 183
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_finish",
+    "is_hacl": true,
+    "size_bytes": 746
+  },
+  {
+    "name": "malloc_raw",
+    "is_hacl": false,
+    "size_bytes": 2707
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_malloc_with_params_and_key",
+    "is_hacl": true,
+    "size_bytes": 156
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_malloc_with_key",
+    "is_hacl": true,
+    "size_bytes": 308
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_malloc",
+    "is_hacl": true,
+    "size_bytes": 25
+  },
+  {
+    "name": "index_of_state",
+    "is_hacl": false,
+    "size_bytes": 122
+  },
+  {
+    "name": "reset_raw",
+    "is_hacl": false,
+    "size_bytes": 2289
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_reset_with_key_and_params",
+    "is_hacl": true,
+    "size_bytes": 109
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_reset_with_key",
+    "is_hacl": true,
+    "size_bytes": 357
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_reset",
+    "is_hacl": true,
+    "size_bytes": 36
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_update",
+    "is_hacl": true,
+    "size_bytes": 2429
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_digest",
+    "is_hacl": true,
+    "size_bytes": 1158
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_info",
+    "is_hacl": true,
+    "size_bytes": 122
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_free",
+    "is_hacl": true,
+    "size_bytes": 175
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_copy",
+    "is_hacl": true,
+    "size_bytes": 985
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_hash_with_key",
+    "is_hacl": true,
+    "size_bytes": 292
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_hash_with_key_and_params",
+    "is_hacl": true,
+    "size_bytes": 1823
+  },
+  {
+    "name": "__uint32_identity",
+    "is_hacl": false,
+    "size_bytes": 12
+  },
+  {
+    "name": "load32",
+    "is_hacl": false,
+    "size_bytes": 61
+  },
+  {
+    "name": "store32",
+    "is_hacl": false,
+    "size_bytes": 23
+  },
+  {
+    "name": "FStar_UInt64_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 73
+  },
+  {
+    "name": "FStar_UInt64_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 114
+  },
+  {
+    "name": "FStar_UInt32_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 57
+  },
+  {
+    "name": "FStar_UInt32_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 88
+  },
+  {
+    "name": "FStar_UInt16_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 75
+  },
+  {
+    "name": "FStar_UInt16_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 117
+  },
+  {
+    "name": "FStar_UInt8_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 66
+  },
+  {
+    "name": "FStar_UInt8_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 101
+  },
+  {
+    "name": "quarter_round",
+    "is_hacl": false,
+    "size_bytes": 600
+  },
+  {
+    "name": "double_round",
+    "is_hacl": false,
+    "size_bytes": 279
+  },
+  {
+    "name": "rounds",
+    "is_hacl": false,
+    "size_bytes": 135
+  },
+  {
+    "name": "chacha20_core",
+    "is_hacl": false,
+    "size_bytes": 1881
+  },
+  {
+    "name": "Hacl_Impl_Chacha20_chacha20_init",
+    "is_hacl": true,
+    "size_bytes": 1837
+  },
+  {
+    "name": "chacha20_encrypt_block",
+    "is_hacl": false,
+    "size_bytes": 4472
+  },
+  {
+    "name": "chacha20_encrypt_last",
+    "is_hacl": false,
+    "size_bytes": 195
+  },
+  {
+    "name": "Hacl_Impl_Chacha20_chacha20_update",
+    "is_hacl": true,
+    "size_bytes": 189
+  },
+  {
+    "name": "Hacl_Chacha20_chacha20_encrypt",
+    "is_hacl": true,
+    "size_bytes": 139
+  },
+  {
+    "name": "Hacl_Chacha20_chacha20_decrypt",
+    "is_hacl": true,
+    "size_bytes": 139
+  },
+  {
+    "name": "__uint64_identity",
+    "is_hacl": false,
+    "size_bytes": 14
+  },
+  {
+    "name": "load64",
+    "is_hacl": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "store64",
+    "is_hacl": false,
+    "size_bytes": 26
+  },
+  {
+    "name": "FStar_UInt64_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 73
+  },
+  {
+    "name": "FStar_UInt64_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 114
+  },
+  {
+    "name": "FStar_UInt32_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 57
+  },
+  {
+    "name": "FStar_UInt32_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 88
+  },
+  {
+    "name": "FStar_UInt16_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 75
+  },
+  {
+    "name": "FStar_UInt16_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 117
+  },
+  {
+    "name": "FStar_UInt8_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 66
+  },
+  {
+    "name": "FStar_UInt8_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 101
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_poly1305_init",
+    "is_hacl": true,
+    "size_bytes": 1100
+  },
+  {
+    "name": "poly1305_update",
+    "is_hacl": false,
+    "size_bytes": 5230
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_poly1305_finish",
+    "is_hacl": true,
+    "size_bytes": 1974
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_malloc",
+    "is_hacl": true,
+    "size_bytes": 741
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_reset",
+    "is_hacl": true,
+    "size_bytes": 200
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_update",
+    "is_hacl": true,
+    "size_bytes": 1781
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_digest",
+    "is_hacl": true,
+    "size_bytes": 544
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_free",
+    "is_hacl": true,
+    "size_bytes": 126
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_mac",
+    "is_hacl": true,
+    "size_bytes": 190
+  },
+  {
+    "name": "__uint64_identity",
+    "is_hacl": false,
+    "size_bytes": 14
+  },
+  {
+    "name": "load64",
+    "is_hacl": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "store64",
+    "is_hacl": false,
+    "size_bytes": 26
+  },
+  {
+    "name": "FStar_UInt64_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 73
+  },
+  {
+    "name": "FStar_UInt64_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 114
+  },
+  {
+    "name": "FStar_UInt32_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 57
+  },
+  {
+    "name": "FStar_UInt32_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 88
+  },
+  {
+    "name": "FStar_UInt16_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 75
+  },
+  {
+    "name": "FStar_UInt16_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 117
+  },
+  {
+    "name": "FStar_UInt8_eq_mask",
+    "is_hacl": false,
+    "size_bytes": 66
+  },
+  {
+    "name": "FStar_UInt8_gte_mask",
+    "is_hacl": false,
+    "size_bytes": 101
+  },
+  {
+    "name": "poly1305_padded_32",
+    "is_hacl": false,
+    "size_bytes": 7819
+  },
+  {
+    "name": "poly1305_do_32",
+    "is_hacl": false,
+    "size_bytes": 2843
+  },
+  {
+    "name": "Hacl_AEAD_Chacha20Poly1305_encrypt",
+    "is_hacl": true,
+    "size_bytes": 297
+  },
+  {
+    "name": "Hacl_AEAD_Chacha20Poly1305_decrypt",
+    "is_hacl": true,
+    "size_bytes": 1229
+  },
+  {
+    "name": "Lib_Memzero0_memzero0",
+    "is_hacl": false,
+    "size_bytes": 92
+  },
+  {
+    "name": "alloca",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "heap_init",
+    "is_hacl": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "sbrk",
+    "is_hacl": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "sgx_spin_lock",
+    "is_hacl": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "sgx_spin_unlock",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "dispose_chunk",
+    "is_hacl": false,
+    "size_bytes": 2096
+  },
+  {
+    "name": "init_mparams.isra.0",
+    "is_hacl": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "dlmalloc",
+    "is_hacl": false,
+    "size_bytes": 6992
+  },
+  {
+    "name": "internal_memalign.constprop.0",
+    "is_hacl": false,
+    "size_bytes": 672
+  },
+  {
+    "name": "dlfree",
+    "is_hacl": false,
+    "size_bytes": 2816
+  },
+  {
+    "name": "calloc",
+    "is_hacl": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "dlrealloc",
+    "is_hacl": false,
+    "size_bytes": 1808
+  },
+  {
+    "name": "dlmemalign",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "dlposix_memalign",
+    "is_hacl": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "dlmallinfo",
+    "is_hacl": false,
+    "size_bytes": 448
+  },
+  {
+    "name": "__memcpy.part.0",
+    "is_hacl": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "__memcpy",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "memcpy_verw",
+    "is_hacl": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "copy_external_memory",
+    "is_hacl": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "memcpy_nochecks",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "memcpy",
+    "is_hacl": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "memset_verw",
+    "is_hacl": false,
+    "size_bytes": 256
+  },
+  {
+    "name": "memset",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "memset_s",
+    "is_hacl": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "memset_verw_s",
+    "is_hacl": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "sgx_init_string_lib",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "__stack_chk_fail",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "__stack_chk_fail_local",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "__intel_security_check_cookie",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "sgx_thread_spin_init",
+    "is_hacl": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "sgx_thread_spin_destroy",
+    "is_hacl": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "sgx_thread_spin_trylock",
+    "is_hacl": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "sgx_thread_spin_unlock",
+    "is_hacl": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "memcpy_s",
+    "is_hacl": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "memcpy_verw_s",
+    "is_hacl": false,
+    "size_bytes": 114
+  },
+  {
+    "name": "setjmp",
+    "is_hacl": false,
+    "size_bytes": 139
+  },
+  {
+    "name": ".crash",
+    "is_hacl": false,
+    "size_bytes": 2
+  },
+  {
+    "name": "longjmp",
+    "is_hacl": false,
+    "size_bytes": 177
+  },
+  {
+    "name": "rsrv_mem_init",
+    "is_hacl": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "__errno_location",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "__memcpy_verw",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "__memcpy_8a",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "__memset",
+    "is_hacl": false,
+    "size_bytes": 78
+  },
+  {
+    "name": "L1",
+    "is_hacl": false,
+    "size_bytes": 18
+  },
+  {
+    "name": "sgx_init_crypto_lib",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "init_ipp_cpuid",
+    "is_hacl": false,
+    "size_bytes": 592
+  },
+  {
+    "name": "sgx_create_report",
+    "is_hacl": false,
+    "size_bytes": 400
+  },
+  {
+    "name": "sgx_self_report",
+    "is_hacl": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "init_enclave",
+    "is_hacl": false,
+    "size_bytes": 832
+  },
+  {
+    "name": "do_init_enclave",
+    "is_hacl": false,
+    "size_bytes": 416
+  },
+  {
+    "name": "sgx_is_enclave_crashed",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "enter_enclave",
+    "is_hacl": false,
+    "size_bytes": 433
+  },
+  {
+    "name": "restore_xregs",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "save_xregs",
+    "is_hacl": false,
+    "size_bytes": 49
+  },
+  {
+    "name": "__x86_return_thunk",
+    "is_hacl": false,
+    "size_bytes": 1
+  },
+  {
+    "name": "__x86_indirect_thunk_rax",
+    "is_hacl": false,
+    "size_bytes": 2
+  },
+  {
+    "name": "__x86_indirect_thunk_rbx",
+    "is_hacl": false,
+    "size_bytes": 2
+  },
+  {
+    "name": "__x86_indirect_thunk_rcx",
+    "is_hacl": false,
+    "size_bytes": 2
+  },
+  {
+    "name": "__x86_indirect_thunk_rdx",
+    "is_hacl": false,
+    "size_bytes": 2
+  },
+  {
+    "name": "__x86_indirect_thunk_rbp",
+    "is_hacl": false,
+    "size_bytes": 2
+  },
+  {
+    "name": "__x86_indirect_thunk_rsi",
+    "is_hacl": false,
+    "size_bytes": 2
+  },
+  {
+    "name": "__x86_indirect_thunk_rdi",
+    "is_hacl": false,
+    "size_bytes": 2
+  },
+  {
+    "name": "__x86_indirect_thunk_r8",
+    "is_hacl": false,
+    "size_bytes": 3
+  },
+  {
+    "name": "__x86_indirect_thunk_r9",
+    "is_hacl": false,
+    "size_bytes": 3
+  },
+  {
+    "name": "__x86_indirect_thunk_r10",
+    "is_hacl": false,
+    "size_bytes": 3
+  },
+  {
+    "name": "__x86_indirect_thunk_r11",
+    "is_hacl": false,
+    "size_bytes": 3
+  },
+  {
+    "name": "__x86_indirect_thunk_r12",
+    "is_hacl": false,
+    "size_bytes": 3
+  },
+  {
+    "name": "__x86_indirect_thunk_r13",
+    "is_hacl": false,
+    "size_bytes": 3
+  },
+  {
+    "name": "__x86_indirect_thunk_r14",
+    "is_hacl": false,
+    "size_bytes": 3
+  },
+  {
+    "name": "__x86_indirect_thunk_r15",
+    "is_hacl": false,
+    "size_bytes": 202
+  },
+  {
+    "name": "constant_time_apply_sgxstep_mitigation_and_continue_execution",
+    "is_hacl": false,
+    "size_bytes": 418
+  },
+  {
+    "name": ".restore_flags",
+    "is_hacl": false,
+    "size_bytes": 94
+  },
+  {
+    "name": ".ct_enable_aexnotify",
+    "is_hacl": false,
+    "size_bytes": 11
+  },
+  {
+    "name": "__ct_mitigation_begin",
+    "is_hacl": false,
+    "size_bytes": 3
+  },
+  {
+    "name": ".ct_check_write",
+    "is_hacl": false,
+    "size_bytes": 20
+  },
+  {
+    "name": ".ct_clear_low_bits_of_rdx",
+    "is_hacl": false,
+    "size_bytes": 15
+  },
+  {
+    "name": ".ct_check_execute",
+    "is_hacl": false,
+    "size_bytes": 15
+  },
+  {
+    "name": ".ct_warm_caches_and_tlbs",
+    "is_hacl": false,
+    "size_bytes": 21
+  },
+  {
+    "name": ".ct_restore_state",
+    "is_hacl": false,
+    "size_bytes": 147
+  },
+  {
+    "name": ".ct_restore_rcx",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "__ct_mitigation_end",
+    "is_hacl": false,
+    "size_bytes": 7
+  },
+  {
+    "name": "__ct_mitigation_ret",
+    "is_hacl": false,
+    "size_bytes": 1
+  },
+  {
+    "name": "get_enclave_base",
+    "is_hacl": false,
+    "size_bytes": 12
+  },
+  {
+    "name": "get_enclave_state",
+    "is_hacl": false,
+    "size_bytes": 17
+  },
+  {
+    "name": "set_enclave_state",
+    "is_hacl": false,
+    "size_bytes": 14
+  },
+  {
+    "name": "lock_enclave",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "get_thread_data",
+    "is_hacl": false,
+    "size_bytes": 14
+  },
+  {
+    "name": "get_stack_guard",
+    "is_hacl": false,
+    "size_bytes": 14
+  },
+  {
+    "name": "enclave_entry",
+    "is_hacl": false,
+    "size_bytes": 327
+  },
+  {
+    "name": "do_ocall",
+    "is_hacl": false,
+    "size_bytes": 313
+  },
+  {
+    "name": "__morestack",
+    "is_hacl": false,
+    "size_bytes": 19
+  },
+  {
+    "name": "asm_oret",
+    "is_hacl": false,
+    "size_bytes": 110
+  },
+  {
+    "name": "do_egetkey",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "do_ereport",
+    "is_hacl": false,
+    "size_bytes": 21
+  },
+  {
+    "name": "Lereport_inst",
+    "is_hacl": false,
+    "size_bytes": 10
+  },
+  {
+    "name": "do_everifyreport2",
+    "is_hacl": false,
+    "size_bytes": 20
+  },
+  {
+    "name": "Leverifyreport2_inst",
+    "is_hacl": false,
+    "size_bytes": 12
+  },
+  {
+    "name": "do_eaccept",
+    "is_hacl": false,
+    "size_bytes": 30
+  },
+  {
+    "name": "do_eacceptcopy",
+    "is_hacl": false,
+    "size_bytes": 30
+  },
+  {
+    "name": "do_emodpe",
+    "is_hacl": false,
+    "size_bytes": 25
+  },
+  {
+    "name": "do_rdrand",
+    "is_hacl": false,
+    "size_bytes": 35
+  },
+  {
+    "name": "abort",
+    "is_hacl": false,
+    "size_bytes": 19
+  },
+  {
+    "name": "continue_execution",
+    "is_hacl": false,
+    "size_bytes": 102
+  },
+  {
+    "name": "second_phase",
+    "is_hacl": false,
+    "size_bytes": 1104
+  },
+  {
+    "name": "g_dyn_entry_table",
+    "is_hacl": false,
+    "size_bytes": 352
+  },
+  {
+    "name": "Hacl_Hash_SHA2_h224",
+    "is_hacl": true,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_Hash_SHA2_h256",
+    "is_hacl": true,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_Hash_SHA2_h384",
+    "is_hacl": true,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_SHA2_h512",
+    "is_hacl": true,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_SHA2_k224_256",
+    "is_hacl": true,
+    "size_bytes": 256
+  },
+  {
+    "name": "Hacl_Hash_SHA2_k384_512",
+    "is_hacl": true,
+    "size_bytes": 928
+  },
+  {
+    "name": "Hacl_Hash_SHA2_h224",
+    "is_hacl": true,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_Hash_SHA2_h256",
+    "is_hacl": true,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_Hash_SHA2_h384",
+    "is_hacl": true,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_SHA2_h512",
+    "is_hacl": true,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_SHA2_k224_256",
+    "is_hacl": true,
+    "size_bytes": 256
+  },
+  {
+    "name": "Hacl_Hash_SHA2_k384_512",
+    "is_hacl": true,
+    "size_bytes": 800
+  },
+  {
+    "name": "Hacl_Hash_SHA3_keccak_rotc",
+    "is_hacl": true,
+    "size_bytes": 96
+  },
+  {
+    "name": "Hacl_Hash_SHA3_keccak_piln",
+    "is_hacl": true,
+    "size_bytes": 96
+  },
+  {
+    "name": "Hacl_Hash_SHA3_keccak_rndc",
+    "is_hacl": true,
+    "size_bytes": 384
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_sigmaTable",
+    "is_hacl": true,
+    "size_bytes": 640
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_ivTable_S",
+    "is_hacl": true,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_ivTable_B",
+    "is_hacl": true,
+    "size_bytes": 224
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_sigmaTable",
+    "is_hacl": true,
+    "size_bytes": 640
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_ivTable_S",
+    "is_hacl": true,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_ivTable_B",
+    "is_hacl": true,
+    "size_bytes": 208
+  },
+  {
+    "name": "Hacl_Impl_Chacha20_Vec_chacha20_constants",
+    "is_hacl": true,
+    "size_bytes": 16
+  },
+  {
+    "name": "chacha20_constants",
+    "is_hacl": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "g_global_data",
+    "is_hacl": false,
+    "size_bytes": 1792
+  },
+  {
+    "name": "SYNTHETIC_STATE",
+    "is_hacl": false,
+    "size_bytes": 576
+  },
+  {
+    "name": "__GNU_EH_FRAME_HDR",
+    "is_hacl": false,
+    "size_bytes": 4624
+  },
+  {
+    "name": ".eh_frame",
+    "is_hacl": false,
+    "size_bytes": 27856
+  },
+  {
+    "name": ".fini_array",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "g_ecall_table",
+    "is_hacl": false,
+    "size_bytes": 72
+  },
+  {
+    "name": "__intel_security_cookie",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "g_cpu_core_num",
+    "is_hacl": false,
+    "size_bytes": 4
+  },
+  {
+    "name": "g_aexnotify_supported",
+    "is_hacl": false,
+    "size_bytes": 4
+  },
+  {
+    "name": "g_enclave_size",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "g_enclave_base",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "g_sdk_version",
+    "is_hacl": false,
+    "size_bytes": 4
+  },
+  {
+    "name": "EDMM_supported",
+    "is_hacl": false,
+    "size_bytes": 4
+  },
+  {
+    "name": "g_cpu_feature_indicator",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "heap_min_size",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "is_edmm_supported",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "heap_size",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "heap_base",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "__memset_vp",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "rsrv_mem_min_size",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "rsrv_mem_size",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "rsrv_mem_base",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "_DYNAMIC",
+    "is_hacl": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "_GLOBAL_OFFSET_TABLE_",
+    "is_hacl": false,
+    "size_bytes": 72
+  },
+  {
+    "name": "super_secret_constant",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "AEAD_key",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "extension_2op_table",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "extended",
+    "is_hacl": false,
+    "size_bytes": 256
+  },
+  {
+    "name": "standard",
+    "is_hacl": false,
+    "size_bytes": 256
+  },
+  {
+    "name": "_ZL16g_is_first_ecall",
+    "is_hacl": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "sgx_trts_version",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "__dso_handle",
+    "is_hacl": false,
+    "size_bytes": 3440
+  },
+  {
+    "name": "aex_notify_c3_cache",
+    "is_hacl": false,
+    "size_bytes": 4096
+  },
+  {
+    "name": "g_user_ema_root",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "user_ema_guard",
+    "is_hacl": false,
+    "size_bytes": 72
+  },
+  {
+    "name": "g_rts_ema_root",
+    "is_hacl": false,
+    "size_bytes": 24
+  },
+  {
+    "name": "rts_ema_guard",
+    "is_hacl": false,
+    "size_bytes": 72
+  },
+  {
+    "name": "reserve_size_increment",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "size_mask",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "header_size",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "_h0",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "_t",
+    "is_hacl": false,
+    "size_bytes": 256
+  },
+  {
+    "name": "_h0",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "sgx_tstdc_version",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "sgx_tcrypto_version",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "sgx_tservice_version",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "g_enclave_state",
+    "is_hacl": false,
+    "size_bytes": 4
+  },
+  {
+    "name": "g_xsave_enabled",
+    "is_hacl": false,
+    "size_bytes": 28
+  },
+  {
+    "name": "stderr",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "g_uninit_flag",
+    "is_hacl": false,
+    "size_bytes": 4
+  },
+  {
+    "name": "_ZL10g_ife_lock",
+    "is_hacl": false,
+    "size_bytes": 4
+  },
+  {
+    "name": "_ZL12g_tcs_cookie",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "_ZL10g_tcs_node",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "g_mm_pfhandler",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "_ZL12g_veh_cookie",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "_ZL14g_handler_lock",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "_ZL12g_first_node",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "g_exit_function_cookie",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "g_exit_function_lock",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "g_exit_function",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "adding_reserve",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "reserve_list",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "large_block_list",
+    "is_hacl": false,
+    "size_bytes": 24
+  },
+  {
+    "name": "exact_block_list",
+    "is_hacl": false,
+    "size_bytes": 2048
+  },
+  {
+    "name": "meta_used",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "meta_reserve",
+    "is_hacl": false,
+    "size_bytes": 65536
+  },
+  {
+    "name": "mm_user_end",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "mm_user_base",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "mm_lock",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "heap_used.0",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "g_peak_heap_used",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "_gm_",
+    "is_hacl": false,
+    "size_bytes": 960
+  },
+  {
+    "name": "mparams",
+    "is_hacl": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "malloc_global_mutex",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "g_peak_rsrv_mem_committed",
+    "is_hacl": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "_ZZ15sgx_self_reportE11report_lock",
+    "is_hacl": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "_ZZ15sgx_self_reportE7_report",
+    "is_hacl": false,
+    "size_bytes": 18446744073708552288
+  },
+  {
+    "name": ".comment",
+    "is_hacl": false,
+    "size_bytes": 0
+  },
+  {
+    "name": ".note.sgxmeta",
+    "is_hacl": false,
+    "size_bytes": 0
+  },
+  {
+    "name": ".debug_aranges",
+    "is_hacl": false,
+    "size_bytes": 0
+  },
+  {
+    "name": ".debug_info",
+    "is_hacl": false,
+    "size_bytes": 0
+  },
+  {
+    "name": ".debug_abbrev",
+    "is_hacl": false,
+    "size_bytes": 0
+  },
+  {
+    "name": ".debug_line",
+    "is_hacl": false,
+    "size_bytes": 0
+  },
+  {
+    "name": ".debug_str",
+    "is_hacl": false,
+    "size_bytes": 0
+  },
+  {
+    "name": ".debug_line_str",
+    "is_hacl": false,
+    "size_bytes": 0
+  },
+  {
+    "name": ".debug_loclists",
+    "is_hacl": false,
+    "size_bytes": 1
+  }
+]
