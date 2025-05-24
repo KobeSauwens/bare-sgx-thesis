@@ -10,7 +10,7 @@ map_rips
 run
 
 analyze_text_section
-
+sdk_enlave_dump.txt
 
 # Ignore .vscode folder
 *.vscode
