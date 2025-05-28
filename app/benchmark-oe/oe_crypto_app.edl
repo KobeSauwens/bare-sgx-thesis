@@ -1,0 +1,17 @@
+// Copyright (c) Open Enclave SDK contributors.
+// Licensed under the MIT License.
+
+enclave {
+    from "openenclave/edl/syscall.edl" import *;
+    from "platform.edl" import *;
+
+
+    trusted {
+        public int oe_encl_op_hmac ([out,size=32] uint8_t *digest, [in,size=data_len] uint8_t *data, uint32_t data_len);
+    };
+
+    untrusted {
+    };
+};
+
+
