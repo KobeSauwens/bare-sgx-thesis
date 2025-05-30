@@ -8,9 +8,17 @@
 // sdk tool oeedger8r against the oe-crypto-app.edl file.
 #include "oe_crypto_app_t.h"
 #include "dist/portable-gcc-compatible/Hacl_HMAC.h"
+#include "dist/portable-gcc-compatible/Hacl_AEAD_Chacha20Poly1305.h"
 
 #define KEY_LEN 16  // 128 bits
 #define TAG_LEN 32  // 256 bits
+
+uint8_t AEAD_key[32] = {
+0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
+0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F,
+0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
+0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F
+};
 
 // This is the function that the host calls. It prints
 // a message in the enclave before calling back out to
@@ -22,5 +30,33 @@ int oe_encl_op_hmac(uint8_t *digest, uint8_t *data, uint32_t data_len)
         0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F
     };
     Hacl_HMAC_compute_sha2_256(digest, key, KEY_LEN, data, data_len);
+    return 1;
+}
+
+int oe_encl_op_chacha20poly1305_enc(uint8_t *ciphertext,
+                             uint8_t *tag, 
+                             uint8_t *plaintext, 
+                             uint32_t pt_len, 
+                             uint8_t *aad, 
+                             uint32_t aad_len, 
+                             uint8_t *nonce)
+{
+    // Perform encryption
+    Hacl_AEAD_Chacha20Poly1305_encrypt(ciphertext, tag, plaintext, pt_len, aad, aad_len, AEAD_key, nonce);
+
+    return 1;
+}
+
+int oe_encl_op_chacha20poly1305_dec(uint8_t *ciphertext,
+                             uint8_t *tag, 
+                             uint8_t *plaintext, 
+                             uint32_t pt_len, 
+                             uint8_t *aad, 
+                             uint32_t aad_len, 
+                             uint8_t *nonce)
+{
+    // Perform encryption
+    Hacl_AEAD_Chacha20Poly1305_decrypt(plaintext, ciphertext, pt_len, aad, aad_len, AEAD_key, nonce, tag);
+
     return 1;
 }

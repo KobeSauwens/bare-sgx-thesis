@@ -1,0 +1,33 @@
+enclave {
+	trusted {
+        /* define ECALLs here. */
+        
+        public void encl_HMAC([out, size=32] uint8_t* digest, 
+                                [in,size=message_len] uint8_t* message,
+                                uint32_t message_len);
+        
+        public void encl_AEAD_enc(
+                                [out,size=plaintext_len] uint8_t *ciphertext,
+                                [out, size=32]           uint8_t *tag,
+                                [in, size=plaintext_len] uint8_t *plaintext,
+                                                         uint32_t plaintext_len,
+                                [in, size=data_len]  uint8_t *data,
+                                                         uint32_t data_len,
+                                [in, size=12]            uint8_t *nonce
+                                );
+
+        public void encl_AEAD_dec([out, size=ciphertext_len] uint8_t *plaintext,
+                                [in, size=ciphertext_len]    uint8_t *ciphertext,
+                                                            uint32_t ciphertext_len,
+                                [in, size=data_len]     uint8_t *data,
+                                                            uint32_t data_len,
+                                [in, size=12]               uint8_t *nonce,
+                                [in, size=32]               uint8_t *tag
+                                );
+        
+        };
+	
+	//untrusted {
+        /* define OCALLs here. */
+	//};
+};

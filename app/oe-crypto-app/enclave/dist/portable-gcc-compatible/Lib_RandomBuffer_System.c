@@ -36,10 +36,10 @@ bool read_random_bytes(uint32_t len, uint8_t *buf) {
 
 bool read_random_bytes(uint32_t len, uint8_t *buf) {
 #ifdef SYS_getrandom
-  ssize_t res = syscall(SYS_getrandom, buf, (size_t)len, 0);
-  if (res == -1) {
-    return false;
-  }
+  //ssize_t res = syscall(SYS_getrandom, buf, (size_t)len, 0);
+  //if (res == -1) {
+  return false;
+  //}
 #else // !defined(SYS_getrandom)
   int fd = open("/dev/urandom", O_RDONLY);
   if (fd == -1) {
@@ -48,7 +48,7 @@ bool read_random_bytes(uint32_t len, uint8_t *buf) {
   ssize_t res = read(fd, buf, (uint64_t)len);
   close(fd);
 #endif // defined(SYS_getrandom)
-  return ((size_t)res == (size_t)len);
+  //return ((size_t)res == (size_t)len);
 }
 
 #endif

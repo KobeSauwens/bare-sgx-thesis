@@ -7,7 +7,7 @@ INCLUDE       = -I$(SGX_SDK)/include/ -I$(SGX_SDK)/include/tlibc
 T_CFLAGS	  = $(CFLAGS) -nostdinc -fvisibility=hidden -fpie -fstack-protector -g -Os
 U_CFLAGS	  = $(CFLAGS) -nostdinc -fvisibility=hidden -fpie -fstack-protector -g
 AR_FLAGS	  = rcs
-OBJECTS		  = encl.o hacl-hmac.o
+OBJECTS		  = encl.o #hacl-hmac.o
 LIB_SGX_TRTS      = -lsgx_trts
 LIB_SGX_TSERVICE  = -lsgx_tservice
 
@@ -48,8 +48,8 @@ $(OUTPUT_U) : $(UNTRUSTED_OBJECTS)
 	echo "$(INDENT)[AR]  " $(OUTPUT_U)
 	$(AR) $(AR_FLAGS) $(OUTPUT_U) $(UNTRUSTED_OBJECTS) 
 
-hacl-hmac.o: hacl-c/Hacl_HMAC_SHA2_256.c
-	$(CC) -c $(CFLAGS) -o $@ $<
+#hacl-hmac.o: hacl-c/Hacl_HMAC_SHA2_256.c
+#	$(CC) -c $(CFLAGS) -o $@ $<
 	
 %_t.o : $(subst .o,.c,$@) edger
 	echo "$(INDENT)[CC] " $(subst .o,.c,$@) "(trusted edge)"

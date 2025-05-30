@@ -23,7 +23,7 @@ ifeq ($(OE_CRYPTO_LIB),openssl_3)
   CFLAGS=$(shell pkg-config oeenclave-$(COMPILER) --variable=${OE_CRYPTO_LIB}flags)
 else
   CFLAGS=$(shell pkg-config oeenclave-$(COMPILER) --cflags) -Idist/portable-gcc-compatible/ \
-	-Idist/karamel/include -Idist/karamel/krmllib/dist/minimal
+	-Idist/karamel/include -Idist/karamel/krmllib/dist/minimal -Os
 endif
 LDFLAGS=$(shell pkg-config oeenclave-$(COMPILER) --libs) -L$(HACL_STAR_DIR) -levercrypt
 INCDIR=$(shell pkg-config oeenclave-$(COMPILER) --variable=includedir)

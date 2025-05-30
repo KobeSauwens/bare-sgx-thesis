@@ -27,7 +27,7 @@ ifeq ($(UNAME),Darwin)
   VARIANT	= -darwin
   SO		= so
 else ifeq ($(UNAME),Linux)
-  CFLAGS	+= -fPIC -ffreestanding -nostdlib -fno-builtin -fno-stack-protector -D_FORTIFY_SOURCE=0-fno-stack-protector -DLINUX_NO_EXPLICIT_BZERO -USYS_getrandom
+  CFLAGS	+= -fPIC -ffreestanding -nostdlib -fno-builtin -fno-stack-protector -D_FORTIFY_SOURCE=0 -DLINUX_NO_EXPLICIT_BZERO
   VARIANT	= -linux
   SO 		= so
 else ifeq ($(OS),Windows_NT)
@@ -43,7 +43,13 @@ else ifeq ($(UNAME),FreeBSD)
   SO 		= so
 endif
 
-OBJS 		+= $(patsubst %.S,%.o,$(wildcard *-$(MARCH)$(VARIANT).S))
+UNWANTED_ASM_OBJS := aesgcm-x86_64-linux.o cpuid-x86_64-linux.o curve25519-x86_64-linux.o
+
+ASM_OBJS := $(patsubst %.S,%.o,$(wildcard *-$(MARCH)$(VARIANT).S))
+ASM_OBJS := $(filter-out $(UNWANTED_ASM_OBJS),$(ASM_OBJS))
+
+OBJS += $(ASM_OBJS)
+
 
 include Makefile.basic
 

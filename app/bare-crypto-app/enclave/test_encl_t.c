@@ -262,12 +262,6 @@ static sgx_status_t SGX_CDECL sgx_encl_AEAD_enc(void* pms)
 			goto err;
 		}
 	}
-	if (_in_data) {
-		if (memcpy_verw_s(_tmp_data, _len_data, _in_data, _len_data)) {
-			status = SGX_ERROR_UNEXPECTED;
-			goto err;
-		}
-	}
 
 err:
 	if (_in_ciphertext) free(_in_ciphertext);
@@ -412,12 +406,6 @@ static sgx_status_t SGX_CDECL sgx_encl_AEAD_dec(void* pms)
 			goto err;
 		}
 	}
-	if (_in_data) {
-		if (memcpy_verw_s(_tmp_data, _len_data, _in_data, _len_data)) {
-			status = SGX_ERROR_UNEXPECTED;
-			goto err;
-		}
-	}
 
 err:
 	if (_in_plaintext) free(_in_plaintext);
@@ -428,15 +416,24 @@ err:
 	return status;
 }
 
+static sgx_status_t SGX_CDECL sgx_encl_return(void* pms)
+{
+	sgx_status_t status = SGX_SUCCESS;
+	if (pms != NULL) return SGX_ERROR_INVALID_PARAMETER;
+	encl_return();
+	return status;
+}
+
 SGX_EXTERNC const struct {
 	size_t nr_ecall;
-	struct {void* ecall_addr; uint8_t is_priv; uint8_t is_switchless;} ecall_table[3];
+	struct {void* ecall_addr; uint8_t is_priv; uint8_t is_switchless;} ecall_table[4];
 } g_ecall_table = {
-	3,
+	4,
 	{
 		{(void*)(uintptr_t)sgx_encl_HMAC, 0, 0},
 		{(void*)(uintptr_t)sgx_encl_AEAD_enc, 0, 0},
 		{(void*)(uintptr_t)sgx_encl_AEAD_dec, 0, 0},
+		{(void*)(uintptr_t)sgx_encl_return, 0, 0},
 	}
 };
 

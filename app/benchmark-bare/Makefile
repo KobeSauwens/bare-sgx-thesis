@@ -4,18 +4,18 @@ LIBSGXSTEP			= $(LIBSGXSTEP_DIR)/libsgxstep
 LIBSGXSTEP_SILEN 	= 1
 
 BARESGX         = ../../urts/
-ENCLAVE         = enclave
+ENCLAVE         = enclave_crypto/
 
 SUBDIRS         = $(ENCLAVE) $(BARESGX) $(LIBSGXSTEP)
 
 CC              := gcc
 LD              := gcc
-INCLUDE         := -I$(BARESGX)/include/ -I$(LIBSGXSTEP_DIR)
-CFLAGS          := -Wall -Werror -g -fPIC $(CFLAGS)
+INCLUDE         := -I$(BARESGX)/include/ -I$(LIBSGXSTEP_DIR) -I../../trts/bare-trts/
+CFLAGS          := -Wall  -g -fPIC $(CFLAGS) -Os
 LDFLAGS         := -z noexecstack -lbaresgx-urts -lsgx-step -L$(BARESGX) -L$(LIBSGXSTEP) -lcrypto -lelf
 
 SOURCES         = $(shell ls *.c)
-OBJECTS         = $(SOURCES:.c=.o)
+OBJECTS         = $(SOURCES:.c=.o) $(ENCLAVE)test_encl_u.o
 OUTPUT          = app
 
 BUILDDIRS       = $(SUBDIRS:%=build-%)

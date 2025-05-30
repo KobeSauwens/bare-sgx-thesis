@@ -16,7 +16,7 @@ CFLAGS                  := -Wall -g -fPIC
 LDFLAGS                 := -z noexecstack -pthread -lbaresgx-urts -lsgx-step -L$(BARESGX) -L$(LIBSGXSTEP) -lcrypto -lelf
 
 SOURCES                 = $(shell ls *.c)
-OBJECTS                 = $(SOURCES:.c=.o)
+OBJECTS                 = $(SOURCES:.c=.o) $(ENCLAVE)test_encl_u.o
 OUTPUT                  = app
 
 BUILDDIRS               = $(SUBDIRS:%=build-%)

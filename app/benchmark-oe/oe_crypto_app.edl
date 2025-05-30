@@ -8,6 +8,19 @@ enclave {
 
     trusted {
         public int oe_encl_op_hmac ([out,size=32] uint8_t *digest, [in,size=data_len] uint8_t *data, uint32_t data_len);
+
+        public int oe_encl_op_chacha20poly1305_enc([out,size=pt_len] uint8_t  *ciphertext,
+                                                [out,size=32] uint8_t *tag, 
+                                                [in,size=pt_len] uint8_t *plaintext, uint32_t pt_len, 
+                                                [in,size=aad_len] uint8_t *aad, uint32_t aad_len, 
+                                                [in,size=12] uint8_t *nonce);
+                                                
+        public int oe_encl_op_chacha20poly1305_dec([in,size=pt_len] uint8_t  *ciphertext, 
+                                                [in,size=32] uint8_t *tag, 
+                                                [out,size=pt_len] uint8_t *plaintext, uint32_t pt_len, 
+                                                [in,size=aad_len] uint8_t *aad, uint32_t aad_len, 
+                                                [in,size=12] uint8_t *nonce);
+        public void oe_encl_op_return();
     };
 
     untrusted {

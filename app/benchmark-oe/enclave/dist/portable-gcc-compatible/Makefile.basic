@@ -23,10 +23,12 @@ CFLAGS 	+= -fPIC
 endif
 CFLAGS 	+= $(USER_CFLAGS)
 
-SOURCES += $(ALL_C_FILES) $(USER_C_FILES)
-ifneq (,$(BLACKLIST))
-  SOURCES := $(filter-out $(BLACKLIST),$(SOURCES))
+ifeq ($(USE_MANUAL_SOURCES),yes)
+  $(info Using manually specified SOURCES)
+else
+  SOURCES += $(ALL_C_FILES) $(USER_C_FILES)
 endif
+
 OBJS 	+= $(patsubst %.c,%.o,$(SOURCES))
 
 all: $(USER_TARGET)

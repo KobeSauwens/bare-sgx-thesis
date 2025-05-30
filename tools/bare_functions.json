@@ -1,0 +1,1238 @@
+[
+  {
+    "name": "malloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 318
+  },
+  {
+    "name": "free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 97
+  },
+  {
+    "name": "xPortGetFreeHeapSize",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 12
+  },
+  {
+    "name": "vPortInitialiseBlocks",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 5
+  },
+  {
+    "name": "calloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 58
+  },
+  {
+    "name": "vPortHeapResetState",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 23
+  },
+  {
+    "name": "get_enclave_base",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "get_enclave_size",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "encl_entry",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 37
+  },
+  {
+    "name": "__enclave_size",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 8
+  },
+  {
+    "name": "exit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 6
+  },
+  {
+    "name": "fprintf",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 7
+  },
+  {
+    "name": "printf",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 7
+  },
+  {
+    "name": "encl_HMAC",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 61
+  },
+  {
+    "name": "encl_AEAD_enc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 27
+  },
+  {
+    "name": "encl_AEAD_dec",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 28
+  },
+  {
+    "name": "encl_body",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 39
+  },
+  {
+    "name": "memcpy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 28
+  },
+  {
+    "name": "memcpy_s",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 18
+  },
+  {
+    "name": "memcpy_verw_s",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 18
+  },
+  {
+    "name": "memset",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 24
+  },
+  {
+    "name": "sgx_is_outside_enclave",
+    "is_hacl": false,
+    "is_edger8r": true,
+    "size_bytes": 89
+  },
+  {
+    "name": "sgx_is_within_enclave",
+    "is_hacl": false,
+    "is_edger8r": true,
+    "size_bytes": 91
+  },
+  {
+    "name": "panic",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 7
+  },
+  {
+    "name": "assert_inside_enclave",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 19
+  },
+  {
+    "name": "sgx_encl_AEAD_dec",
+    "is_hacl": false,
+    "is_edger8r": true,
+    "size_bytes": 904
+  },
+  {
+    "name": "sgx_encl_AEAD_enc",
+    "is_hacl": false,
+    "is_edger8r": true,
+    "size_bytes": 936
+  },
+  {
+    "name": "sgx_encl_HMAC",
+    "is_hacl": false,
+    "is_edger8r": true,
+    "size_bytes": 397
+  },
+  {
+    "name": "Hacl_HMAC_compute_md5",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 608
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha1",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 624
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha2_224",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 640
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha2_256",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 640
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha2_384",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 912
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha2_512",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 912
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha3_224",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1424
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha3_256",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1424
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha3_384",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1280
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha3_512",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1216
+  },
+  {
+    "name": "Hacl_HMAC_compute_blake2s_32",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1088
+  },
+  {
+    "name": "Hacl_HMAC_compute_blake2b_32",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1200
+  },
+  {
+    "name": "Hacl_Hash_MD5_init",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_MD5_finish",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "Hacl_Hash_MD5_update_multi",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 5872
+  },
+  {
+    "name": "Hacl_Hash_MD5_update_last",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 480
+  },
+  {
+    "name": "Hacl_Hash_MD5_hash_oneshot",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 176
+  },
+  {
+    "name": "Hacl_Hash_MD5_malloc",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "Hacl_Hash_MD5_reset",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_MD5_update",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 528
+  },
+  {
+    "name": "Hacl_Hash_MD5_digest",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "Hacl_Hash_MD5_free",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "Hacl_Hash_MD5_copy",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "Hacl_Hash_MD5_hash",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "update",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 432
+  },
+  {
+    "name": "Hacl_Hash_SHA1_init",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_Hash_SHA1_finish",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "Hacl_Hash_SHA1_update_multi",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "Hacl_Hash_SHA1_update_last",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 480
+  },
+  {
+    "name": "Hacl_Hash_SHA1_hash_oneshot",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 176
+  },
+  {
+    "name": "Hacl_Hash_SHA1_malloc",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "Hacl_Hash_SHA1_reset",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_SHA1_update",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 528
+  },
+  {
+    "name": "Hacl_Hash_SHA1_digest",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "Hacl_Hash_SHA1_free",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "Hacl_Hash_SHA1_copy",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "Hacl_Hash_SHA1_hash",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "sha256_update",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 11104
+  },
+  {
+    "name": "sha512_update",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16048
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha256_init",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha256_update_nblocks",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha256_update_last",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha256_finish",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha224_init",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha224_update_nblocks",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha224_update_last",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha224_finish",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha512_init",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha512_update_nblocks",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha512_update_last",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 400
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha512_finish",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha384_init",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha384_update_nblocks",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha384_update_last",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha384_finish",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "Hacl_Hash_SHA2_malloc_256",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "Hacl_Hash_SHA2_copy_256",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "Hacl_Hash_SHA2_reset_256",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_SHA2_update_256",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 512
+  },
+  {
+    "name": "Hacl_Hash_SHA2_digest_256",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 176
+  },
+  {
+    "name": "Hacl_Hash_SHA2_free_256",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "Hacl_Hash_SHA2_hash_256",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "Hacl_Hash_SHA2_malloc_224",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "Hacl_Hash_SHA2_reset_224",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_SHA2_update_224",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 512
+  },
+  {
+    "name": "Hacl_Hash_SHA2_digest_224",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 176
+  },
+  {
+    "name": "Hacl_Hash_SHA2_free_224",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_SHA2_hash_224",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "Hacl_Hash_SHA2_malloc_512",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "Hacl_Hash_SHA2_copy_512",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "Hacl_Hash_SHA2_reset_512",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_SHA2_update_512",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 528
+  },
+  {
+    "name": "Hacl_Hash_SHA2_digest_512",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "Hacl_Hash_SHA2_free_512",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "Hacl_Hash_SHA2_hash_512",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "Hacl_Hash_SHA2_malloc_384",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "Hacl_Hash_SHA2_reset_384",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_SHA2_update_384",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 528
+  },
+  {
+    "name": "Hacl_Hash_SHA2_digest_384",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "Hacl_Hash_SHA2_free_384",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_SHA2_hash_384",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "absorb_inner_32",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 2752
+  },
+  {
+    "name": "squeeze",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 2384
+  },
+  {
+    "name": "block_len.part.0",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "hash_len.part.0",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_SHA3_init_",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_Hash_SHA3_update_multi_sha3",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "Hacl_Hash_SHA3_update_last_sha3",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 3536
+  },
+  {
+    "name": "digest_",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "Hacl_Hash_SHA3_get_alg",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_SHA3_malloc",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "Hacl_Hash_SHA3_free",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "Hacl_Hash_SHA3_copy",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "Hacl_Hash_SHA3_reset",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_SHA3_update",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 688
+  },
+  {
+    "name": "Hacl_Hash_SHA3_digest",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "Hacl_Hash_SHA3_squeeze",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "Hacl_Hash_SHA3_block_len",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "Hacl_Hash_SHA3_hash_len",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "Hacl_Hash_SHA3_is_shake",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_Hash_SHA3_absorb_inner_32",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 2752
+  },
+  {
+    "name": "Hacl_Hash_SHA3_shake128",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 4688
+  },
+  {
+    "name": "Hacl_Hash_SHA3_shake256",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 4736
+  },
+  {
+    "name": "Hacl_Hash_SHA3_sha3_224",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 2272
+  },
+  {
+    "name": "Hacl_Hash_SHA3_sha3_256",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 2272
+  },
+  {
+    "name": "Hacl_Hash_SHA3_sha3_384",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 2256
+  },
+  {
+    "name": "Hacl_Hash_SHA3_sha3_512",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 2256
+  },
+  {
+    "name": "Hacl_Hash_SHA3_state_malloc",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_Hash_SHA3_state_free",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_SHA3_shake128_absorb_nblocks",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "Hacl_Hash_SHA3_shake128_absorb_final",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1616
+  },
+  {
+    "name": "Hacl_Hash_SHA3_shake128_squeeze_nblocks",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 2032
+  },
+  {
+    "name": "update_block",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 6208
+  },
+  {
+    "name": "reset_raw",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 512
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_init",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_update_multi",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_update_last",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_finish",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_malloc_with_params_and_key",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 640
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_malloc_with_key",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_malloc",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_reset_with_key_and_params",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_reset_with_key",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_reset",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_update",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 864
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_digest",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 352
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_info",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_free",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_copy",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_hash_with_key",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 512
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_hash_with_key_and_params",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 832
+  },
+  {
+    "name": "update_block",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 8592
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_init",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 352
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_update_multi",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_update_last",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_finish",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_malloc_with_params_and_key",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 640
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_malloc_with_key",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_malloc",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_reset_with_key_and_params",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 544
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_reset_with_key",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 560
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_reset",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_update",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 880
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_digest",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_info",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_free",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_copy",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_hash_with_key",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 528
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_hash_with_key_and_params",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 960
+  },
+  {
+    "name": "FStar_UInt8_eq_mask",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "poly1305_padded_32",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1280
+  },
+  {
+    "name": "Hacl_AEAD_Chacha20Poly1305_encrypt",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 944
+  },
+  {
+    "name": "Hacl_AEAD_Chacha20Poly1305_decrypt",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1296
+  },
+  {
+    "name": "Lib_Memzero0_memzero0",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "double_round",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 464
+  },
+  {
+    "name": "chacha20_encrypt_block",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1280
+  },
+  {
+    "name": "Hacl_Impl_Chacha20_chacha20_init",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "Hacl_Impl_Chacha20_chacha20_update",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "Hacl_Chacha20_chacha20_encrypt",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "Hacl_Chacha20_chacha20_decrypt",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "poly1305_update",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1360
+  },
+  {
+    "name": "FStar_UInt64_gte_mask.constprop.0",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "FStar_UInt64_eq_mask.constprop.0",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_poly1305_init",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_poly1305_finish",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 496
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_malloc",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_reset",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_update",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1104
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_digest",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_free",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_mac",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 104
+  },
+  {
+    "name": "g_dyn_entry_table",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 296
+  },
+  {
+    "name": "CSWTCH.26",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "CSWTCH.24",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "Hacl_Hash_SHA3_keccak_rndc",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "Hacl_Hash_SHA3_keccak_piln",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "Hacl_Hash_SHA3_keccak_rotc",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "Hacl_Impl_Chacha20_Vec_chacha20_constants",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 2191
+  }
+]

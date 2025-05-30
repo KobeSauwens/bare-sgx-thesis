@@ -11,11 +11,14 @@ OE_EXTERNC_BEGIN
 enum
 {
     oe_crypto_app_fcn_id_oe_encl_op_hmac = 0,
-    oe_crypto_app_fcn_id_oe_get_sgx_report_ecall = 1,
-    oe_crypto_app_fcn_id_oe_get_report_v2_ecall = 2,
-    oe_crypto_app_fcn_id_oe_verify_local_report_ecall = 3,
-    oe_crypto_app_fcn_id_oe_sgx_init_context_switchless_ecall = 4,
-    oe_crypto_app_fcn_id_oe_sgx_switchless_enclave_worker_thread_ecall = 5,
+    oe_crypto_app_fcn_id_oe_encl_op_chacha20poly1305_enc = 1,
+    oe_crypto_app_fcn_id_oe_encl_op_chacha20poly1305_dec = 2,
+    oe_crypto_app_fcn_id_oe_encl_op_return = 3,
+    oe_crypto_app_fcn_id_oe_get_sgx_report_ecall = 4,
+    oe_crypto_app_fcn_id_oe_get_report_v2_ecall = 5,
+    oe_crypto_app_fcn_id_oe_verify_local_report_ecall = 6,
+    oe_crypto_app_fcn_id_oe_sgx_init_context_switchless_ecall = 7,
+    oe_crypto_app_fcn_id_oe_sgx_switchless_enclave_worker_thread_ecall = 8,
     oe_crypto_app_fcn_id_trusted_call_id_max = OE_ENUM_MAX
 };
 
@@ -23,6 +26,9 @@ enum
 static const oe_ecall_info_t _oe_crypto_app_ecall_info_table[] = 
 {
     { "oe_encl_op_hmac" },
+    { "oe_encl_op_chacha20poly1305_enc" },
+    { "oe_encl_op_chacha20poly1305_dec" },
+    { "oe_encl_op_return" },
     { "oe_get_sgx_report_ecall" },
     { "oe_get_report_v2_ecall" },
     { "oe_verify_local_report_ecall" },
@@ -41,6 +47,43 @@ typedef struct _oe_encl_op_hmac_args_t
     uint8_t* data;
     uint32_t data_len;
 } oe_encl_op_hmac_args_t;
+
+typedef struct _oe_encl_op_chacha20poly1305_enc_args_t
+{
+    oe_result_t oe_result;
+    uint8_t* deepcopy_out_buffer;
+    size_t deepcopy_out_buffer_size;
+    int oe_retval;
+    uint8_t* ciphertext;
+    uint8_t* tag;
+    uint8_t* plaintext;
+    uint32_t pt_len;
+    uint8_t* aad;
+    uint32_t aad_len;
+    uint8_t* nonce;
+} oe_encl_op_chacha20poly1305_enc_args_t;
+
+typedef struct _oe_encl_op_chacha20poly1305_dec_args_t
+{
+    oe_result_t oe_result;
+    uint8_t* deepcopy_out_buffer;
+    size_t deepcopy_out_buffer_size;
+    int oe_retval;
+    uint8_t* ciphertext;
+    uint8_t* tag;
+    uint8_t* plaintext;
+    uint32_t pt_len;
+    uint8_t* aad;
+    uint32_t aad_len;
+    uint8_t* nonce;
+} oe_encl_op_chacha20poly1305_dec_args_t;
+
+typedef struct _oe_encl_op_return_args_t
+{
+    oe_result_t oe_result;
+    uint8_t* deepcopy_out_buffer;
+    size_t deepcopy_out_buffer_size;
+} oe_encl_op_return_args_t;
 
 typedef struct _oe_get_sgx_report_ecall_args_t
 {
@@ -199,6 +242,346 @@ done:
 }
 
 OE_WEAK_ALIAS(oe_crypto_app_oe_encl_op_hmac, oe_encl_op_hmac);
+
+oe_result_t oe_crypto_app_oe_encl_op_chacha20poly1305_enc(
+    oe_enclave_t* enclave,
+    int* _retval,
+    uint8_t* ciphertext,
+    uint8_t* tag,
+    uint8_t* plaintext,
+    uint32_t pt_len,
+    uint8_t* aad,
+    uint32_t aad_len,
+    uint8_t* nonce)
+{
+    oe_result_t _result = OE_FAILURE;
+
+    static uint64_t global_id = OE_GLOBAL_ECALL_ID_NULL;
+
+    /* Marshalling struct. */
+    oe_encl_op_chacha20poly1305_enc_args_t _args, *_pargs_in = NULL, *_pargs_out = NULL;
+    /* Marshalling buffer and sizes. */
+    size_t _input_buffer_size = 0;
+    size_t _output_buffer_size = 0;
+    size_t _total_buffer_size = 0;
+    uint8_t* _buffer = NULL;
+    uint8_t* _input_buffer = NULL;
+    uint8_t* _output_buffer = NULL;
+    size_t _input_buffer_offset = 0;
+    size_t _output_buffer_offset = 0;
+    size_t _output_bytes_written = 0;
+
+    /* Fill marshalling struct. */
+    memset(&_args, 0, sizeof(_args));
+    _args.ciphertext = (uint8_t*)ciphertext;
+    _args.tag = (uint8_t*)tag;
+    _args.plaintext = (uint8_t*)plaintext;
+    _args.pt_len = pt_len;
+    _args.aad = (uint8_t*)aad;
+    _args.aad_len = aad_len;
+    _args.nonce = (uint8_t*)nonce;
+
+    /* Compute input buffer size. Include in and in-out parameters. */
+    OE_ADD_SIZE(_input_buffer_size, sizeof(oe_encl_op_chacha20poly1305_enc_args_t));
+    if (plaintext)
+        OE_ADD_ARG_SIZE(_input_buffer_size, 1, _args.pt_len);
+    if (aad)
+        OE_ADD_ARG_SIZE(_input_buffer_size, 1, _args.aad_len);
+    if (nonce)
+        OE_ADD_ARG_SIZE(_input_buffer_size, 1, 12);
+    
+    /* Compute output buffer size. Include out and in-out parameters. */
+    OE_ADD_SIZE(_output_buffer_size, sizeof(oe_encl_op_chacha20poly1305_enc_args_t));
+    if (ciphertext)
+        OE_ADD_ARG_SIZE(_output_buffer_size, 1, _args.pt_len);
+    if (tag)
+        OE_ADD_ARG_SIZE(_output_buffer_size, 1, 32);
+    
+    /* Allocate marshalling buffer. */
+    _total_buffer_size = _input_buffer_size;
+    OE_ADD_SIZE(_total_buffer_size, _output_buffer_size);
+    _buffer = (uint8_t*)oe_malloc(_total_buffer_size);
+    _input_buffer = _buffer;
+    _output_buffer = _buffer + _input_buffer_size;
+    if (_buffer == NULL)
+    {
+        _result = OE_OUT_OF_MEMORY;
+        goto done;
+    }
+    
+    /* Serialize buffer inputs (in and in-out parameters). */
+    _pargs_in = (oe_encl_op_chacha20poly1305_enc_args_t*)_input_buffer;
+    OE_ADD_SIZE(_input_buffer_offset, sizeof(*_pargs_in));
+    if (plaintext)
+        OE_WRITE_IN_PARAM(plaintext, 1, _args.pt_len, uint8_t*);
+    if (aad)
+        OE_WRITE_IN_PARAM(aad, 1, _args.aad_len, uint8_t*);
+    if (nonce)
+        OE_WRITE_IN_PARAM(nonce, 1, 12, uint8_t*);
+    
+    /* Copy args structure (now filled) to input buffer. */
+    memcpy(_pargs_in, &_args, sizeof(*_pargs_in));
+
+    /* Call enclave function. */
+    if ((_result = oe_call_enclave_function(
+             enclave,
+             &global_id,
+             _oe_crypto_app_ecall_info_table[oe_crypto_app_fcn_id_oe_encl_op_chacha20poly1305_enc].name,
+             _input_buffer,
+             _input_buffer_size,
+             _output_buffer,
+             _output_buffer_size,
+             &_output_bytes_written)) != OE_OK)
+        goto done;
+
+    /* Currently exactly _output_buffer_size bytes must be written. */
+    if (_output_bytes_written != _output_buffer_size)
+    {
+        _result = OE_FAILURE;
+        goto done;
+    }
+
+    /* Setup output arg struct pointer. */
+    _pargs_out = (oe_encl_op_chacha20poly1305_enc_args_t*)_output_buffer;
+    OE_ADD_SIZE(_output_buffer_offset, sizeof(*_pargs_out));
+
+    /* Check if the call succeeded. */
+    if ((_result = _pargs_out->oe_result) != OE_OK)
+        goto done;
+
+    /* Unmarshal return value and out, in-out parameters. */
+    *_retval = _pargs_out->oe_retval;
+
+    OE_READ_OUT_PARAM(ciphertext, 1, _args.pt_len);
+    OE_READ_OUT_PARAM(tag, 1, 32);
+
+    _result = OE_OK;
+
+done:
+    if (_buffer)
+        oe_free(_buffer);
+
+    return _result;
+}
+
+OE_WEAK_ALIAS(oe_crypto_app_oe_encl_op_chacha20poly1305_enc, oe_encl_op_chacha20poly1305_enc);
+
+oe_result_t oe_crypto_app_oe_encl_op_chacha20poly1305_dec(
+    oe_enclave_t* enclave,
+    int* _retval,
+    uint8_t* ciphertext,
+    uint8_t* tag,
+    uint8_t* plaintext,
+    uint32_t pt_len,
+    uint8_t* aad,
+    uint32_t aad_len,
+    uint8_t* nonce)
+{
+    oe_result_t _result = OE_FAILURE;
+
+    static uint64_t global_id = OE_GLOBAL_ECALL_ID_NULL;
+
+    /* Marshalling struct. */
+    oe_encl_op_chacha20poly1305_dec_args_t _args, *_pargs_in = NULL, *_pargs_out = NULL;
+    /* Marshalling buffer and sizes. */
+    size_t _input_buffer_size = 0;
+    size_t _output_buffer_size = 0;
+    size_t _total_buffer_size = 0;
+    uint8_t* _buffer = NULL;
+    uint8_t* _input_buffer = NULL;
+    uint8_t* _output_buffer = NULL;
+    size_t _input_buffer_offset = 0;
+    size_t _output_buffer_offset = 0;
+    size_t _output_bytes_written = 0;
+
+    /* Fill marshalling struct. */
+    memset(&_args, 0, sizeof(_args));
+    _args.ciphertext = (uint8_t*)ciphertext;
+    _args.tag = (uint8_t*)tag;
+    _args.plaintext = (uint8_t*)plaintext;
+    _args.pt_len = pt_len;
+    _args.aad = (uint8_t*)aad;
+    _args.aad_len = aad_len;
+    _args.nonce = (uint8_t*)nonce;
+
+    /* Compute input buffer size. Include in and in-out parameters. */
+    OE_ADD_SIZE(_input_buffer_size, sizeof(oe_encl_op_chacha20poly1305_dec_args_t));
+    if (ciphertext)
+        OE_ADD_ARG_SIZE(_input_buffer_size, 1, _args.pt_len);
+    if (tag)
+        OE_ADD_ARG_SIZE(_input_buffer_size, 1, 32);
+    if (aad)
+        OE_ADD_ARG_SIZE(_input_buffer_size, 1, _args.aad_len);
+    if (nonce)
+        OE_ADD_ARG_SIZE(_input_buffer_size, 1, 12);
+    
+    /* Compute output buffer size. Include out and in-out parameters. */
+    OE_ADD_SIZE(_output_buffer_size, sizeof(oe_encl_op_chacha20poly1305_dec_args_t));
+    if (plaintext)
+        OE_ADD_ARG_SIZE(_output_buffer_size, 1, _args.pt_len);
+    
+    /* Allocate marshalling buffer. */
+    _total_buffer_size = _input_buffer_size;
+    OE_ADD_SIZE(_total_buffer_size, _output_buffer_size);
+    _buffer = (uint8_t*)oe_malloc(_total_buffer_size);
+    _input_buffer = _buffer;
+    _output_buffer = _buffer + _input_buffer_size;
+    if (_buffer == NULL)
+    {
+        _result = OE_OUT_OF_MEMORY;
+        goto done;
+    }
+    
+    /* Serialize buffer inputs (in and in-out parameters). */
+    _pargs_in = (oe_encl_op_chacha20poly1305_dec_args_t*)_input_buffer;
+    OE_ADD_SIZE(_input_buffer_offset, sizeof(*_pargs_in));
+    if (ciphertext)
+        OE_WRITE_IN_PARAM(ciphertext, 1, _args.pt_len, uint8_t*);
+    if (tag)
+        OE_WRITE_IN_PARAM(tag, 1, 32, uint8_t*);
+    if (aad)
+        OE_WRITE_IN_PARAM(aad, 1, _args.aad_len, uint8_t*);
+    if (nonce)
+        OE_WRITE_IN_PARAM(nonce, 1, 12, uint8_t*);
+    
+    /* Copy args structure (now filled) to input buffer. */
+    memcpy(_pargs_in, &_args, sizeof(*_pargs_in));
+
+    /* Call enclave function. */
+    if ((_result = oe_call_enclave_function(
+             enclave,
+             &global_id,
+             _oe_crypto_app_ecall_info_table[oe_crypto_app_fcn_id_oe_encl_op_chacha20poly1305_dec].name,
+             _input_buffer,
+             _input_buffer_size,
+             _output_buffer,
+             _output_buffer_size,
+             &_output_bytes_written)) != OE_OK)
+        goto done;
+
+    /* Currently exactly _output_buffer_size bytes must be written. */
+    if (_output_bytes_written != _output_buffer_size)
+    {
+        _result = OE_FAILURE;
+        goto done;
+    }
+
+    /* Setup output arg struct pointer. */
+    _pargs_out = (oe_encl_op_chacha20poly1305_dec_args_t*)_output_buffer;
+    OE_ADD_SIZE(_output_buffer_offset, sizeof(*_pargs_out));
+
+    /* Check if the call succeeded. */
+    if ((_result = _pargs_out->oe_result) != OE_OK)
+        goto done;
+
+    /* Unmarshal return value and out, in-out parameters. */
+    *_retval = _pargs_out->oe_retval;
+
+    OE_READ_OUT_PARAM(plaintext, 1, _args.pt_len);
+
+    _result = OE_OK;
+
+done:
+    if (_buffer)
+        oe_free(_buffer);
+
+    return _result;
+}
+
+OE_WEAK_ALIAS(oe_crypto_app_oe_encl_op_chacha20poly1305_dec, oe_encl_op_chacha20poly1305_dec);
+
+oe_result_t oe_crypto_app_oe_encl_op_return(oe_enclave_t* enclave)
+{
+    oe_result_t _result = OE_FAILURE;
+
+    static uint64_t global_id = OE_GLOBAL_ECALL_ID_NULL;
+
+    /* Marshalling struct. */
+    oe_encl_op_return_args_t _args, *_pargs_in = NULL, *_pargs_out = NULL;
+    /* Marshalling buffer and sizes. */
+    size_t _input_buffer_size = 0;
+    size_t _output_buffer_size = 0;
+    size_t _total_buffer_size = 0;
+    uint8_t* _buffer = NULL;
+    uint8_t* _input_buffer = NULL;
+    uint8_t* _output_buffer = NULL;
+    size_t _input_buffer_offset = 0;
+    size_t _output_buffer_offset = 0;
+    size_t _output_bytes_written = 0;
+
+    /* Fill marshalling struct. */
+    memset(&_args, 0, sizeof(_args));
+
+    /* Compute input buffer size. Include in and in-out parameters. */
+    OE_ADD_SIZE(_input_buffer_size, sizeof(oe_encl_op_return_args_t));
+    /* There were no corresponding parameters. */
+    
+    /* Compute output buffer size. Include out and in-out parameters. */
+    OE_ADD_SIZE(_output_buffer_size, sizeof(oe_encl_op_return_args_t));
+    /* There were no corresponding parameters. */
+    
+    /* Allocate marshalling buffer. */
+    _total_buffer_size = _input_buffer_size;
+    OE_ADD_SIZE(_total_buffer_size, _output_buffer_size);
+    _buffer = (uint8_t*)oe_malloc(_total_buffer_size);
+    _input_buffer = _buffer;
+    _output_buffer = _buffer + _input_buffer_size;
+    if (_buffer == NULL)
+    {
+        _result = OE_OUT_OF_MEMORY;
+        goto done;
+    }
+    
+    /* Serialize buffer inputs (in and in-out parameters). */
+    _pargs_in = (oe_encl_op_return_args_t*)_input_buffer;
+    OE_ADD_SIZE(_input_buffer_offset, sizeof(*_pargs_in));
+    /* There were no in nor in-out parameters. */
+    
+    /* Copy args structure (now filled) to input buffer. */
+    memcpy(_pargs_in, &_args, sizeof(*_pargs_in));
+
+    /* Call enclave function. */
+    if ((_result = oe_call_enclave_function(
+             enclave,
+             &global_id,
+             _oe_crypto_app_ecall_info_table[oe_crypto_app_fcn_id_oe_encl_op_return].name,
+             _input_buffer,
+             _input_buffer_size,
+             _output_buffer,
+             _output_buffer_size,
+             &_output_bytes_written)) != OE_OK)
+        goto done;
+
+    /* Currently exactly _output_buffer_size bytes must be written. */
+    if (_output_bytes_written != _output_buffer_size)
+    {
+        _result = OE_FAILURE;
+        goto done;
+    }
+
+    /* Setup output arg struct pointer. */
+    _pargs_out = (oe_encl_op_return_args_t*)_output_buffer;
+    OE_ADD_SIZE(_output_buffer_offset, sizeof(*_pargs_out));
+
+    /* Check if the call succeeded. */
+    if ((_result = _pargs_out->oe_result) != OE_OK)
+        goto done;
+
+    /* Unmarshal return value and out, in-out parameters. */
+    /* No return value. */
+
+    /* There were no out nor in-out parameters. */
+
+    _result = OE_OK;
+
+done:
+    if (_buffer)
+        oe_free(_buffer);
+
+    return _result;
+}
+
+OE_WEAK_ALIAS(oe_crypto_app_oe_encl_op_return, oe_encl_op_return);
 
 oe_result_t oe_crypto_app_oe_get_sgx_report_ecall(
     oe_enclave_t* enclave,
@@ -7397,7 +7780,7 @@ oe_result_t oe_create_oe_crypto_app_enclave(
                _oe_crypto_app_ocall_function_table,
                87,
                _oe_crypto_app_ecall_info_table,
-                6,
+                9,
                enclave);
 }
 

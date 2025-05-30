@@ -1,0 +1,21 @@
+[INFO] Counting SGX SDK runtime LOC (code only) in: /home/kobe/linux-sgx/sdk
+---------------------------------------------------------------
+Component                   LOC
+---------                   ---
+tkey_exchange               798
+tlibc                     49774
+tlibcrypto                28349
+tlibcxx                   17210
+tlibthread                  626
+tmm_rsrv                   1056
+trts                       4757
+tsafecrt                   3301
+tseal                       478
+tsetjmp                     210
+ttlstrts              [SKIPPED]
+tlibc                     49774
+tlibcrypto                28349
+tlibthread                  626
+tseal                       478
+tkey_exchange               798
+tsafecrt                   3301

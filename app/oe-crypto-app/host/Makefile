@@ -6,7 +6,7 @@ include ../config.mk
 LIBSGXSTEP_DIR=../../../
 LIBSGXSTEP=$(LIBSGXSTEP_DIR)/libsgxstep
 
-CFLAGS=$(shell pkg-config oehost-$(COMPILER) --cflags) -I$(LIBSGXSTEP_DIR)
+CFLAGS=$(shell pkg-config oehost-$(COMPILER) --cflags) -I$(LIBSGXSTEP_DIR) -Os
 LDFLAGS=$(shell pkg-config oehost-$(COMPILER) --libs) -pthread -L$(LIBSGXSTEP) -lelf 
 INCDIR=$(shell pkg-config oehost-$(COMPILER) --variable=includedir)
 

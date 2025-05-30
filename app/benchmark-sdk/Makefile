@@ -1,4 +1,5 @@
-ENCLAVE              = Enclave
+#ENCLAVE              = return_Enclave 
+ENCLAVE				 = Enclave_crypto
 SUBDIRS              = $(ENCLAVE) ../../external/sgx-step/libsgxstep
 
 CC                   = gcc

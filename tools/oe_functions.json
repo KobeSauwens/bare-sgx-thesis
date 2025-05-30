@@ -1,0 +1,9392 @@
+[
+  {
+    "name": "exit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 74
+  },
+  {
+    "name": "oe_add_size",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 31
+  },
+  {
+    "name": "ecall_oe_sgx_switchless_enclave_worker_thread_ecall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 140
+  },
+  {
+    "name": "ecall_oe_sgx_init_context_switchless_ecall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 147
+  },
+  {
+    "name": "ecall_oe_encl_op_hmac",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 312
+  },
+  {
+    "name": "ecall_oe_get_sgx_report_ecall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 317
+  },
+  {
+    "name": "ecall_oe_get_report_v2_ecall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 500
+  },
+  {
+    "name": "ecall_oe_verify_local_report_ecall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 317
+  },
+  {
+    "name": "ecall_oe_encl_op_chacha20poly1305_enc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 462
+  },
+  {
+    "name": "ecall_oe_encl_op_chacha20poly1305_dec",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 462
+  },
+  {
+    "name": "oe_syscall_read_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 627
+  },
+  {
+    "name": "oe_syscall_write_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 548
+  },
+  {
+    "name": "oe_syscall_readv_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 759
+  },
+  {
+    "name": "oe_syscall_writev_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 573
+  },
+  {
+    "name": "oe_syscall_close_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 375
+  },
+  {
+    "name": "oe_syscall_dup_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 375
+  },
+  {
+    "name": "oe_syscall_fcntl_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 767
+  },
+  {
+    "name": "oe_syscall_ioctl_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 767
+  },
+  {
+    "name": "oe_get_supported_attester_format_ids_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 663
+  },
+  {
+    "name": "oe_get_qetarget_info_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 710
+  },
+  {
+    "name": "oe_get_quote_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1044
+  },
+  {
+    "name": "oe_get_quote_verification_collateral_with_baseline_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2511
+  },
+  {
+    "name": "oe_verify_quote_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2617
+  },
+  {
+    "name": "oe_sgx_get_cpuid_table_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 559
+  },
+  {
+    "name": "oe_sgx_backtrace_symbols_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 911
+  },
+  {
+    "name": "oe_sgx_log_backtrace_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 589
+  },
+  {
+    "name": "oe_sgx_thread_wake_wait_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 357
+  },
+  {
+    "name": "oe_sgx_wake_switchless_worker_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 343
+  },
+  {
+    "name": "oe_sgx_sleep_switchless_worker_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 343
+  },
+  {
+    "name": "oe_encl_op_hmac",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 100
+  },
+  {
+    "name": "oe_encl_op_chacha20poly1305_enc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 31
+  },
+  {
+    "name": "oe_encl_op_chacha20poly1305_dec",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 53
+  },
+  {
+    "name": "oe_verify_raw_sgx_report",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2320
+  },
+  {
+    "name": "_get_report_key",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1328
+  },
+  {
+    "name": "oe_secure_memcpy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "oe_secure_aes_cmac_equal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "oe_secure_zero_fill",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_verify_report_internal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1680
+  },
+  {
+    "name": "oe_verify_report_ecall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "oe_get_report_v2",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3680
+  },
+  {
+    "name": "oe_free_report",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "oe_get_report_v2_ecall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 848
+  },
+  {
+    "name": "oe_verify_report",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2336
+  },
+  {
+    "name": "oe_verify_local_report_ecall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1200
+  },
+  {
+    "name": "oe_constant_time_mem_equal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 236
+  },
+  {
+    "name": "_start",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 5
+  },
+  {
+    "name": "oe_call_link_enclave",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 15
+  },
+  {
+    "name": "oe_register_attester_plugin",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "oe_unregister_attester_plugin",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "oe_find_attester_plugin",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 832
+  },
+  {
+    "name": "oe_attest_find_plugin",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 464
+  },
+  {
+    "name": "oe_attest_register_plugin",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1760
+  },
+  {
+    "name": "oe_attest_unregister_plugin",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1616
+  },
+  {
+    "name": "oe_register_verifier_plugin",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "oe_unregister_verifier_plugin",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "oe_find_verifier_plugin",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 832
+  },
+  {
+    "name": "oe_link_enclave",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "oe_get_quote_cert_chain_internal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2160
+  },
+  {
+    "name": "_parse_quote",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 5360
+  },
+  {
+    "name": "oe_verify_sgx_quote",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3424
+  },
+  {
+    "name": "oe_verify_quote_with_sgx_endorsements",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 8176
+  },
+  {
+    "name": "oe_verify_quote_internal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 14944
+  },
+  {
+    "name": "oe_get_sgx_quote_validity",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 11536
+  },
+  {
+    "name": "_update_validity",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 384
+  },
+  {
+    "name": "ReadUint16",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "ReadUint32",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "_validate_sgx_quote",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 672
+  },
+  {
+    "name": "_validate_qe_cert_data",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2000
+  },
+  {
+    "name": "_ec_public_key_write_pem",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1184
+  },
+  {
+    "name": "_ecdsa_verify",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2736
+  },
+  {
+    "name": "oe_constant_time_mem_equal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "_read_public_key",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_parse_sgx_report_body",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1392
+  },
+  {
+    "name": "oe_secure_zero_fill",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_parse_report",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 4512
+  },
+  {
+    "name": "oe_get_target_info_v2",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 880
+  },
+  {
+    "name": "_oe_get_target_info_internal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1856
+  },
+  {
+    "name": "oe_free_target_info",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "_sgx_get_target_info",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1648
+  },
+  {
+    "name": "oe_get_sgx_quote_verification_collateral_from_certs",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2400
+  },
+  {
+    "name": "_get_crl_ca_type",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 368
+  },
+  {
+    "name": "oe_validate_revocation_list",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 20320
+  },
+  {
+    "name": "_hex_to_raw",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 624
+  },
+  {
+    "name": "_get_revocation_validity",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2688
+  },
+  {
+    "name": "_hex_digit_to_num",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 464
+  },
+  {
+    "name": "_get_tcb_info_validity",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 400
+  },
+  {
+    "name": "_get_crl_validity",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2448
+  },
+  {
+    "name": "oe_parse_sgx_extensions",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 9392
+  },
+  {
+    "name": "_get_sgx_extension",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 464
+  },
+  {
+    "name": "_read_asn1_length",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1520
+  },
+  {
+    "name": "_read_octet_extension",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1504
+  },
+  {
+    "name": "_read_extension",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3744
+  },
+  {
+    "name": "_read_integer_extension_as_uint8",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 640
+  },
+  {
+    "name": "_read_integer_extension_as_uint16",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 640
+  },
+  {
+    "name": "_read_enumeration_extension",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1120
+  },
+  {
+    "name": "_read_boolean_extension",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 976
+  },
+  {
+    "name": "_oid_equal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "_read_integer_extension",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1712
+  },
+  {
+    "name": "oe_tcb_level_status_to_sgx_tcb_status",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 768
+  },
+  {
+    "name": "oe_sgx_tcb_status_str",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 496
+  },
+  {
+    "name": "oe_parse_tcb_info_json",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 5168
+  },
+  {
+    "name": "_skip_ws",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "_read",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "_read_property_name_and_colon",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1344
+  },
+  {
+    "name": "_read_tcb_info",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3824
+  },
+  {
+    "name": "_read_hex_string",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1328
+  },
+  {
+    "name": "oe_parse_qe_identity_info_json",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 6736
+  },
+  {
+    "name": "_read_qe_identity_info_v2",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 22720
+  },
+  {
+    "name": "_read_qe_identity_info_v1",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16352
+  },
+  {
+    "name": "oe_verify_ecdsa256_signature",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 5184
+  },
+  {
+    "name": "_ecdsa_verify",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2736
+  },
+  {
+    "name": "_read_string",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1120
+  },
+  {
+    "name": "_is_space",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 480
+  },
+  {
+    "name": "_read_integer",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1008
+  },
+  {
+    "name": "_read_tcb_info_v1_or_v2",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3120
+  },
+  {
+    "name": "_read_tcb_info_v3",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 5520
+  },
+  {
+    "name": "_is_digit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "_read_tcb_info_common_fields",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 12672
+  },
+  {
+    "name": "_read_tcb_info_tcb_level_v1",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 5872
+  },
+  {
+    "name": "_read_tcb_info_tcb_level_v2_or_v3",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 10848
+  },
+  {
+    "name": "_read_tcb_info_tcb_level_tcb_v1_or_v2",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 4288
+  },
+  {
+    "name": "_trace_json_string",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1136
+  },
+  {
+    "name": "_parse_tcb_status",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1056
+  },
+  {
+    "name": "_determine_platform_tcb_info_tcb_level",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 368
+  },
+  {
+    "name": "_json_str_equal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 256
+  },
+  {
+    "name": "_read_tcb_info_tcb_level_tcb_v3",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 8768
+  },
+  {
+    "name": "_move_to_end_of_tcb_levels",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 528
+  },
+  {
+    "name": "_read_tcb_info_tcb_level_tcb_tcbcomponent",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3520
+  },
+  {
+    "name": "_read_tcb_info_tdx_module",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 4464
+  },
+  {
+    "name": "_hex_to_dec",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 480
+  },
+  {
+    "name": "read_uint32",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "read_uint64",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "_read_qe_tcb_level",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 7968
+  },
+  {
+    "name": "_read_qe_tcb",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3056
+  },
+  {
+    "name": "_determine_platform_qe_tcb_level",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "oe_sgx_free_claims_list",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "_free_claim",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "oe_sgx_add_claim",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 656
+  },
+  {
+    "name": "oe_sgx_hash_custom_claims_buffer",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 656
+  },
+  {
+    "name": "oe_sgx_extract_claims",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 6928
+  },
+  {
+    "name": "_process_sgx_report_data",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1712
+  },
+  {
+    "name": "oe_safe_add_u64",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "oe_safe_mul_u64",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "_fill_with_known_claims",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 19584
+  },
+  {
+    "name": "oe_sgx_verify_evidence",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 9648
+  },
+  {
+    "name": "_get_input_time",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 432
+  },
+  {
+    "name": "_verify_local_report",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "oe_verifier_initialize",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1664
+  },
+  {
+    "name": "_get_verifier_plugins",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1344
+  },
+  {
+    "name": "oe_verifier_shutdown",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1248
+  },
+  {
+    "name": "_on_register",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "_on_unregister",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "_get_format_settings",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2672
+  },
+  {
+    "name": "_verify_report",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1440
+  },
+  {
+    "name": "oe_attester_initialize",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1872
+  },
+  {
+    "name": "_get_attester_plugins",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2752
+  },
+  {
+    "name": "oe_attester_shutdown",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1248
+  },
+  {
+    "name": "_on_register",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "_on_unregister",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "_get_evidence",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 8864
+  },
+  {
+    "name": "_free_evidence",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "_free_endorsements",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "_get_report",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2304
+  },
+  {
+    "name": "oe_create_qve_report_info",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3632
+  },
+  {
+    "name": "oe_verify_qve_report_and_identity",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 12080
+  },
+  {
+    "name": "dump_info",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 368
+  },
+  {
+    "name": "sgx_verify_quote",
+    "is_hacl": false,
+    "is_edger8r": true,
+    "size_bytes": 4656
+  },
+  {
+    "name": "oe_get_sgx_quote_verification_collateral",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 6720
+  },
+  {
+    "name": "oe_prealloc_quote_verification_collateral_args",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1408
+  },
+  {
+    "name": "oe_update_default_collateral_arg_sizes",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "oe_free_sgx_quote_verification_collateral_args",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 608
+  },
+  {
+    "name": "oe_datetime_is_valid",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 4176
+  },
+  {
+    "name": "oe_datetime_to_string",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1712
+  },
+  {
+    "name": "oe_num_to_str",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "oe_datetime_from_string",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3472
+  },
+  {
+    "name": "oe_str_to_num",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "oe_datetime_compare",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 736
+  },
+  {
+    "name": "oe_datetime_now",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 720
+  },
+  {
+    "name": "oe_datetime_log",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 672
+  },
+  {
+    "name": "oe_datetime_to_time_t",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1248
+  },
+  {
+    "name": "oe_sha256",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1680
+  },
+  {
+    "name": "oe_get_public_key_by_policy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "_load_asymmetric_key_by_policy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3168
+  },
+  {
+    "name": "oe_get_public_key",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "_load_asymmetric_key",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2352
+  },
+  {
+    "name": "oe_secure_zero_fill",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_get_public_key_by_policy_ecall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2304
+  },
+  {
+    "name": "oe_get_public_key_ecall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1568
+  },
+  {
+    "name": "_check_asymmetric_key_params",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 256
+  },
+  {
+    "name": "_load_seal_key_by_policy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1376
+  },
+  {
+    "name": "_derive_asymmetric_key",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2288
+  },
+  {
+    "name": "_create_asymmetric_keypair",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3376
+  },
+  {
+    "name": "_export_keypair",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2736
+  },
+  {
+    "name": "_load_seal_key",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1072
+  },
+  {
+    "name": "oe_parse_sgx_endorsements",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 5520
+  },
+  {
+    "name": "oe_get_sgx_endorsements",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 6288
+  },
+  {
+    "name": "oe_create_sgx_endorsements",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 10448
+  },
+  {
+    "name": "oe_free_sgx_endorsements",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "oe_validate_qe_identity",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 13296
+  },
+  {
+    "name": "oe_constant_time_mem_equal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "dump_info",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 368
+  },
+  {
+    "name": "malloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "calloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "realloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "memalign",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "posix_memalign",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "aligned_alloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "malloc_usable_size",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "isdigit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "isxdigit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "memcmp",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 384
+  },
+  {
+    "name": "__gmtime_r",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "__secs_to_tm",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1936
+  },
+  {
+    "name": "timegm",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 512
+  },
+  {
+    "name": "__tm_to_secs",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 704
+  },
+  {
+    "name": "__year_to_secs",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1408
+  },
+  {
+    "name": "oe_libc_initialize",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 52
+  },
+  {
+    "name": "memcpy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 52
+  },
+  {
+    "name": "memmove",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 40
+  },
+  {
+    "name": "memset",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "__errno_location",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "___errno_location",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "oe_SYS_clock_gettime_impl",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 448
+  },
+  {
+    "name": "oe_SYS_gettimeofday_impl",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 544
+  },
+  {
+    "name": "__syscall_ret",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "fprintf",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 656
+  },
+  {
+    "name": "__aio_close",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "__stdio_close",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "__stdio_read",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1040
+  },
+  {
+    "name": "__stdio_seek",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "__stdio_write",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1056
+  },
+  {
+    "name": "__stdout_write",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 464
+  },
+  {
+    "name": "vfprintf",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2096
+  },
+  {
+    "name": "printf_core",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 14752
+  },
+  {
+    "name": "out",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "getint",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 368
+  },
+  {
+    "name": "pop_arg",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 4128
+  },
+  {
+    "name": "fmt_x",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "fmt_o",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 176
+  },
+  {
+    "name": "fmt_u",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "pad",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 880
+  },
+  {
+    "name": "fmt_fp",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 19040
+  },
+  {
+    "name": "__FLOAT_BITS",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "__DOUBLE_BITS",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "memchr",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1232
+  },
+  {
+    "name": "strchr",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "__strchrnul",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1088
+  },
+  {
+    "name": "strcmp",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "strlen",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 528
+  },
+  {
+    "name": "strnlen",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "__month_to_secs",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "__lseek",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "strerror",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "__fpclassifyl",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 432
+  },
+  {
+    "name": "frexpl",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 464
+  },
+  {
+    "name": "__signbitl",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "wctomb",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 176
+  },
+  {
+    "name": "__fwritex",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1152
+  },
+  {
+    "name": "__lockfile",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 768
+  },
+  {
+    "name": "a_cas",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "__futexwait",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 352
+  },
+  {
+    "name": "__unlockfile",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "a_swap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "__wake",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 416
+  },
+  {
+    "name": "__towrite",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "pthread_cond_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "pthread_cond_wait",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "pthread_cond_timedwait",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "pthread_cond_signal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "pthread_cond_broadcast",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "pthread_cond_destroy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "pthread_equal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "pthread_key_create",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "pthread_key_delete",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "pthread_setspecific",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "pthread_getspecific",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "pthread_mutexattr_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "pthread_mutexattr_settype",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "pthread_mutexattr_destroy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "pthread_mutex_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "pthread_mutex_lock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "pthread_mutex_trylock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "pthread_mutex_unlock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "pthread_mutex_destroy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "pthread_once",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "pthread_rwlock_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "pthread_rwlock_rdlock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "pthread_rwlock_wrlock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "pthread_rwlock_unlock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "pthread_rwlock_destroy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "pthread_spin_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "pthread_spin_lock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "pthread_spin_trylock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "pthread_spin_unlock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "pthread_spin_destroy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "__get_tp",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "pthread_self",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "oe_register_pthread_hooks",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "pthread_create",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 384
+  },
+  {
+    "name": "pthread_join",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 368
+  },
+  {
+    "name": "pthread_detach",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 352
+  },
+  {
+    "name": "pthread_atfork",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "wcrtomb",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1120
+  },
+  {
+    "name": "oe_SYS_close_impl",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "oe_SYS_exit_impl",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_SYS_exit_group_impl",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "oe_SYS_futex_impl",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "oe_SYS_ioctl_impl",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1408
+  },
+  {
+    "name": "oe_SYS_lseek_impl",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "oe_SYS_read_impl",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "oe_SYS_readv_impl",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "oe_SYS_writev_impl",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "oe_read",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 512
+  },
+  {
+    "name": "oe_close",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 640
+  },
+  {
+    "name": "_close_epoll_callback",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 544
+  },
+  {
+    "name": "oe_lseek",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 512
+  },
+  {
+    "name": "oe_readv",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 512
+  },
+  {
+    "name": "oe_writev",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 512
+  },
+  {
+    "name": "__oe_ioctl",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 496
+  },
+  {
+    "name": "oe_ioctl",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 896
+  },
+  {
+    "name": "_initialize",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1312
+  },
+  {
+    "name": "_resize_table",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 624
+  },
+  {
+    "name": "oe_fdtable_release",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1040
+  },
+  {
+    "name": "oe_fdtable_get",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 672
+  },
+  {
+    "name": "_get_fd",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1056
+  },
+  {
+    "name": "oe_fdtable_foreach",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 672
+  },
+  {
+    "name": "_atexit_handler",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "oe_round_up_to_multiple",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "oe_exit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "oe_consolefs_create_file",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 400
+  },
+  {
+    "name": "_new_file",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 736
+  },
+  {
+    "name": "_consolefs_read",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1072
+  },
+  {
+    "name": "_consolefs_write",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1072
+  },
+  {
+    "name": "_consolefs_readv",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2208
+  },
+  {
+    "name": "_consolefs_writev",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2016
+  },
+  {
+    "name": "_consolefs_dup",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2128
+  },
+  {
+    "name": "_consolefs_ioctl",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1136
+  },
+  {
+    "name": "_consolefs_fcntl",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1632
+  },
+  {
+    "name": "_consolefs_close",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1072
+  },
+  {
+    "name": "_consolefs_gethostfd",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 352
+  },
+  {
+    "name": "_consolefs_lseek",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "_consolefs_pread",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "_consolefs_pwrite",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "_consolefs_getdents64",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "_consolefs_fstat",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "_consolefs_ftruncate",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "_consolefs_fsync",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "_cast_file",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "_get_ops",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "oe_iov_pack",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2160
+  },
+  {
+    "name": "oe_iov_sync",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1744
+  },
+  {
+    "name": "oe_memcpy_s",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1520
+  },
+  {
+    "name": "oe_memset_s",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 592
+  },
+  {
+    "name": "__stack_chk_fail",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "__oe_assert_fail",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "oe_cxa_atexit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "_new_atexit_entry",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "oe_atexit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "oe_call_atexit_functions",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "oe_print_backtrace",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1536
+  },
+  {
+    "name": "_oe_log_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "_oe_write_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "oe_host_malloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 592
+  },
+  {
+    "name": "oe_host_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "oe_host_vfprintf",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 816
+  },
+  {
+    "name": "oe_host_write",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "oe_host_printf",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 656
+  },
+  {
+    "name": "oe_malloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 432
+  },
+  {
+    "name": "oe_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "oe_calloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 512
+  },
+  {
+    "name": "oe_realloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 448
+  },
+  {
+    "name": "oe_memalign",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 592
+  },
+  {
+    "name": "oe_is_pow2",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "oe_posix_memalign",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 576
+  },
+  {
+    "name": "oe_aligned_alloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 672
+  },
+  {
+    "name": "oe_is_size_multiple_alignment",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 256
+  },
+  {
+    "name": "oe_malloc_usable_size",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "oe_check_memory_leaks",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "oe_debug_malloc_tracking_start",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "oe_once",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 672
+  },
+  {
+    "name": "oe_vsnprintf",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 448
+  },
+  {
+    "name": "_out_str_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "_vprintf",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 5984
+  },
+  {
+    "name": "oe_snprintf",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 656
+  },
+  {
+    "name": "oe_vprintf",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1200
+  },
+  {
+    "name": "oe_printf",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 656
+  },
+  {
+    "name": "_write",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 416
+  },
+  {
+    "name": "_parse_placeholder",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 6784
+  },
+  {
+    "name": "_str_toupper",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "_format",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2096
+  },
+  {
+    "name": "oe_isdigit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "oe_toupper",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "_prefix",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 608
+  },
+  {
+    "name": "_fill",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 368
+  },
+  {
+    "name": "oe_pthread_equal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "oe_pthread_once",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "_to_errno",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 432
+  },
+  {
+    "name": "oe_pthread_spin_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_spin_lock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_spin_trylock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_spin_unlock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_spin_destroy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_mutexattr_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "oe_pthread_mutexattr_settype",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_mutexattr_destroy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "oe_pthread_mutex_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 496
+  },
+  {
+    "name": "oe_pthread_mutex_lock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_mutex_trylock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_mutex_unlock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_mutex_destroy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_rwlock_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_rwlock_rdlock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_rwlock_wrlock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_rwlock_unlock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_rwlock_destroy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_cond_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_cond_wait",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_cond_timedwait",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "oe_pthread_cond_signal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_cond_broadcast",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_cond_destroy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_key_create",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_key_delete",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_setspecific",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_pthread_getspecific",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "oe_random",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "oe_result_str",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3104
+  },
+  {
+    "name": "oe_strerror",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "oe_strlen",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1136
+  },
+  {
+    "name": "oe_strcmp",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 368
+  },
+  {
+    "name": "oe_strtoul",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2784
+  },
+  {
+    "name": "oe_isspace",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "_isdigit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "oe_get_time",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "oe_log",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1632
+  },
+  {
+    "name": "_log_enclave_message",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 464
+  },
+  {
+    "name": "oe_get_current_logging_level",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "_check_address",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "oe_backtrace_impl",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 416
+  },
+  {
+    "name": "oe_backtrace",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "oe_backtrace_symbols_impl",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2992
+  },
+  {
+    "name": "oe_backtrace_symbols",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_backtrace_symbols_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "oe_handle_call_enclave_function",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 7968
+  },
+  {
+    "name": "oe_safe_add_u64",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "oe_get_enclave_status",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "__morestack",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "_exit_enclave",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 512
+  },
+  {
+    "name": "oe_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1168
+  },
+  {
+    "name": "_handle_exit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "oe_abort",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "oe_call_host_function_internal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 8000
+  },
+  {
+    "name": "oe_call_host_function",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "__oe_handle_main",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2176
+  },
+  {
+    "name": "oe_get_code_from_call_arg1",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "oe_get_func_from_call_arg1",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "oe_get_result_from_call_arg1",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "_stitch_ecall_stack",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 576
+  },
+  {
+    "name": "oe_make_call_arg1",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "oe_abort_with_td",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1376
+  },
+  {
+    "name": "_handle_ecall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2512
+  },
+  {
+    "name": "_handle_oret",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "_call_at_exit_functions",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "_enclave_destructor",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 720
+  },
+  {
+    "name": "_handle_init_enclave",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1632
+  },
+  {
+    "name": "oe_initialize_cpuid",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1280
+  },
+  {
+    "name": "oe_get_emulated_cpuid_leaf_index",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "oe_emulate_cpuid",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 496
+  },
+  {
+    "name": "oe_snap_current_context",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 109
+  },
+  {
+    "name": "oe_continue_execution",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 114
+  },
+  {
+    "name": "oe_enter",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 10
+  },
+  {
+    "name": ".check_aborted",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 21
+  },
+  {
+    "name": ".save_host_registers",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 35
+  },
+  {
+    "name": ".determine_entry_type",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 15
+  },
+  {
+    "name": ".update_td_state_on_normal_entry",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": ".check_entry_nesting_level",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 25
+  },
+  {
+    "name": ".exception_entry",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 72
+  },
+  {
+    "name": ".exception_handler_stack_check",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 46
+  },
+  {
+    "name": ".exception_stack_setup",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 14
+  },
+  {
+    "name": ".state_machine_check",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 10
+  },
+  {
+    "name": ".state_machine_check_non_nested_exception",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": ".state_machine_check_nested_exception",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 17
+  },
+  {
+    "name": ".check_host_signal_request",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 115
+  },
+  {
+    "name": ".update_td_state",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 30
+  },
+  {
+    "name": ".nested_entry",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 20
+  },
+  {
+    "name": ".clean_entry",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 13
+  },
+  {
+    "name": ".call_function",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 14
+  },
+  {
+    "name": ".locate_next_ssa",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 10
+  },
+  {
+    "name": ".construct_stack_frame",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 164
+  },
+  {
+    "name": ".abort",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 19
+  },
+  {
+    "name": ".return",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 13
+  },
+  {
+    "name": ".prepare_eexit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 21
+  },
+  {
+    "name": ".eexit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 5
+  },
+  {
+    "name": ".forever",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2
+  },
+  {
+    "name": "oe_exception_dispatcher",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 74
+  },
+  {
+    "name": ".forever_loop",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 4
+  },
+  {
+    "name": "__oe_errno_location",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "_emulate_illegal_instruction",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 400
+  },
+  {
+    "name": "_emulate_cpuid",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 256
+  },
+  {
+    "name": "_emulate_wrfsbase64",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 880
+  },
+  {
+    "name": "oe_real_exception_dispatcher",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3184
+  },
+  {
+    "name": "oe_virtual_exception_dispatcher",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 4624
+  },
+  {
+    "name": "_get_enclave_thread_first_ssa_info",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 232
+  },
+  {
+    "name": "oe_asm_exit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3
+  },
+  {
+    "name": ".determine_exit_type",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 22
+  },
+  {
+    "name": ".nested_exit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 9
+  },
+  {
+    "name": ".clean_exit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 13
+  },
+  {
+    "name": ".return",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 17
+  },
+  {
+    "name": ".prepare_eexit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 35
+  },
+  {
+    "name": ".locate_next_ssa",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 21
+  },
+  {
+    "name": ".restore_host_registers",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 29
+  },
+  {
+    "name": ".update_td_state",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 57
+  },
+  {
+    "name": ".execute_eexit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 100
+  },
+  {
+    "name": ".execute_eexit_sim",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 17
+  },
+  {
+    "name": ".execute_eexit_instruction",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 21
+  },
+  {
+    "name": ".forever",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "__oe_get_enclave_start_address",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "__oe_get_enclave_create_zero_base_flag",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "__oe_get_enclave_size",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "__oe_get_configured_enclave_start_address",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "__oe_get_reloc_base",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "__oe_get_reloc_size",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "__oe_get_heap_base",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "__oe_get_heap_size",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "__oe_get_heap_end",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "oe_get_enclave",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "oe_get_module_info",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "oe_ecall_context_get_ocall_args",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 176
+  },
+  {
+    "name": "oe_ecall_context_get_ocall_buffer",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 544
+  },
+  {
+    "name": "oe_allocate_ocall_buffer",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "oe_free_ocall_buffer",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "oe_allocate_arena",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "oe_deallocate_arena",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "_get_ecall_context",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "oe_initialize_enclave",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "_initialize_enclave_imp",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "_initialize_enclave_image",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "_check_memory_boundaries",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 992
+  },
+  {
+    "name": "oe_get_key",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 944
+  },
+  {
+    "name": "_get_key_imp",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1120
+  },
+  {
+    "name": "oe_get_seal_key_v2",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 672
+  },
+  {
+    "name": "oe_free_seal_key",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "oe_secure_zero_fill",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_get_seal_key_by_policy_v2",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1536
+  },
+  {
+    "name": "_oe_get_seal_key_by_policy_internal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1952
+  },
+  {
+    "name": "_get_default_key_request_attributes",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1064
+  },
+  {
+    "name": "oe_longjmp",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "val_is_nonzero",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 40
+  },
+  {
+    "name": "oe_is_within_enclave",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 640
+  },
+  {
+    "name": "oe_is_outside_enclave",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 656
+  },
+  {
+    "name": "oe_random_internal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 480
+  },
+  {
+    "name": "oe_apply_relocations",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 672
+  },
+  {
+    "name": "sgx_create_report",
+    "is_hacl": false,
+    "is_edger8r": true,
+    "size_bytes": 3504
+  },
+  {
+    "name": "oe_get_remote_report",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3664
+  },
+  {
+    "name": "_get_sgx_target_info",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 800
+  },
+  {
+    "name": "_get_local_report",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2160
+  },
+  {
+    "name": "_get_quote",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 960
+  },
+  {
+    "name": "oe_get_report_v2_internal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2032
+  },
+  {
+    "name": "_oe_get_report_internal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1744
+  },
+  {
+    "name": "oe_get_sgx_report_ecall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 640
+  },
+  {
+    "name": "oe_safe_add_u64",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 88
+  },
+  {
+    "name": "oe_setjmp",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 56
+  },
+  {
+    "name": "oe_spin_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "oe_spin_lock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "_spin_set_locked",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "oe_spin_trylock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "oe_spin_unlock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "oe_spin_destroy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "oe_is_switchless_initialized",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "oe_sgx_init_context_switchless_ecall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2768
+  },
+  {
+    "name": "oe_atomic_compare_and_swap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "oe_safe_mul_u64",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "oe_post_switchless_ocall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1184
+  },
+  {
+    "name": "oe_atomic_compare_and_swap_ptr",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 496
+  },
+  {
+    "name": "oe_sgx_switchless_enclave_worker_thread_ecall",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 944
+  },
+  {
+    "name": "oe_get_thread_data",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "td_push_callsite",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "td_from_tcs",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "td_to_tcs",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "oe_sgx_get_td",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "_sgx_get_td",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 432
+  },
+  {
+    "name": "oe_sgx_get_td_no_fs_check",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "oe_sgx_td_clear_states",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "oe_sgx_td_mask_host_signal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "oe_sgx_td_set_exception_handler_stack",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "oe_sgx_td_exception_handler_stack_registered",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "_set_td_host_signal_unmasked",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "oe_sgx_td_host_signal_registered",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "td_initialized",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "td_pop_callsite",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "td_clear",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 592
+  },
+  {
+    "name": "td_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 464
+  },
+  {
+    "name": "oe_thread_self",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "oe_thread_equal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "oe_mutexattr_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 432
+  },
+  {
+    "name": "oe_mutexattr_settype",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 768
+  },
+  {
+    "name": "_validate_mutexattr_type",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 384
+  },
+  {
+    "name": "oe_mutex_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 960
+  },
+  {
+    "name": "oe_mutex_lock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 864
+  },
+  {
+    "name": "_mutex_lock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 624
+  },
+  {
+    "name": "_queue_contains",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "_queue_push_back",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 176
+  },
+  {
+    "name": "_thread_wait",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 256
+  },
+  {
+    "name": "oe_mutex_trylock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 432
+  },
+  {
+    "name": "oe_mutex_unlock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 464
+  },
+  {
+    "name": "_mutex_unlock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 416
+  },
+  {
+    "name": "_thread_wake",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 256
+  },
+  {
+    "name": "oe_mutex_destroy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 416
+  },
+  {
+    "name": "_queue_empty",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "oe_cond_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "oe_cond_destroy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 352
+  },
+  {
+    "name": "oe_cond_wait",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1200
+  },
+  {
+    "name": "_thread_wake_wait",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 352
+  },
+  {
+    "name": "oe_cond_signal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 400
+  },
+  {
+    "name": "_queue_pop_front",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 256
+  },
+  {
+    "name": "oe_cond_broadcast",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 768
+  },
+  {
+    "name": "oe_rwlock_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "oe_rwlock_rdlock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 720
+  },
+  {
+    "name": "oe_rwlock_wrlock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 960
+  },
+  {
+    "name": "oe_rwlock_destroy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 416
+  },
+  {
+    "name": "oe_rwlock_unlock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "_rwlock_wrunlock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 512
+  },
+  {
+    "name": "_rwlock_rdunlock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 528
+  },
+  {
+    "name": "oe_thread_key_create",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 480
+  },
+  {
+    "name": "oe_thread_key_delete",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 352
+  },
+  {
+    "name": "oe_thread_setspecific",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "_get_tsd_page",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 176
+  },
+  {
+    "name": "oe_thread_getspecific",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "oe_thread_destruct_specific",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 704
+  },
+  {
+    "name": "_wake_waiters",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 608
+  },
+  {
+    "name": "oe_sgx_get_thread_local_start_offset",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "_tlsoffset_m1",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "_get_thread_local_data_start",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 480
+  },
+  {
+    "name": "oe_sgx_thread_local_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1552
+  },
+  {
+    "name": "_get_fs_from_td",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "_initialize_allocator",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "oe_sgx_thread_local_cleanup",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 736
+  },
+  {
+    "name": "oe_round_up_to_multiple",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "_call_oe_allocator_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "oe_sgx_initialize_simulation_mode_cache",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 464
+  },
+  {
+    "name": "oe_sgx_is_in_simulation_mode",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "oe_is_enclave_debug_allowed",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 720
+  },
+  {
+    "name": "oe_memset_with_barrier",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 432
+  },
+  {
+    "name": "_memset_unaligned_with_barrier",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1552
+  },
+  {
+    "name": "oe_memcpy_with_barrier",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "_memcpy_unaligned_with_barrier",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2080
+  },
+  {
+    "name": "oe_memcpy_s_with_barrier",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1680
+  },
+  {
+    "name": "oe_set_is_xsave_supported",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 640
+  },
+  {
+    "name": "oe_call_init_functions",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 544
+  },
+  {
+    "name": "_call_init_functions",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "oe_call_fini_functions",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 544
+  },
+  {
+    "name": "_call_fini_functions",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "sched_yield",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "dlmalloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 4656
+  },
+  {
+    "name": "init_mparams",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 576
+  },
+  {
+    "name": "spin_acquire_lock",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 368
+  },
+  {
+    "name": "tmalloc_small",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 4352
+  },
+  {
+    "name": "tmalloc_large",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 7632
+  },
+  {
+    "name": "sys_alloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 7744
+  },
+  {
+    "name": "dlfree",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 13024
+  },
+  {
+    "name": "sys_trim",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1920
+  },
+  {
+    "name": "release_unused_segments",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 5456
+  },
+  {
+    "name": "dlcalloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 544
+  },
+  {
+    "name": "dlrealloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1584
+  },
+  {
+    "name": "try_realloc_chunk",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 6944
+  },
+  {
+    "name": "dlrealloc_in_place",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1088
+  },
+  {
+    "name": "dlmemalign",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "internal_memalign",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2720
+  },
+  {
+    "name": "dlposix_memalign",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 752
+  },
+  {
+    "name": "dlvalloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "dlpvalloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "dlindependent_calloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "ialloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3104
+  },
+  {
+    "name": "dlindependent_comalloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "dlbulk_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "internal_bulk_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1744
+  },
+  {
+    "name": "dlmalloc_trim",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 704
+  },
+  {
+    "name": "dlmalloc_footprint",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "dlmalloc_max_footprint",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "dlmalloc_footprint_limit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "dlmalloc_set_footprint_limit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "dlmallinfo",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "internal_mallinfo",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2000
+  },
+  {
+    "name": "dlmallopt",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "change_mparam",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 704
+  },
+  {
+    "name": "dlmalloc_usable_size",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "dlmalloc_sbrk",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 400
+  },
+  {
+    "name": "oe_allocator_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "oe_allocator_cleanup",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "oe_allocator_thread_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "oe_allocator_thread_cleanup",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "oe_allocator_malloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "oe_allocator_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "oe_allocator_calloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "oe_allocator_realloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "oe_allocator_aligned_alloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "oe_allocator_posix_memalign",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "oe_allocator_malloc_usable_size",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "oe_allocator_mallinfo",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "mmap_alloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1168
+  },
+  {
+    "name": "segment_holding",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "init_bins",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 176
+  },
+  {
+    "name": "init_top",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "prepend_alloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 7264
+  },
+  {
+    "name": "add_segment",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3424
+  },
+  {
+    "name": "mmap_resize",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 880
+  },
+  {
+    "name": "dispose_chunk",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 11856
+  },
+  {
+    "name": "oe_buffer_to_argv",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 5520
+  },
+  {
+    "name": "oe_safe_add_sizet",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "oe_safe_mul_sizet",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "oe_uint64_to_hexstr",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 656
+  },
+  {
+    "name": "oe_get_hex_char",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 176
+  },
+  {
+    "name": "oe_uint64_to_octstr",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "oe_uint64_to_decstr",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "oe_int64_to_decstr",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 596
+  },
+  {
+    "name": "oe_rdrand",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 10
+  },
+  {
+    "name": "_rdrand_epilogue",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1
+  },
+  {
+    "name": "oe_rdseed",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 10
+  },
+  {
+    "name": "_rdseed_epilogue",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 7
+  },
+  {
+    "name": "oe_arena_malloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1632
+  },
+  {
+    "name": "oe_round_up_to_multiple",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "oe_safe_add_sizet",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "oe_teardown_arena",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "_get_arena",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 20
+  },
+  {
+    "name": "oe_egetkey",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 28
+  },
+  {
+    "name": "Hacl_HMAC_compute_md5",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 608
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha1",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 624
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha2_224",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 640
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha2_256",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 640
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha2_384",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 912
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha2_512",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 912
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha3_224",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1424
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha3_256",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1424
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha3_384",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1280
+  },
+  {
+    "name": "Hacl_HMAC_compute_sha3_512",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1216
+  },
+  {
+    "name": "Hacl_HMAC_compute_blake2s_32",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1088
+  },
+  {
+    "name": "Hacl_HMAC_compute_blake2b_32",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1200
+  },
+  {
+    "name": "Hacl_Hash_MD5_init",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_MD5_finish",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "Hacl_Hash_MD5_update_multi",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 5872
+  },
+  {
+    "name": "Hacl_Hash_MD5_update_last",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 480
+  },
+  {
+    "name": "Hacl_Hash_MD5_hash_oneshot",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 176
+  },
+  {
+    "name": "Hacl_Hash_MD5_malloc",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "Hacl_Hash_MD5_reset",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_MD5_update",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 528
+  },
+  {
+    "name": "Hacl_Hash_MD5_digest",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "Hacl_Hash_MD5_free",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "Hacl_Hash_MD5_copy",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "Hacl_Hash_MD5_hash",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "update",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 432
+  },
+  {
+    "name": "Hacl_Hash_SHA1_init",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_Hash_SHA1_finish",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "Hacl_Hash_SHA1_update_multi",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "Hacl_Hash_SHA1_update_last",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 480
+  },
+  {
+    "name": "Hacl_Hash_SHA1_hash_oneshot",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 176
+  },
+  {
+    "name": "Hacl_Hash_SHA1_malloc",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "Hacl_Hash_SHA1_reset",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_SHA1_update",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 528
+  },
+  {
+    "name": "Hacl_Hash_SHA1_digest",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "Hacl_Hash_SHA1_free",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "Hacl_Hash_SHA1_copy",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "Hacl_Hash_SHA1_hash",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "sha256_update",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 11104
+  },
+  {
+    "name": "sha512_update",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16048
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha256_init",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha256_update_nblocks",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha256_update_last",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha256_finish",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha224_init",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha224_update_nblocks",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha224_update_last",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha224_finish",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha512_init",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha512_update_nblocks",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha512_update_last",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 400
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha512_finish",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha384_init",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha384_update_nblocks",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha384_update_last",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_SHA2_sha384_finish",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "Hacl_Hash_SHA2_malloc_256",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "Hacl_Hash_SHA2_copy_256",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "Hacl_Hash_SHA2_reset_256",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_SHA2_update_256",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 512
+  },
+  {
+    "name": "Hacl_Hash_SHA2_digest_256",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 176
+  },
+  {
+    "name": "Hacl_Hash_SHA2_free_256",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "Hacl_Hash_SHA2_hash_256",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "Hacl_Hash_SHA2_malloc_224",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "Hacl_Hash_SHA2_reset_224",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_SHA2_update_224",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 512
+  },
+  {
+    "name": "Hacl_Hash_SHA2_digest_224",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 176
+  },
+  {
+    "name": "Hacl_Hash_SHA2_free_224",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_SHA2_hash_224",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "Hacl_Hash_SHA2_malloc_512",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "Hacl_Hash_SHA2_copy_512",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "Hacl_Hash_SHA2_reset_512",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_SHA2_update_512",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 528
+  },
+  {
+    "name": "Hacl_Hash_SHA2_digest_512",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "Hacl_Hash_SHA2_free_512",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "Hacl_Hash_SHA2_hash_512",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "Hacl_Hash_SHA2_malloc_384",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "Hacl_Hash_SHA2_reset_384",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_SHA2_update_384",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 528
+  },
+  {
+    "name": "Hacl_Hash_SHA2_digest_384",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "Hacl_Hash_SHA2_free_384",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_SHA2_hash_384",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "absorb_inner_32",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 2752
+  },
+  {
+    "name": "squeeze",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 2384
+  },
+  {
+    "name": "block_len.part.0",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "hash_len.part.0",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_SHA3_init_",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_Hash_SHA3_update_multi_sha3",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "Hacl_Hash_SHA3_update_last_sha3",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 3536
+  },
+  {
+    "name": "digest_",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "Hacl_Hash_SHA3_get_alg",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_SHA3_malloc",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "Hacl_Hash_SHA3_free",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "Hacl_Hash_SHA3_copy",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "Hacl_Hash_SHA3_reset",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_SHA3_update",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 688
+  },
+  {
+    "name": "Hacl_Hash_SHA3_digest",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "Hacl_Hash_SHA3_squeeze",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "Hacl_Hash_SHA3_block_len",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "Hacl_Hash_SHA3_hash_len",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "Hacl_Hash_SHA3_is_shake",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_Hash_SHA3_absorb_inner_32",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 2752
+  },
+  {
+    "name": "Hacl_Hash_SHA3_shake128",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 4688
+  },
+  {
+    "name": "Hacl_Hash_SHA3_shake256",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 4736
+  },
+  {
+    "name": "Hacl_Hash_SHA3_sha3_224",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 2272
+  },
+  {
+    "name": "Hacl_Hash_SHA3_sha3_256",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 2272
+  },
+  {
+    "name": "Hacl_Hash_SHA3_sha3_384",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 2256
+  },
+  {
+    "name": "Hacl_Hash_SHA3_sha3_512",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 2256
+  },
+  {
+    "name": "Hacl_Hash_SHA3_state_malloc",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_Hash_SHA3_state_free",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_SHA3_shake128_absorb_nblocks",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "Hacl_Hash_SHA3_shake128_absorb_final",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1616
+  },
+  {
+    "name": "Hacl_Hash_SHA3_shake128_squeeze_nblocks",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 2032
+  },
+  {
+    "name": "update_block",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 6208
+  },
+  {
+    "name": "reset_raw",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 512
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_init",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_update_multi",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_update_last",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_finish",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_malloc_with_params_and_key",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 640
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_malloc_with_key",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_malloc",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_reset_with_key_and_params",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_reset_with_key",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_reset",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_update",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 864
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_digest",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 352
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_info",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_free",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_copy",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_hash_with_key",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 512
+  },
+  {
+    "name": "Hacl_Hash_Blake2s_hash_with_key_and_params",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 832
+  },
+  {
+    "name": "update_block",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 8592
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_init",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 352
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_update_multi",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_update_last",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_finish",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_malloc_with_params_and_key",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 640
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_malloc_with_key",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_malloc",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_reset_with_key_and_params",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 544
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_reset_with_key",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 560
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_reset",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_update",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 880
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_digest",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_info",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_free",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_copy",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_hash_with_key",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 528
+  },
+  {
+    "name": "Hacl_Hash_Blake2b_hash_with_key_and_params",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 960
+  },
+  {
+    "name": "FStar_UInt8_eq_mask",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "poly1305_padded_32",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1280
+  },
+  {
+    "name": "Hacl_AEAD_Chacha20Poly1305_encrypt",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 944
+  },
+  {
+    "name": "Hacl_AEAD_Chacha20Poly1305_decrypt",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1296
+  },
+  {
+    "name": "Lib_Memzero0_memzero0",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "double_round",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 464
+  },
+  {
+    "name": "chacha20_encrypt_block",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1280
+  },
+  {
+    "name": "Hacl_Impl_Chacha20_chacha20_init",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "Hacl_Impl_Chacha20_chacha20_update",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "Hacl_Chacha20_chacha20_encrypt",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "Hacl_Chacha20_chacha20_decrypt",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "poly1305_update",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1360
+  },
+  {
+    "name": "FStar_UInt64_gte_mask.constprop.0",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "FStar_UInt64_eq_mask.constprop.0",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_poly1305_init",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_poly1305_finish",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 496
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_malloc",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_reset",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_update",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 1104
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_digest",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_free",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "Hacl_MAC_Poly1305_mac",
+    "is_hacl": true,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "oe_cert_chain_get_root_cert",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1312
+  },
+  {
+    "name": "oe_cert_chain_get_leaf_cert",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "oe_safe_add_sizet",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "_to_big_endian",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "oe_kdf_derive_key",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1232
+  },
+  {
+    "name": "kdf_hmac_sha256_ctr",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 4656
+  },
+  {
+    "name": "_min",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "oe_secure_zero_fill",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "_cert_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "oe_cert_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 464
+  },
+  {
+    "name": "_cert_is_valid",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "_cert_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 416
+  },
+  {
+    "name": "oe_cert_chain_read_pem",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3712
+  },
+  {
+    "name": "_referent_new",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 432
+  },
+  {
+    "name": "_sort_certs_by_issue_date",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 608
+  },
+  {
+    "name": "_verify_whole_chain",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2144
+  },
+  {
+    "name": "_cert_chain_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "_referent_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 432
+  },
+  {
+    "name": "oe_cert_chain_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 528
+  },
+  {
+    "name": "_cert_chain_is_valid",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "oe_cert_verify",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 6176
+  },
+  {
+    "name": "_mbedtls_x509_crt_verify",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1504
+  },
+  {
+    "name": "_crl_list_find_issuer_for_cert",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 400
+  },
+  {
+    "name": "oe_secure_zero_fill",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_cert_get_ec_public_key",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1104
+  },
+  {
+    "name": "oe_is_ec_key",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "oe_cert_chain_get_length",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 592
+  },
+  {
+    "name": "oe_cert_chain_get_cert",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1104
+  },
+  {
+    "name": "_referent_get_cert",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "oe_cert_find_extension",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1040
+  },
+  {
+    "name": "_parse_extensions",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 6672
+  },
+  {
+    "name": "_find_extension",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1216
+  },
+  {
+    "name": "oe_cert_get_validity_dates",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1008
+  },
+  {
+    "name": "_referent_add_ref",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "oe_atomic_increment",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "_mbedtls_x509_time_is_before_or_equal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 640
+  },
+  {
+    "name": "_find_root_cert",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 480
+  },
+  {
+    "name": "_x509_buf_equal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 352
+  },
+  {
+    "name": "oe_atomic_decrement",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "oe_aes_cmac_sign",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1568
+  },
+  {
+    "name": "oe_secure_zero_fill",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "crl_is_valid",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "oe_crl_read_der",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2096
+  },
+  {
+    "name": "_crl_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "oe_crl_read_pem",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2096
+  },
+  {
+    "name": "oe_crl_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 464
+  },
+  {
+    "name": "_crl_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "oe_crl_get_update_dates",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1152
+  },
+  {
+    "name": "oe_mbedtls_get_drbg",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "_seed_entropy_source_once",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "_seed_entropy_source",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 560
+  },
+  {
+    "name": "oe_ec_public_key_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "_copy_key",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3568
+  },
+  {
+    "name": "oe_ec_private_key_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_ec_private_key_write_pem",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_ec_public_key_read_pem",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_ec_public_key_write_pem",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_ec_private_key_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "oe_ec_public_key_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "oe_ec_public_key_verify",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "oe_ec_generate_key_pair_from_private",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 6480
+  },
+  {
+    "name": "mbedtls_pk_ec",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "_get_group_id",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "oe_ec_public_key_equal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "oe_public_key_equal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1472
+  },
+  {
+    "name": "oe_ec_public_key_from_coordinates",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 4304
+  },
+  {
+    "name": "oe_secure_zero_fill",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_ecdsa_signature_write_der",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 5968
+  },
+  {
+    "name": "oe_ec_valid_raw_private_key",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1344
+  },
+  {
+    "name": "oe_hmac_sha256_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2016
+  },
+  {
+    "name": "oe_hmac_sha256_update",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1152
+  },
+  {
+    "name": "oe_hmac_sha256_final",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1136
+  },
+  {
+    "name": "oe_hmac_sha256_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 416
+  },
+  {
+    "name": "SCOSSL_ENGINE_Initialize",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "oe_crypto_initialize",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "OSSL_provider_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 32
+  },
+  {
+    "name": "oe_private_key_is_valid",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_private_key_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1360
+  },
+  {
+    "name": "oe_private_key_release",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "oe_secure_zero_fill",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_public_key_is_valid",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "oe_public_key_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1344
+  },
+  {
+    "name": "oe_public_key_release",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "oe_private_key_write_pem",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2720
+  },
+  {
+    "name": "oe_public_key_read_pem",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2688
+  },
+  {
+    "name": "oe_public_key_write_pem",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2720
+  },
+  {
+    "name": "oe_private_key_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "oe_public_key_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "_map_hash_type",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 256
+  },
+  {
+    "name": "oe_public_key_verify",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1504
+  },
+  {
+    "name": "oe_sha256_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1104
+  },
+  {
+    "name": "oe_sha256_update",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1168
+  },
+  {
+    "name": "oe_sha256_final",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1152
+  },
+  {
+    "name": "mbedtls_x509_crl_parse_der",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 6688
+  },
+  {
+    "name": "mbedtls_x509_crl_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1232
+  },
+  {
+    "name": "mbedtls_x509_crl_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_error_add",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "x509_crl_get_version",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "x509_get_entries",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1392
+  },
+  {
+    "name": "x509_get_crl_ext",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1840
+  },
+  {
+    "name": "mbedtls_x509_crl_parse",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1424
+  },
+  {
+    "name": "x509_get_crl_entry_ext",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1200
+  },
+  {
+    "name": "mbedtls_x509_crt_parse_der_internal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1248
+  },
+  {
+    "name": "mbedtls_x509_crt_parse_der",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "mbedtls_x509_crt_parse",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2016
+  },
+  {
+    "name": "mbedtls_x509_parse_subject_alt_name",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 848
+  },
+  {
+    "name": "x509_get_other_name",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2096
+  },
+  {
+    "name": "mbedtls_x509_crt_verify_info",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 928
+  },
+  {
+    "name": "mbedtls_x509_crt_check_key_usage",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "mbedtls_x509_crt_is_revoked",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 528
+  },
+  {
+    "name": "mbedtls_x509_crt_verify",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "x509_crt_verify_restartable_ca_cb",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1616
+  },
+  {
+    "name": "mbedtls_x509_crt_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_x509_crt_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2032
+  },
+  {
+    "name": "x509_crt_parse_der_core",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 7008
+  },
+  {
+    "name": "mbedtls_error_add",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "x509_get_version",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 800
+  },
+  {
+    "name": "x509_get_dates",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 768
+  },
+  {
+    "name": "x509_get_uid",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 480
+  },
+  {
+    "name": "x509_get_crt_ext",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 4688
+  },
+  {
+    "name": "x509_get_basic_constraints",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1504
+  },
+  {
+    "name": "x509_get_key_usage",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 880
+  },
+  {
+    "name": "x509_get_ext_key_usage",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 416
+  },
+  {
+    "name": "x509_get_subject_alt_name",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2480
+  },
+  {
+    "name": "x509_get_ns_cert_type",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 592
+  },
+  {
+    "name": "x509_get_certificate_policies",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2560
+  },
+  {
+    "name": "x509_crt_verify_chain_reset",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "x509_crt_verify_name",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1200
+  },
+  {
+    "name": "x509_profile_check_pk_alg",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "x509_profile_check_key",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 752
+  },
+  {
+    "name": "x509_crt_verify_chain",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2464
+  },
+  {
+    "name": "x509_crt_merge_flags_with_cb",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 608
+  },
+  {
+    "name": "x509_crt_check_san",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "x509_crt_check_cn",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 384
+  },
+  {
+    "name": "x509_memcasecmp",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 736
+  },
+  {
+    "name": "x509_check_wildcard",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 896
+  },
+  {
+    "name": "mbedtls_pk_ec",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "x509_profile_check_md_alg",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "x509_crt_check_ee_locally_trusted",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 560
+  },
+  {
+    "name": "x509_crt_find_parent",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 624
+  },
+  {
+    "name": "x509_name_cmp",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 944
+  },
+  {
+    "name": "x509_crt_verifycrl",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2352
+  },
+  {
+    "name": "x509_crt_find_parent_in",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1216
+  },
+  {
+    "name": "x509_crt_check_parent",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 688
+  },
+  {
+    "name": "x509_crt_check_signature",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 880
+  },
+  {
+    "name": "x509_string_cmp",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 960
+  },
+  {
+    "name": "mbedtls_x509_get_serial",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 720
+  },
+  {
+    "name": "mbedtls_error_add",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "mbedtls_x509_get_alg_null",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "mbedtls_x509_get_alg",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "mbedtls_x509_get_rsassa_pss_params",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 4112
+  },
+  {
+    "name": "x509_get_hash_alg",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1376
+  },
+  {
+    "name": "mbedtls_x509_get_name",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1328
+  },
+  {
+    "name": "x509_get_attr_type_value",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2064
+  },
+  {
+    "name": "mbedtls_x509_get_time",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 864
+  },
+  {
+    "name": "x509_parse_time",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1744
+  },
+  {
+    "name": "mbedtls_x509_get_sig",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 592
+  },
+  {
+    "name": "mbedtls_x509_get_sig_alg",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 960
+  },
+  {
+    "name": "mbedtls_x509_get_ext",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 784
+  },
+  {
+    "name": "mbedtls_x509_time_is_past",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "x509_get_current_time",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 512
+  },
+  {
+    "name": "x509_check_time",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1872
+  },
+  {
+    "name": "mbedtls_x509_time_is_future",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "x509_parse_int",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 368
+  },
+  {
+    "name": "x509_date_is_valid",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2016
+  },
+  {
+    "name": "mbedtls_asn1_get_len",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1312
+  },
+  {
+    "name": "mbedtls_asn1_get_tag",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "mbedtls_asn1_get_bool",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 448
+  },
+  {
+    "name": "mbedtls_asn1_get_int",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "asn1_get_tagged_int",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1104
+  },
+  {
+    "name": "mbedtls_asn1_get_mpi",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 416
+  },
+  {
+    "name": "mbedtls_asn1_get_bitstring",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 544
+  },
+  {
+    "name": "mbedtls_asn1_traverse_sequence_of",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1104
+  },
+  {
+    "name": "mbedtls_asn1_get_bitstring_null",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 400
+  },
+  {
+    "name": "mbedtls_asn1_get_sequence_of",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 368
+  },
+  {
+    "name": "asn1_get_sequence_of_cb",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 368
+  },
+  {
+    "name": "mbedtls_asn1_get_alg",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1040
+  },
+  {
+    "name": "mbedtls_asn1_get_alg_null",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 624
+  },
+  {
+    "name": "mbedtls_asn1_write_len",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1376
+  },
+  {
+    "name": "mbedtls_asn1_write_tag",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "mbedtls_asn1_write_raw_buffer",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 352
+  },
+  {
+    "name": "mbedtls_asn1_write_mpi",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1184
+  },
+  {
+    "name": "mbedtls_asn1_write_null",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 384
+  },
+  {
+    "name": "mbedtls_asn1_write_oid",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 544
+  },
+  {
+    "name": "mbedtls_asn1_write_algorithm_identifier",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "mbedtls_asn1_write_algorithm_identifier_ext",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 896
+  },
+  {
+    "name": "mbedtls_asn1_write_int",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "asn1_write_tagged_int",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 832
+  },
+  {
+    "name": "mbedtls_asn1_write_octet_string",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 544
+  },
+  {
+    "name": "mbedtls_mpi_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "mbedtls_mpi_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 352
+  },
+  {
+    "name": "mbedtls_mpi_zeroize",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_mpi_grow",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 656
+  },
+  {
+    "name": "mbedtls_mpi_shrink",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1024
+  },
+  {
+    "name": "mbedtls_mpi_copy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1056
+  },
+  {
+    "name": "mbedtls_mpi_lset",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 384
+  },
+  {
+    "name": "mpi_sint_abs",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "mbedtls_mpi_get_bit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "mbedtls_mpi_set_bit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 656
+  },
+  {
+    "name": "mbedtls_mpi_lsb",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 400
+  },
+  {
+    "name": "mbedtls_mpi_bitlen",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 432
+  },
+  {
+    "name": "mbedtls_clz",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "mbedtls_mpi_size",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_mpi_mul_int",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 912
+  },
+  {
+    "name": "mbedtls_mpi_add_int",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 368
+  },
+  {
+    "name": "mbedtls_mpi_read_binary_le",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 432
+  },
+  {
+    "name": "mbedtls_mpi_resize_clear",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 416
+  },
+  {
+    "name": "mbedtls_mpi_read_binary",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 496
+  },
+  {
+    "name": "mpi_bigendian_to_host",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 384
+  },
+  {
+    "name": "mbedtls_mpi_write_binary_le",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 736
+  },
+  {
+    "name": "mbedtls_mpi_write_binary",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 704
+  },
+  {
+    "name": "mbedtls_mpi_shift_l",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1200
+  },
+  {
+    "name": "mbedtls_mpi_shift_r",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1152
+  },
+  {
+    "name": "mbedtls_mpi_cmp_abs",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1200
+  },
+  {
+    "name": "mbedtls_mpi_cmp_mpi",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1568
+  },
+  {
+    "name": "mbedtls_mpi_cmp_int",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "mbedtls_mpi_add_abs",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1712
+  },
+  {
+    "name": "mbedtls_mpi_sub_abs",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1680
+  },
+  {
+    "name": "mpi_sub_hlp",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "mbedtls_mpi_add_mpi",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "add_sub_mpi",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 848
+  },
+  {
+    "name": "mbedtls_mpi_sub_mpi",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "mbedtls_mpi_sub_int",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 368
+  },
+  {
+    "name": "mbedtls_mpi_mul_mpi",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2224
+  },
+  {
+    "name": "mpi_mul_hlp",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1488
+  },
+  {
+    "name": "mbedtls_mpi_div_mpi",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 7200
+  },
+  {
+    "name": "mbedtls_int_div_int",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1616
+  },
+  {
+    "name": "mbedtls_mpi_mod_mpi",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 912
+  },
+  {
+    "name": "mbedtls_mpi_mod_int",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 912
+  },
+  {
+    "name": "mbedtls_mpi_montmul_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "mbedtls_mpi_montmul",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1040
+  },
+  {
+    "name": "mbedtls_mpi_get_mont_r2_unsafe",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 608
+  },
+  {
+    "name": "mbedtls_mpi_exp_mod",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 9600
+  },
+  {
+    "name": "mpi_montred",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "mpi_select",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 416
+  },
+  {
+    "name": "mbedtls_mpi_gcd",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2672
+  },
+  {
+    "name": "mbedtls_mpi_fill_random",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 400
+  },
+  {
+    "name": "mpi_fill_random_internal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 640
+  },
+  {
+    "name": "mbedtls_mpi_random",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1920
+  },
+  {
+    "name": "mbedtls_mpi_inv_mod",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 7168
+  },
+  {
+    "name": "mbedtls_mpi_is_prime_ext",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 848
+  },
+  {
+    "name": "mpi_check_small_factors",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 752
+  },
+  {
+    "name": "mpi_miller_rabin",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3856
+  },
+  {
+    "name": "mpi_uint_bigendian_to_host",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 48
+  },
+  {
+    "name": "mbedtls_cipher_info_from_type",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 256
+  },
+  {
+    "name": "mbedtls_cipher_info_from_values",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 416
+  },
+  {
+    "name": "mbedtls_cipher_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_cipher_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 512
+  },
+  {
+    "name": "mbedtls_cipher_setup",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 384
+  },
+  {
+    "name": "mbedtls_cipher_set_padding_mode",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 656
+  },
+  {
+    "name": "mbedtls_cipher_setkey",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 912
+  },
+  {
+    "name": "mbedtls_cipher_update",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 4336
+  },
+  {
+    "name": "mbedtls_cipher_get_block_size",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "add_pkcs_padding",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 176
+  },
+  {
+    "name": "get_pkcs_padding",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 688
+  },
+  {
+    "name": "add_one_and_zeros_padding",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 176
+  },
+  {
+    "name": "get_one_and_zeros_padding",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 736
+  },
+  {
+    "name": "add_zeros_and_len_padding",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "get_zeros_and_len_padding",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 688
+  },
+  {
+    "name": "add_zeros_padding",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "get_zeros_padding",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 512
+  },
+  {
+    "name": "get_no_padding",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "aes_crypt_ecb_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "aes_crypt_cbc_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "aes_crypt_ofb_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "aes_crypt_ctr_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "aes_setkey_enc_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "aes_setkey_dec_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "aes_ctx_alloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "aes_ctx_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "aes_crypt_xts_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "xts_aes_setkey_enc_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "xts_aes_setkey_dec_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "xts_aes_ctx_alloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "xts_aes_ctx_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "gcm_aes_setkey_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "gcm_ctx_alloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "gcm_ctx_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "ccm_aes_setkey_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "ccm_ctx_alloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "ccm_ctx_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "des_crypt_ecb_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "des_crypt_cbc_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "des_setkey_enc_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "des_setkey_dec_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "des_ctx_alloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "des_ctx_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "des3_crypt_ecb_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "des3_crypt_cbc_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "des3_set2key_enc_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "des3_set2key_dec_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "des3_ctx_alloc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "des3_ctx_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "des3_set3key_enc_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "des3_set3key_dec_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_ct_memcmp",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "mbedtls_ct_uint_mask",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "mbedtls_ct_size_mask",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "mbedtls_ct_mpi_uint_mask",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "mbedtls_ct_size_mask_ge",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_ct_size_mask_lt",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "mbedtls_ct_size_bool_eq",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "mbedtls_ct_mpi_uint_lt",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_ct_uint_if",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "mbedtls_ct_mpi_uint_cond_assign",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "mbedtls_ct_base64_enc_char",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 432
+  },
+  {
+    "name": "mbedtls_ct_uchar_mask_of_range",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_ct_base64_dec_value",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 480
+  },
+  {
+    "name": "mbedtls_mpi_safe_cond_assign",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 656
+  },
+  {
+    "name": "mbedtls_mpi_safe_cond_swap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 992
+  },
+  {
+    "name": "mbedtls_mpi_lt_mpi_ct",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 672
+  },
+  {
+    "name": "mbedtls_ct_rsaes_pkcs1_v15_unpadding",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1872
+  },
+  {
+    "name": "mbedtls_ct_size_gt",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "mbedtls_ct_mem_move_to_left",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 608
+  },
+  {
+    "name": "mbedtls_cipher_cmac_starts",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 768
+  },
+  {
+    "name": "mbedtls_cipher_cmac_update",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1728
+  },
+  {
+    "name": "cmac_xor_block",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "mbedtls_cipher_cmac_finish",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1664
+  },
+  {
+    "name": "cmac_generate_subkeys",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 720
+  },
+  {
+    "name": "cmac_pad",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "mbedtls_cipher_cmac",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1152
+  },
+  {
+    "name": "cmac_multiply_by_u",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 448
+  },
+  {
+    "name": "mbedtls_ctr_drbg_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "block_cipher_df",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2880
+  },
+  {
+    "name": "ctr_drbg_update_internal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1152
+  },
+  {
+    "name": "mbedtls_ctr_drbg_reseed",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "mbedtls_ctr_drbg_reseed_internal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1840
+  },
+  {
+    "name": "mbedtls_ctr_drbg_seed",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1008
+  },
+  {
+    "name": "good_nonce_len",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "mbedtls_ctr_drbg_random_with_add",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2192
+  },
+  {
+    "name": "mbedtls_ctr_drbg_random",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 432
+  },
+  {
+    "name": "mbedtls_des_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_des_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "mbedtls_des3_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_des3_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "mbedtls_des_setkey",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1856
+  },
+  {
+    "name": "mbedtls_des_setkey_enc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_des_setkey_dec",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 384
+  },
+  {
+    "name": "mbedtls_des3_set2key_enc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "des3_set2key",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 560
+  },
+  {
+    "name": "mbedtls_des3_set2key_dec",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "mbedtls_des3_set3key_enc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "des3_set3key",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 560
+  },
+  {
+    "name": "mbedtls_des3_set3key_dec",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "mbedtls_des_crypt_ecb",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1664
+  },
+  {
+    "name": "mbedtls_des_crypt_cbc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1360
+  },
+  {
+    "name": "mbedtls_des3_crypt_ecb",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3376
+  },
+  {
+    "name": "mbedtls_des3_crypt_cbc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1360
+  },
+  {
+    "name": "mbedtls_ecp_get_type",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "mbedtls_ecp_point_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "mbedtls_ecp_group_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 480
+  },
+  {
+    "name": "mbedtls_ecp_keypair_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "mbedtls_ecp_point_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "mbedtls_ecp_group_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 832
+  },
+  {
+    "name": "mbedtls_ecp_keypair_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "mbedtls_ecp_copy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 496
+  },
+  {
+    "name": "mbedtls_ecp_group_copy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "mbedtls_ecp_set_zero",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 464
+  },
+  {
+    "name": "mbedtls_ecp_is_zero",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "mbedtls_ecp_point_cmp",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 464
+  },
+  {
+    "name": "mbedtls_ecp_point_write_binary",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1808
+  },
+  {
+    "name": "mbedtls_ecp_point_read_binary",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1952
+  },
+  {
+    "name": "mbedtls_ecp_mul_restartable",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1056
+  },
+  {
+    "name": "mbedtls_ecp_check_privkey",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1072
+  },
+  {
+    "name": "mbedtls_ecp_check_pubkey",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 512
+  },
+  {
+    "name": "ecp_mul_mxz",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3744
+  },
+  {
+    "name": "ecp_mul_comb",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3104
+  },
+  {
+    "name": "mbedtls_ecp_mul",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "mbedtls_ecp_muladd_restartable",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1264
+  },
+  {
+    "name": "mbedtls_ecp_mul_shortcuts",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1792
+  },
+  {
+    "name": "ecp_add_mixed",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 5712
+  },
+  {
+    "name": "ecp_normalize_jac",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1456
+  },
+  {
+    "name": "ecp_check_pubkey_mx",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 384
+  },
+  {
+    "name": "ecp_check_pubkey_sw",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2480
+  },
+  {
+    "name": "mbedtls_ecp_gen_privkey",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 480
+  },
+  {
+    "name": "mbedtls_ecp_gen_privkey_mx",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 992
+  },
+  {
+    "name": "mbedtls_ecp_gen_privkey_sw",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "mbedtls_ecp_write_key",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 816
+  },
+  {
+    "name": "mbedtls_ecp_check_pub_priv",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1904
+  },
+  {
+    "name": "ecp_drbg_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "ecp_drbg_seed",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 656
+  },
+  {
+    "name": "ecp_drbg_random",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "ecp_randomize_mxz",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 832
+  },
+  {
+    "name": "ecp_double_add_mxz",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 4304
+  },
+  {
+    "name": "ecp_normalize_mxz",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 496
+  },
+  {
+    "name": "ecp_drbg_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "mbedtls_mpi_mul_mod",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 352
+  },
+  {
+    "name": "ecp_modp",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1392
+  },
+  {
+    "name": "mbedtls_mpi_add_mod",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 480
+  },
+  {
+    "name": "mbedtls_mpi_sub_mod",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 592
+  },
+  {
+    "name": "ecp_pick_window_size",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "ecp_precompute_comb",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2336
+  },
+  {
+    "name": "ecp_mul_comb_after_precomp",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1328
+  },
+  {
+    "name": "ecp_double_jac",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 6000
+  },
+  {
+    "name": "ecp_normalize_jac_many",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3968
+  },
+  {
+    "name": "mbedtls_mpi_shift_l_mod",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 480
+  },
+  {
+    "name": "ecp_comb_recode_scalar",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1200
+  },
+  {
+    "name": "ecp_mul_comb_core",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1712
+  },
+  {
+    "name": "ecp_safe_invert_jac",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 688
+  },
+  {
+    "name": "ecp_randomize_jac",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1392
+  },
+  {
+    "name": "ecp_comb_recode_core",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 832
+  },
+  {
+    "name": "ecp_select_comb",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 688
+  },
+  {
+    "name": "ecp_check_bad_points_mx",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1376
+  },
+  {
+    "name": "mbedtls_ecp_group_load",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1408
+  },
+  {
+    "name": "ecp_mod_p256",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 11616
+  },
+  {
+    "name": "ecp_group_load",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 896
+  },
+  {
+    "name": "ecp_mod_p384",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 15232
+  },
+  {
+    "name": "ecp_mod_p521",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1120
+  },
+  {
+    "name": "ecp_mod_p256k1",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "ecp_mod_p255",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1328
+  },
+  {
+    "name": "ecp_use_curve25519",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1456
+  },
+  {
+    "name": "ecp_mod_p448",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2112
+  },
+  {
+    "name": "ecp_use_curve448",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2160
+  },
+  {
+    "name": "ecp_mpi_load",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "ecp_mpi_set1",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "add32",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "sub32",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_ecp_fix_negative",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 608
+  },
+  {
+    "name": "ecp_mod_koblitz",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2928
+  },
+  {
+    "name": "mbedtls_entropy_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 352
+  },
+  {
+    "name": "mbedtls_entropy_add_source",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 592
+  },
+  {
+    "name": "entropy_update",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1104
+  },
+  {
+    "name": "entropy_gather_internal",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1344
+  },
+  {
+    "name": "mbedtls_entropy_func",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2576
+  },
+  {
+    "name": "mbedtls_gcm_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_gcm_setkey",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 672
+  },
+  {
+    "name": "gcm_gen_table",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1472
+  },
+  {
+    "name": "gcm_mult",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1888
+  },
+  {
+    "name": "mbedtls_gcm_update",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1840
+  },
+  {
+    "name": "mbedtls_gcm_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "mbedtls_hmac_drbg_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_hmac_drbg_update_ret",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1760
+  },
+  {
+    "name": "mbedtls_hmac_drbg_seed_buf",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 784
+  },
+  {
+    "name": "mbedtls_hmac_drbg_reseed",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "hmac_drbg_reseed_core",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1744
+  },
+  {
+    "name": "mbedtls_hmac_drbg_random_with_add",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1792
+  },
+  {
+    "name": "mbedtls_hmac_drbg_random",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 432
+  },
+  {
+    "name": "mbedtls_hmac_drbg_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 352
+  },
+  {
+    "name": "mbedtls_md_list",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "mbedtls_md_info_from_type",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 432
+  },
+  {
+    "name": "mbedtls_md_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_md_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1072
+  },
+  {
+    "name": "mbedtls_md_setup",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1696
+  },
+  {
+    "name": "mbedtls_md_starts",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 896
+  },
+  {
+    "name": "mbedtls_md_update",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 784
+  },
+  {
+    "name": "mbedtls_md_finish",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 720
+  },
+  {
+    "name": "mbedtls_md",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 832
+  },
+  {
+    "name": "mbedtls_md_hmac_starts",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1824
+  },
+  {
+    "name": "mbedtls_md_hmac_update",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "mbedtls_md_hmac_finish",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1056
+  },
+  {
+    "name": "mbedtls_md_hmac_reset",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 464
+  },
+  {
+    "name": "mbedtls_md_get_size",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "mbedtls_md5_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_md5_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "mbedtls_md5_starts_ret",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_internal_md5_process",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 5152
+  },
+  {
+    "name": "mbedtls_md5_update_ret",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1056
+  },
+  {
+    "name": "mbedtls_md5_finish_ret",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1360
+  },
+  {
+    "name": "mbedtls_md5_ret",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 704
+  },
+  {
+    "name": "mbedtls_oid_get_x509_ext_type",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "oid_x509_ext_from_asn1",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 560
+  },
+  {
+    "name": "oid_sig_alg_from_asn1",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 560
+  },
+  {
+    "name": "mbedtls_oid_get_sig_alg",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "mbedtls_oid_get_pk_alg",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "oid_pk_alg_from_asn1",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 560
+  },
+  {
+    "name": "mbedtls_oid_get_oid_by_pk_alg",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "mbedtls_oid_get_ec_grp",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "oid_grp_id_from_asn1",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 560
+  },
+  {
+    "name": "mbedtls_oid_get_oid_by_ec_grp",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "mbedtls_oid_get_md_alg",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "oid_md_alg_from_asn1",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 560
+  },
+  {
+    "name": "mbedtls_oid_get_oid_by_md",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "mbedtls_oid_get_numeric_string",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1472
+  },
+  {
+    "name": "mbedtls_pem_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_pem_read_buffer",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 6688
+  },
+  {
+    "name": "pem_get_iv",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1008
+  },
+  {
+    "name": "mbedtls_error_add",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "pem_des3_decrypt",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 832
+  },
+  {
+    "name": "pem_des_decrypt",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 832
+  },
+  {
+    "name": "pem_aes_decrypt",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 832
+  },
+  {
+    "name": "mbedtls_pem_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 368
+  },
+  {
+    "name": "mbedtls_pem_write_buffer",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2016
+  },
+  {
+    "name": "pem_pbkdf1",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1936
+  },
+  {
+    "name": "mbedtls_pk_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "mbedtls_pk_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "mbedtls_pk_info_from_type",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "mbedtls_pk_setup",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "mbedtls_pk_can_do",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "mbedtls_pk_verify_restartable",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 624
+  },
+  {
+    "name": "pk_hashlen_helper",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 592
+  },
+  {
+    "name": "mbedtls_pk_verify",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "mbedtls_pk_verify_ext",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1280
+  },
+  {
+    "name": "mbedtls_pk_get_len",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_pk_rsa",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "mbedtls_pk_get_bitlen",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "mbedtls_pk_get_type",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "rsa_get_bitlen",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 544
+  },
+  {
+    "name": "rsa_can_do",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "rsa_verify_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 640
+  },
+  {
+    "name": "rsa_sign_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 400
+  },
+  {
+    "name": "rsa_decrypt_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "rsa_encrypt_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "rsa_check_pair_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "rsa_alloc_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "rsa_free_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "rsa_debug",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "eckey_get_bitlen",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "eckey_can_do",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "eckey_verify_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 624
+  },
+  {
+    "name": "eckey_sign_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 672
+  },
+  {
+    "name": "eckey_check_pair",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "eckey_alloc_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "eckey_free_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "eckey_debug",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 80
+  },
+  {
+    "name": "eckeydh_can_do",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "ecdsa_can_do",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "ecdsa_verify_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "ecdsa_sign_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "ecdsa_alloc_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "ecdsa_free_wrap",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "mbedtls_pk_parse_subpubkey",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2272
+  },
+  {
+    "name": "mbedtls_error_add",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "pk_get_pk_alg",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 944
+  },
+  {
+    "name": "pk_get_rsapubkey",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1744
+  },
+  {
+    "name": "mbedtls_pk_rsa",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "pk_use_ecparams",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 624
+  },
+  {
+    "name": "mbedtls_pk_ec",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "pk_get_ecpubkey",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "mbedtls_pk_parse_public_key",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2752
+  },
+  {
+    "name": "mbedtls_pk_write_pubkey",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 912
+  },
+  {
+    "name": "pk_write_rsa_pubkey",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1296
+  },
+  {
+    "name": "mbedtls_pk_rsa",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "pk_write_ec_pubkey",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 800
+  },
+  {
+    "name": "mbedtls_pk_ec",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "mbedtls_pk_write_pubkey_der",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1904
+  },
+  {
+    "name": "pk_write_ec_param",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 496
+  },
+  {
+    "name": "mbedtls_pk_write_key_der",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 5728
+  },
+  {
+    "name": "pk_write_ec_private",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 496
+  },
+  {
+    "name": "mbedtls_pk_write_pubkey_pem",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 704
+  },
+  {
+    "name": "mbedtls_pk_write_key_pem",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1056
+  },
+  {
+    "name": "mbedtls_platform_zeroize",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "mbedtls_platform_gmtime_r",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_error_add",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "mbedtls_rsa_import_raw",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1568
+  },
+  {
+    "name": "mbedtls_rsa_complete",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 4144
+  },
+  {
+    "name": "rsa_check_context",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1744
+  },
+  {
+    "name": "mbedtls_rsa_export",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2096
+  },
+  {
+    "name": "mbedtls_rsa_export_crt",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1488
+  },
+  {
+    "name": "mbedtls_rsa_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "mbedtls_rsa_set_padding",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 96
+  },
+  {
+    "name": "mbedtls_rsa_get_len",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "mbedtls_rsa_check_privkey",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 688
+  },
+  {
+    "name": "mbedtls_rsa_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 976
+  },
+  {
+    "name": "mbedtls_rsa_check_pubkey",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 656
+  },
+  {
+    "name": "mbedtls_rsa_check_pub_priv",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 560
+  },
+  {
+    "name": "mbedtls_rsa_public",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1488
+  },
+  {
+    "name": "mbedtls_rsa_private",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 6672
+  },
+  {
+    "name": "rsa_prepare_blinding",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2624
+  },
+  {
+    "name": "rsa_unblind",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1200
+  },
+  {
+    "name": "mbedtls_rsa_rsaes_oaep_encrypt",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2704
+  },
+  {
+    "name": "mgf_mask",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1472
+  },
+  {
+    "name": "mbedtls_rsa_rsaes_pkcs1_v15_encrypt",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1872
+  },
+  {
+    "name": "mbedtls_rsa_pkcs1_encrypt",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 464
+  },
+  {
+    "name": "mbedtls_rsa_rsaes_oaep_decrypt",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3408
+  },
+  {
+    "name": "mbedtls_rsa_rsaes_pkcs1_v15_decrypt",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1216
+  },
+  {
+    "name": "mbedtls_rsa_pkcs1_decrypt",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 496
+  },
+  {
+    "name": "rsa_rsassa_pss_sign",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3728
+  },
+  {
+    "name": "mbedtls_rsa_rsassa_pss_sign",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "mbedtls_rsa_rsassa_pkcs1_v15_sign",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1760
+  },
+  {
+    "name": "rsa_rsassa_pkcs1_v15_encode",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1904
+  },
+  {
+    "name": "mbedtls_rsa_pkcs1_sign",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 464
+  },
+  {
+    "name": "mbedtls_rsa_rsassa_pss_verify_ext",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 4064
+  },
+  {
+    "name": "mbedtls_rsa_rsassa_pss_verify",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 320
+  },
+  {
+    "name": "mbedtls_rsa_rsassa_pkcs1_v15_verify",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1456
+  },
+  {
+    "name": "mbedtls_rsa_pkcs1_verify",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 464
+  },
+  {
+    "name": "mbedtls_rsa_deduce_primes",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 4688
+  },
+  {
+    "name": "mbedtls_rsa_deduce_private_exponent",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1824
+  },
+  {
+    "name": "mbedtls_rsa_validate_crt",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2832
+  },
+  {
+    "name": "mbedtls_rsa_validate_params",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 4368
+  },
+  {
+    "name": "mbedtls_rsa_deduce_crt",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1296
+  },
+  {
+    "name": "mbedtls_sha1_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_sha1_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "mbedtls_sha1_starts_ret",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 128
+  },
+  {
+    "name": "mbedtls_internal_sha1_process",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 8688
+  },
+  {
+    "name": "mbedtls_sha1_update_ret",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1072
+  },
+  {
+    "name": "mbedtls_sha1_finish_ret",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1488
+  },
+  {
+    "name": "mbedtls_sha1_ret",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 752
+  },
+  {
+    "name": "mbedtls_sha256_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_sha256_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "mbedtls_sha256_starts_ret",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "mbedtls_internal_sha256_process",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 8560
+  },
+  {
+    "name": "mbedtls_sha256_update_ret",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1072
+  },
+  {
+    "name": "mbedtls_sha256_finish_ret",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1904
+  },
+  {
+    "name": "mbedtls_sha256_ret",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 784
+  },
+  {
+    "name": "mbedtls_sha512_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_sha512_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "mbedtls_sha512_starts_ret",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 448
+  },
+  {
+    "name": "mbedtls_internal_sha512_process",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 4192
+  },
+  {
+    "name": "mbedtls_sha512_update_ret",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1088
+  },
+  {
+    "name": "mbedtls_sha512_finish_ret",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3376
+  },
+  {
+    "name": "mbedtls_sha512_ret",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 800
+  },
+  {
+    "name": "threading_mutex_init_pthread",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 176
+  },
+  {
+    "name": "threading_mutex_free_pthread",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "threading_mutex_lock_pthread",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "threading_mutex_unlock_pthread",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "mbedtls_hardware_poll",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1056
+  },
+  {
+    "name": "_get_seed_from_rdrand",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1040
+  },
+  {
+    "name": "_fill_buffer",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 272
+  },
+  {
+    "name": "mbedtls_aes_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_aes_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "mbedtls_aes_xts_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "mbedtls_aes_xts_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "mbedtls_aes_setkey_enc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2960
+  },
+  {
+    "name": "aes_gen_tables",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2608
+  },
+  {
+    "name": "mbedtls_aes_rk_offset",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 16
+  },
+  {
+    "name": "mbedtls_aes_setkey_dec",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1984
+  },
+  {
+    "name": "mbedtls_aes_xts_setkey_enc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 528
+  },
+  {
+    "name": "mbedtls_aes_xts_decode_keys",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 288
+  },
+  {
+    "name": "mbedtls_aes_xts_setkey_dec",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 528
+  },
+  {
+    "name": "mbedtls_internal_aes_encrypt",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3520
+  },
+  {
+    "name": "mbedtls_internal_aes_decrypt",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3520
+  },
+  {
+    "name": "mbedtls_aes_crypt_ecb",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 432
+  },
+  {
+    "name": "mbedtls_aes_crypt_cbc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1424
+  },
+  {
+    "name": "mbedtls_aes_crypt_xts",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2672
+  },
+  {
+    "name": "mbedtls_gf128mul_x_ble",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 880
+  },
+  {
+    "name": "mbedtls_aes_crypt_ofb",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 608
+  },
+  {
+    "name": "mbedtls_aes_crypt_ctr",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 880
+  },
+  {
+    "name": "mbedtls_aesni_has_support",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 176
+  },
+  {
+    "name": "mbedtls_aesni_crypt_ecb",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "mbedtls_aesni_gcm_mult",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 752
+  },
+  {
+    "name": "mbedtls_aesni_inverse_key",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 336
+  },
+  {
+    "name": "mbedtls_aesni_setkey_enc",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 448
+  },
+  {
+    "name": "aesni_setkey_enc_128",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "aesni_setkey_enc_192",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 240
+  },
+  {
+    "name": "aesni_setkey_enc_256",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 256
+  },
+  {
+    "name": "mbedtls_base64_encode",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1728
+  },
+  {
+    "name": "mbedtls_base64_decode",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2624
+  },
+  {
+    "name": "mbedtls_ccm_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "mbedtls_ccm_setkey",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 560
+  },
+  {
+    "name": "mbedtls_ccm_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 208
+  },
+  {
+    "name": "mbedtls_ecdsa_can_do",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 192
+  },
+  {
+    "name": "ecdsa_sign_restartable",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 4064
+  },
+  {
+    "name": "ecdsa_sign_det_restartable",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 2352
+  },
+  {
+    "name": "ecdsa_verify_restartable",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 3296
+  },
+  {
+    "name": "mbedtls_ecdsa_write_signature_restartable",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 944
+  },
+  {
+    "name": "ecdsa_signature_to_asn1",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1248
+  },
+  {
+    "name": "mbedtls_ecdsa_write_signature",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 224
+  },
+  {
+    "name": "mbedtls_ecdsa_read_signature",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "mbedtls_ecdsa_read_signature_restartable",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1376
+  },
+  {
+    "name": "mbedtls_error_add",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 64
+  },
+  {
+    "name": "mbedtls_ecdsa_from_keypair",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 512
+  },
+  {
+    "name": "mbedtls_ecdsa_free",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 160
+  },
+  {
+    "name": "mbedtls_ecdsa_init",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 112
+  },
+  {
+    "name": "derive_mpi",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 896
+  },
+  {
+    "name": "_Exit",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 144
+  },
+  {
+    "name": "snprintf",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 656
+  },
+  {
+    "name": "vsnprintf",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 880
+  },
+  {
+    "name": "sn_write",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 800
+  },
+  {
+    "name": "strstr",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 928
+  },
+  {
+    "name": "twobyte_strstr",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 448
+  },
+  {
+    "name": "threebyte_strstr",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 496
+  },
+  {
+    "name": "fourbyte_strstr",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 528
+  },
+  {
+    "name": "twoway_strstr",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 4688
+  },
+  {
+    "name": "time",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "__clock_gettime",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 384
+  },
+  {
+    "name": "oe_get_entropy",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 1680
+  },
+  {
+    "name": "_get_entropy_kind",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 304
+  },
+  {
+    "name": "_has_cpuid_feature",
+    "is_hacl": false,
+    "is_edger8r": false,
+    "size_bytes": 666
+  }
+]

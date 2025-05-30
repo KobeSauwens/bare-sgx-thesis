@@ -49,7 +49,7 @@ void Lib_Memzero0_memzero0(void *dst, uint64_t len) {
     explicit_memset(dst, 0, len_);
   #else
     /* Default implementation for platforms with no particular support. */
-    #warning "Your platform does not support any safe implementation of memzero -- consider a pull request!"
+    //#warning "Your platform does not support any safe implementation of memzero -- consider a pull request!"
     volatile unsigned char *volatile dst_ = (volatile unsigned char *volatile) dst;
     size_t i = 0U;
     while (i < len)

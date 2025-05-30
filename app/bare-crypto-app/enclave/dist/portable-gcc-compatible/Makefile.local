@@ -1,0 +1,21 @@
+KRML_HOME ?= ../karamel
+USE_MANUAL_SOURCES := yes
+
+
+SOURCES := \
+  Hacl_HMAC.c \
+  Hacl_Hash_MD5.c \
+  Hacl_Hash_SHA1.c \
+  Hacl_Hash_SHA2.c \
+  Hacl_Hash_SHA3.c \
+  Hacl_Hash_Blake2s.c \
+  Hacl_Hash_Blake2b.c \
+  Hacl_Chacha20.c \
+  Hacl_MAC_Poly1305.c \
+  Hacl_AEAD_Chacha20Poly1305.c \
+  Lib_Memzero0.c
+
+CFLAGS += -fPIC -ffreestanding -nostdlib -fno-builtin -fno-stack-protector -D_FORTIFY_SOURCE=0 -DLINUX_NO_EXPLICIT_BZERO
+
+include Makefile.basic
+

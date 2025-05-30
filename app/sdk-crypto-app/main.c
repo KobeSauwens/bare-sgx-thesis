@@ -31,65 +31,28 @@ void print_args(
     const uint8_t* nonce, size_t noncelen
 ) {
     printf("=== ChaCha20-Poly1305 Enclave Call Arguments ===\n");
-    printf("Enclave ID: 0x%lx\n", eid);
-    printf("Allowed flag address: %p\n", (void*)allowed);
+    printf("Enclave ID:\t\t0x%lx\n", eid);
+    printf("Allowed flag addr:\t%p\n\n", (void*)allowed);
 
-    printf("Plaintext (m): ");
+    printf("Plaintext [len: %zu]:\t", mlen);
     for (size_t i = 0; i < mlen; i++) printf("%02x ", m[i]);
-    printf("\nLength: %zu bytes\n", mlen);
+    printf("\n");
 
-    printf("AAD: ");
+    printf("AAD [len: %zu]:\t\t", aadlen);
     for (size_t i = 0; i < aadlen; i++) printf("%02x ", aad[i]);
-    printf("\nLength: %zu bytes\n", aadlen);
+    printf("\n");
 
-    printf("Nonce: ");
+    printf("Nonce [len: %zu]:\t", noncelen);
     for (size_t i = 0; i < noncelen; i++) printf("%02x ", nonce[i]);
-    printf("\nLength: %zu bytes\n", noncelen);
+    printf("\n");
 
-    // These would only be filled after the ECALL
-    printf("Ciphertext (out): ");
+    printf("Ciphertext [len: %zu]:\t", ciphertext_len);
     for (size_t i = 0; i < ciphertext_len; i++) printf("%02x ", ciphertext[i]);
     printf("\n");
 
-    printf("MAC (out): ");
-    for (size_t i = 0; i < 16; i++) printf("%02x ", mac[i]); // 16 bytes for Poly1305 MAC
+    printf("MAC [len: 16]:\t\t");
+    for (size_t i = 0; i < 16; i++) printf("%02x ", mac[i]);
     printf("\n");
-}
-
-
-/* define untrusted OCALL functions here */
-
-void ocall_print(const char *str)
-{
-    info("ocall_print: enclave says: '%s'", str);
-}
-
-void ocall_print_uint8_array(uint8_t *arr, size_t len) {
-    printf("Print via ocall: \nsha256sum = ");
-    for (size_t i = 0; i < len; i++) {
-        printf("%02x ", arr[i]);
-    }
-    printf("\n\n");
-}
-
-char *read_from_user(void)
-{
-    char *buffer = NULL;
-    int len; size_t size;
-
-    printf("Enter super secret password ('q' to exit): ");
-    if ((len=getline(&buffer, &size, stdin)) != -1)
-    {
-        /* get rid of the terminating newline character */
-        buffer[len-1]='\0';
-        printf("--> You entered: '%s'\n", buffer);
-        return buffer;
-    }
-    else
-    {
-        printf("--> failure to read line\n");
-        return NULL;
-    }
 }
 
 sgx_enclave_id_t create_enclave(void)
@@ -122,17 +85,12 @@ int main( int argc, char **argv )
     char *message = "Bare-SGX rocks!";
     uint32_t message_len = strlen(message);
     
-    /* =========================== START SOLUTION =========================== */
     SGX_ASSERT(encl_op_hmac(eid, &allowed, digest, (uint8_t*) message, message_len));
-    //printf("The return value was: %i \n",allowed);
-    //#printf("The secret was 0x%08x \n",secret);
-    /* ============================ END SOLUTION ============================ */
     printf("Print via main: \n");
     dump_hex("sha256sum", digest, TAG_LEN);
     
     uint8_t nonce[NONCE_LEN] = {0x0};
 
-    //RAND_bytes(nonce,NONCE_LEN);
 
     char *aad = "TCB should be minimized!";
     uint32_t aadlen = strlen(aad);

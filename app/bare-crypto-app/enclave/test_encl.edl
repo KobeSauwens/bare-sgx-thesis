@@ -11,7 +11,7 @@ enclave {
                                 [out, size=32]           uint8_t *tag,
                                 [in, size=plaintext_len] uint8_t *plaintext,
                                                          uint32_t plaintext_len,
-                                [in,out, size=data_len]  uint8_t *data,
+                                [in, size=data_len]  uint8_t *data,
                                                          uint32_t data_len,
                                 [in, size=12]            uint8_t *nonce
                                 );
@@ -19,12 +19,13 @@ enclave {
         public void encl_AEAD_dec([out, size=ciphertext_len] uint8_t *plaintext,
                                 [in, size=ciphertext_len]    uint8_t *ciphertext,
                                                             uint32_t ciphertext_len,
-                                [in,out, size=data_len]     uint8_t *data,
+                                [in, size=data_len]     uint8_t *data,
                                                             uint32_t data_len,
                                 [in, size=12]               uint8_t *nonce,
                                 [in, size=32]               uint8_t *tag
                                 );
         
+        public void encl_return();
         };
 	
 	//untrusted {

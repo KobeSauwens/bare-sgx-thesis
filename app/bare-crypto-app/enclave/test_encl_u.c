@@ -75,3 +75,10 @@ sgx_status_t encl_AEAD_dec(sgx_enclave_id_t eid, uint8_t* plaintext, uint8_t* ci
 	return status;
 }
 
+sgx_status_t encl_return(sgx_enclave_id_t eid)
+{
+	sgx_status_t status;
+	status = sgx_ecall(eid, 3, &ocall_table_test_encl, NULL);
+	return status;
+}
+

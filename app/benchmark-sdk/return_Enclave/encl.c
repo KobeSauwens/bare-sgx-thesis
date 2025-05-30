@@ -3,7 +3,6 @@
 #include <string.h>
 #include <stdint.h>  // Standard integer types
 
-#include "hacl-c/Hacl_HMAC_SHA2_256.h"
 
 /*
  * NOTE: for demonstration purposes, we hard-code secrets at compile time and

@@ -3,46 +3,21 @@
 #include <string.h>
 #include "../../urts/include/baresgx/urts.h"
 #include <openssl/rand.h>
-//#include "../../external/hacl-star/dist/portable-gcc-compatible/Lib_RandomBuffer_System.h"
 
 #include "enclave/test_encl.h"
 #include "enclave/test_encl_u.h"
-//#include "enclave/test_encl.h"
 
 #define ENCLAVE_PATH    "enclave/encl.elf"
 #define ENCLAVE_DEBUG   0
 
+#define NONCE_LEN       12
+#define MAC_LEN         16
+#define DIGEST_LEN      32
+#define KEY_LEN_AEAD    32
+#define BYTES_PER_LINE  30
 
-#define BYTES_PER_LINE 30
-
-// Helper function to print byte array in aligned hex
-void print_hex_aligned(const char *label, uint8_t *data, uint32_t len) {
-    printf("%s [len=%u]:\n", label, len);
-    for (uint32_t i = 0; i < len; i++) {
-        // New line every BYTES_PER_LINE bytes
-        if (i % BYTES_PER_LINE == 0)
-            printf("  %04x: ", i); // Offset label
-
-        printf("%02x ", data[i]);
-
-        // Add spacing at end of line
-        if ((i + 1) % BYTES_PER_LINE == 0 || i + 1 == len)
-            printf("\n");
-    }
-}// Helper function to print byte array in hex
-void print_hex(const char *label, uint8_t *data, uint32_t len) {
-    printf("%s [len=%u]: ", label, len);
-    for (uint32_t i = 0; i < len; i++) {
-        printf("%02x", data[i]);
-        if (i < len - 1) printf(":");
-    }
-    printf("\n");
-}
-
-
-// Helper: Print a byte array on one line with label
-void print_hex_one_line(const char *label, uint8_t *data, uint32_t len) {
-    printf("%-12s [len=%3u]: ", label, len);  // Left-align label, show length
+void print_hex_one_line(const char *label, const uint8_t *data, uint32_t len) {
+    printf("%-12s [len=%3u]: ", label, len);
     for (uint32_t i = 0; i < len; i++) {
         printf("%02x", data[i]);
         if (i < len - 1) printf(" ");
@@ -50,68 +25,53 @@ void print_hex_one_line(const char *label, uint8_t *data, uint32_t len) {
     printf("\n");
 }
 
-void print_encl_op_hmac(struct encl_op_hmac *op, uint32_t digest_len) {
-    printf("=== encl_op_HMAC ===\n");
-    print_hex_one_line("Message", op->message, op->message_len);
-    print_hex_one_line("Digest",  op->digest, digest_len);
+void print_hmac_args(const uint8_t *message, uint32_t message_len, const uint8_t *digest, uint32_t digest_len) {
+    printf("=== HMAC Operation ===\n");
+    print_hex_one_line("Message", message, message_len);
+    print_hex_one_line("Digest", digest, digest_len);
 }
 
-// Main pretty printer
-void print_encl_op_AEAD(struct encl_op_AEAD *op) {
-    printf("=== encl_op_AEAD ===\n");
-
-    // Optional: print header_AEAD if needed
-
-    print_hex_one_line("Nonce",     op->n,      12);
-    print_hex_one_line("AAD",       op->aad,    op->aadlen);
-    print_hex_one_line("Message",   op->m,      op->mlen);
-    print_hex_one_line("Ciphertext",op->cipher, op->mlen);
-    print_hex_one_line("MAC",       op->mac,    16);
+void print_aead_args(const uint8_t *nonce, const uint8_t *aad, uint32_t aadlen,
+                     const uint8_t *plaintext, const uint8_t *ciphertext,
+                     const uint8_t *mac, uint32_t mlen) {
+    printf("=== AEAD Operation ===\n");
+    print_hex_one_line("Nonce",     nonce,     NONCE_LEN);
+    print_hex_one_line("AAD",       aad,       aadlen);
+    print_hex_one_line("Message",   plaintext, mlen);
+    print_hex_one_line("Ciphertext",ciphertext,mlen);
+    print_hex_one_line("MAC",       mac,       MAC_LEN);
 }
 
-void dump_hex(char *str, uint8_t *buf, int len)
-{
+void dump_hex(const char *str, const uint8_t *buf, int len) {
     printf("%s = ", str);
-    for (int i=0; i < len; i++)
-        printf("%02x ", *(buf + i));
+    for (int i = 0; i < len; i++)
+        printf("%02x ", buf[i]);
     printf("\n");
 }
 
-void run_hmac(sgx_enclave_id_t tcs) {
-    struct encl_op_hmac arg_hmac;
+void run_hmac(sgx_enclave_id_t eid) {
     uint8_t digest[DIGEST_LEN] = {0};
-
-    char *message = "Bare-SGX rocks!";
+    const char *message = "Bare-SGX rocks!";
     uint32_t message_len = strlen(message);
 
-    arg_hmac.header_hmac.type = ENCL_OP_HMAC;
-    arg_hmac.message = (uint8_t*) message;
-    arg_hmac.message_len = message_len;
-    arg_hmac.digest = digest;
-
     baresgx_info("Running HMAC operation");
-    encl_HMAC(tcs, digest, (uint8_t*)message, message_len);
-    //baresgx_enter_enclave(tcs, (uint64_t)&arg_hmac);
+    encl_HMAC(eid, digest, (const uint8_t*)message, message_len);
+
     printf("\nBare SGX currently hashing: \"%s\"\n", message);
-    print_encl_op_hmac(&arg_hmac, DIGEST_LEN);
+    print_hmac_args((const uint8_t*)message, message_len, digest, DIGEST_LEN);
 }
 
-void run_aead(sgx_enclave_id_t tcs) {
-    struct encl_op_AEAD arg_AEAD_ENC;
-    struct encl_op_AEAD arg_AEAD_DEC;
-
+void run_aead(sgx_enclave_id_t eid) {
     uint8_t nonce[NONCE_LEN] = {0};
-
-    // Encryption parameters
-    char *aad = "TCB should be minimized!";
+    const char *aad = "TCB should be minimized!";
     uint32_t aadlen = strlen(aad);
 
-    char *message = "Bare-SGX rocks!";
+    const char *message = "Bare-SGX rocks!";
     uint32_t mlen = strlen(message);
 
     uint8_t mac[MAC_LEN] = {0};
     uint8_t *ciphertext = malloc(mlen);
-    uint8_t *decrypted = malloc(mlen);
+    uint8_t *decrypted  = malloc(mlen);
 
     if (!ciphertext || !decrypted) {
         fprintf(stderr, "Memory allocation failed\n");
@@ -123,37 +83,16 @@ void run_aead(sgx_enclave_id_t tcs) {
         0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
         0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F
     };
-    dump_hex("\nKey: ", key_for_dump, KEY_LEN_AEAD);
 
-    // Encryption setup
-    arg_AEAD_ENC.header_AEAD.type = ENCL_OP_AEAD_ENC;
-    arg_AEAD_ENC.n = nonce;
-    arg_AEAD_ENC.aad = (uint8_t*)aad;
-    arg_AEAD_ENC.aadlen = aadlen;
-    arg_AEAD_ENC.m = (uint8_t*)message;
-    arg_AEAD_ENC.mlen = mlen;
-    arg_AEAD_ENC.cipher = ciphertext;
-    arg_AEAD_ENC.mac = mac;
+    dump_hex("\nKey:", key_for_dump, KEY_LEN_AEAD);
 
     printf("\nBare SGX currently performing AEAD encryption using ChaCha20 and Poly1305\n");
-    //baresgx_enter_enclave(tcs, (uint64_t)&arg_AEAD_ENC);
-    encl_AEAD_enc(tcs, ciphertext, mac,(uint8_t*) message, mlen, (uint8_t*) aad, aadlen, nonce);
-    print_encl_op_AEAD(&arg_AEAD_ENC);
-
-    // Decryption setup
-    arg_AEAD_DEC.header_AEAD.type = ENCL_OP_AEAD_DEC;
-    arg_AEAD_DEC.n = nonce;
-    arg_AEAD_DEC.aad = (uint8_t*)aad;
-    arg_AEAD_DEC.aadlen = aadlen;
-    arg_AEAD_DEC.m = decrypted;
-    arg_AEAD_DEC.mlen = mlen;
-    arg_AEAD_DEC.cipher = ciphertext;
-    arg_AEAD_DEC.mac = mac;
+    encl_AEAD_enc(eid, ciphertext, mac, (const uint8_t*)message, mlen, (const uint8_t*)aad, aadlen, nonce);
+    print_aead_args(nonce, (const uint8_t*)aad, aadlen, (const uint8_t*)message, ciphertext, mac, mlen);
 
     printf("\nBare SGX currently performing AEAD decryption using ChaCha20 and Poly1305\n");
-    encl_AEAD_dec(tcs, decrypted, ciphertext, mlen, (uint8_t*)aad, aadlen, nonce, mac);
-    //baresgx_enter_enclave(tcs, (uint64_t)&arg_AEAD_DEC);
-    print_encl_op_AEAD(&arg_AEAD_DEC);
+    encl_AEAD_dec(eid, decrypted, ciphertext, mlen, (const uint8_t*)aad, aadlen, nonce, mac);
+    print_aead_args(nonce, (const uint8_t*)aad, aadlen, decrypted, ciphertext, mac, mlen);
 
     decrypted[mlen] = '\0';
     printf("\nDecrypted text: %s\n", decrypted);
@@ -171,8 +110,9 @@ int main(void) {
 
     baresgx_info("Calling enclave TCS..");
 
-    run_hmac((sgx_enclave_id_t) tcs);
-    run_aead(tcs);
+    run_hmac((sgx_enclave_id_t)tcs);
+    run_aead((sgx_enclave_id_t)tcs);
 
     return 0;
 }
+

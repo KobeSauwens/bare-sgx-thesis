@@ -14,11 +14,14 @@ OE_WEAK bool oe_edger8r_secure_unserialize = true;
 enum
 {
     oe_crypto_app_fcn_id_oe_encl_op_hmac = 0,
-    oe_crypto_app_fcn_id_oe_get_sgx_report_ecall = 1,
-    oe_crypto_app_fcn_id_oe_get_report_v2_ecall = 2,
-    oe_crypto_app_fcn_id_oe_verify_local_report_ecall = 3,
-    oe_crypto_app_fcn_id_oe_sgx_init_context_switchless_ecall = 4,
-    oe_crypto_app_fcn_id_oe_sgx_switchless_enclave_worker_thread_ecall = 5,
+    oe_crypto_app_fcn_id_oe_encl_op_chacha20poly1305_enc = 1,
+    oe_crypto_app_fcn_id_oe_encl_op_chacha20poly1305_dec = 2,
+    oe_crypto_app_fcn_id_oe_encl_op_return = 3,
+    oe_crypto_app_fcn_id_oe_get_sgx_report_ecall = 4,
+    oe_crypto_app_fcn_id_oe_get_report_v2_ecall = 5,
+    oe_crypto_app_fcn_id_oe_verify_local_report_ecall = 6,
+    oe_crypto_app_fcn_id_oe_sgx_init_context_switchless_ecall = 7,
+    oe_crypto_app_fcn_id_oe_sgx_switchless_enclave_worker_thread_ecall = 8,
     oe_crypto_app_fcn_id_trusted_call_id_max = OE_ENUM_MAX
 };
 
@@ -33,6 +36,43 @@ typedef struct _oe_encl_op_hmac_args_t
     uint8_t* data;
     uint32_t data_len;
 } oe_encl_op_hmac_args_t;
+
+typedef struct _oe_encl_op_chacha20poly1305_enc_args_t
+{
+    oe_result_t oe_result;
+    uint8_t* deepcopy_out_buffer;
+    size_t deepcopy_out_buffer_size;
+    int oe_retval;
+    uint8_t* ciphertext;
+    uint8_t* tag;
+    uint8_t* plaintext;
+    uint32_t pt_len;
+    uint8_t* aad;
+    uint32_t aad_len;
+    uint8_t* nonce;
+} oe_encl_op_chacha20poly1305_enc_args_t;
+
+typedef struct _oe_encl_op_chacha20poly1305_dec_args_t
+{
+    oe_result_t oe_result;
+    uint8_t* deepcopy_out_buffer;
+    size_t deepcopy_out_buffer_size;
+    int oe_retval;
+    uint8_t* ciphertext;
+    uint8_t* tag;
+    uint8_t* plaintext;
+    uint32_t pt_len;
+    uint8_t* aad;
+    uint32_t aad_len;
+    uint8_t* nonce;
+} oe_encl_op_chacha20poly1305_dec_args_t;
+
+typedef struct _oe_encl_op_return_args_t
+{
+    oe_result_t oe_result;
+    uint8_t* deepcopy_out_buffer;
+    size_t deepcopy_out_buffer_size;
+} oe_encl_op_return_args_t;
 
 typedef struct _oe_get_sgx_report_ecall_args_t
 {
@@ -137,6 +177,214 @@ static void ecall_oe_encl_op_hmac(
         _pargs_in->digest,
         _pargs_in->data,
         _pargs_in->data_len);
+
+    /* There is no deep-copyable out parameter. */
+    _pargs_out->deepcopy_out_buffer = NULL;
+    _pargs_out->deepcopy_out_buffer_size = 0;
+
+    /* Success. */
+    _result = OE_OK;
+    *output_bytes_written = _output_buffer_offset;
+
+done:
+    if (output_buffer_size >= sizeof(*_pargs_out) &&
+        oe_is_within_enclave(_pargs_out, output_buffer_size))
+        _pargs_out->oe_result = _result;
+}
+
+static void ecall_oe_encl_op_chacha20poly1305_enc(
+    uint8_t* input_buffer,
+    size_t input_buffer_size,
+    uint8_t* output_buffer,
+    size_t output_buffer_size,
+    size_t* output_bytes_written)
+{
+    oe_result_t _result = OE_FAILURE;
+
+    /* Prepare parameters. */
+    oe_encl_op_chacha20poly1305_enc_args_t* _pargs_in = (oe_encl_op_chacha20poly1305_enc_args_t*)input_buffer;
+    oe_encl_op_chacha20poly1305_enc_args_t* _pargs_out = (oe_encl_op_chacha20poly1305_enc_args_t*)output_buffer;
+
+    size_t _input_buffer_offset = 0;
+    size_t _output_buffer_offset = 0;
+    OE_ADD_SIZE(_input_buffer_offset, sizeof(*_pargs_in));
+    OE_ADD_SIZE(_output_buffer_offset, sizeof(*_pargs_out));
+
+    if (input_buffer_size < sizeof(*_pargs_in) || output_buffer_size < sizeof(*_pargs_in))
+        goto done;
+
+    /* Make sure input and output buffers lie within the enclave. */
+    /* oe_is_within_enclave explicitly checks if buffers are null or not. */
+    if (!oe_is_within_enclave(input_buffer, input_buffer_size))
+        goto done;
+
+    if (!oe_is_within_enclave(output_buffer, output_buffer_size))
+        goto done;
+
+    /* Set in and in-out pointers. */
+    if (_pargs_in->plaintext)
+        OE_SET_IN_POINTER(plaintext, 1, _pargs_in->pt_len, uint8_t*);
+    if (_pargs_in->aad)
+        OE_SET_IN_POINTER(aad, 1, _pargs_in->aad_len, uint8_t*);
+    if (_pargs_in->nonce)
+        OE_SET_IN_POINTER(nonce, 1, 12, uint8_t*);
+
+    /* Set out and in-out pointers. */
+    /* In-out parameters are copied to output buffer. */
+    if (_pargs_in->ciphertext)
+        OE_SET_OUT_POINTER(ciphertext, 1, _pargs_in->pt_len, uint8_t*);
+    if (_pargs_in->tag)
+        OE_SET_OUT_POINTER(tag, 1, 32, uint8_t*);
+
+    /* Check that in/in-out strings are null terminated. */
+    /* There were no in nor in-out string parameters. */
+
+    /* lfence after checks. */
+    oe_lfence();
+
+    /* Call user function. */
+    _pargs_out->oe_retval = oe_encl_op_chacha20poly1305_enc(
+        _pargs_in->ciphertext,
+        _pargs_in->tag,
+        _pargs_in->plaintext,
+        _pargs_in->pt_len,
+        _pargs_in->aad,
+        _pargs_in->aad_len,
+        _pargs_in->nonce);
+
+    /* There is no deep-copyable out parameter. */
+    _pargs_out->deepcopy_out_buffer = NULL;
+    _pargs_out->deepcopy_out_buffer_size = 0;
+
+    /* Success. */
+    _result = OE_OK;
+    *output_bytes_written = _output_buffer_offset;
+
+done:
+    if (output_buffer_size >= sizeof(*_pargs_out) &&
+        oe_is_within_enclave(_pargs_out, output_buffer_size))
+        _pargs_out->oe_result = _result;
+}
+
+static void ecall_oe_encl_op_chacha20poly1305_dec(
+    uint8_t* input_buffer,
+    size_t input_buffer_size,
+    uint8_t* output_buffer,
+    size_t output_buffer_size,
+    size_t* output_bytes_written)
+{
+    oe_result_t _result = OE_FAILURE;
+
+    /* Prepare parameters. */
+    oe_encl_op_chacha20poly1305_dec_args_t* _pargs_in = (oe_encl_op_chacha20poly1305_dec_args_t*)input_buffer;
+    oe_encl_op_chacha20poly1305_dec_args_t* _pargs_out = (oe_encl_op_chacha20poly1305_dec_args_t*)output_buffer;
+
+    size_t _input_buffer_offset = 0;
+    size_t _output_buffer_offset = 0;
+    OE_ADD_SIZE(_input_buffer_offset, sizeof(*_pargs_in));
+    OE_ADD_SIZE(_output_buffer_offset, sizeof(*_pargs_out));
+
+    if (input_buffer_size < sizeof(*_pargs_in) || output_buffer_size < sizeof(*_pargs_in))
+        goto done;
+
+    /* Make sure input and output buffers lie within the enclave. */
+    /* oe_is_within_enclave explicitly checks if buffers are null or not. */
+    if (!oe_is_within_enclave(input_buffer, input_buffer_size))
+        goto done;
+
+    if (!oe_is_within_enclave(output_buffer, output_buffer_size))
+        goto done;
+
+    /* Set in and in-out pointers. */
+    if (_pargs_in->ciphertext)
+        OE_SET_IN_POINTER(ciphertext, 1, _pargs_in->pt_len, uint8_t*);
+    if (_pargs_in->tag)
+        OE_SET_IN_POINTER(tag, 1, 32, uint8_t*);
+    if (_pargs_in->aad)
+        OE_SET_IN_POINTER(aad, 1, _pargs_in->aad_len, uint8_t*);
+    if (_pargs_in->nonce)
+        OE_SET_IN_POINTER(nonce, 1, 12, uint8_t*);
+
+    /* Set out and in-out pointers. */
+    /* In-out parameters are copied to output buffer. */
+    if (_pargs_in->plaintext)
+        OE_SET_OUT_POINTER(plaintext, 1, _pargs_in->pt_len, uint8_t*);
+
+    /* Check that in/in-out strings are null terminated. */
+    /* There were no in nor in-out string parameters. */
+
+    /* lfence after checks. */
+    oe_lfence();
+
+    /* Call user function. */
+    _pargs_out->oe_retval = oe_encl_op_chacha20poly1305_dec(
+        _pargs_in->ciphertext,
+        _pargs_in->tag,
+        _pargs_in->plaintext,
+        _pargs_in->pt_len,
+        _pargs_in->aad,
+        _pargs_in->aad_len,
+        _pargs_in->nonce);
+
+    /* There is no deep-copyable out parameter. */
+    _pargs_out->deepcopy_out_buffer = NULL;
+    _pargs_out->deepcopy_out_buffer_size = 0;
+
+    /* Success. */
+    _result = OE_OK;
+    *output_bytes_written = _output_buffer_offset;
+
+done:
+    if (output_buffer_size >= sizeof(*_pargs_out) &&
+        oe_is_within_enclave(_pargs_out, output_buffer_size))
+        _pargs_out->oe_result = _result;
+}
+
+static void ecall_oe_encl_op_return(
+    uint8_t* input_buffer,
+    size_t input_buffer_size,
+    uint8_t* output_buffer,
+    size_t output_buffer_size,
+    size_t* output_bytes_written)
+{
+    oe_result_t _result = OE_FAILURE;
+
+    /* Prepare parameters. */
+    oe_encl_op_return_args_t* _pargs_in = (oe_encl_op_return_args_t*)input_buffer;
+    oe_encl_op_return_args_t* _pargs_out = (oe_encl_op_return_args_t*)output_buffer;
+
+    size_t _input_buffer_offset = 0;
+    size_t _output_buffer_offset = 0;
+    OE_ADD_SIZE(_input_buffer_offset, sizeof(*_pargs_in));
+    OE_ADD_SIZE(_output_buffer_offset, sizeof(*_pargs_out));
+
+    if (input_buffer_size < sizeof(*_pargs_in) || output_buffer_size < sizeof(*_pargs_in))
+        goto done;
+
+    /* Make sure input and output buffers lie within the enclave. */
+    /* oe_is_within_enclave explicitly checks if buffers are null or not. */
+    if (!oe_is_within_enclave(input_buffer, input_buffer_size))
+        goto done;
+
+    if (!oe_is_within_enclave(output_buffer, output_buffer_size))
+        goto done;
+
+    /* Set in and in-out pointers. */
+    /* There were no in nor in-out parameters. */
+
+    /* Set out and in-out pointers. */
+    /* In-out parameters are copied to output buffer. */
+    /* There were no out nor in-out parameters. */
+
+    /* Check that in/in-out strings are null terminated. */
+    /* There were no in nor in-out string parameters. */
+
+    /* lfence after checks. */
+    oe_lfence();
+
+    /* Call user function. */
+    oe_encl_op_return(
+    );
 
     /* There is no deep-copyable out parameter. */
     _pargs_out->deepcopy_out_buffer = NULL;
@@ -515,6 +763,9 @@ done:
 
 oe_ecall_func_t oe_ecalls_table[] = {
     (oe_ecall_func_t) ecall_oe_encl_op_hmac,
+    (oe_ecall_func_t) ecall_oe_encl_op_chacha20poly1305_enc,
+    (oe_ecall_func_t) ecall_oe_encl_op_chacha20poly1305_dec,
+    (oe_ecall_func_t) ecall_oe_encl_op_return,
     (oe_ecall_func_t) ecall_oe_get_sgx_report_ecall,
     (oe_ecall_func_t) ecall_oe_get_report_v2_ecall,
     (oe_ecall_func_t) ecall_oe_verify_local_report_ecall,

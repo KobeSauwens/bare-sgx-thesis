@@ -1,0 +1,14 @@
+/home/kobe/linux-sgx/sdk/tsafecrt/pal/src/safecrt
+/home/kobe/linux-sgx/sdk/tlibc/stdlib
+/home/kobe/linux-sgx/sdk/selib
+/home/kobe/linux-sgx/sdk/tlibc/stdio
+/home/kobe/linux-sgx/sdk/tlibc/time
+/home/kobe/linux-sgx/common/src
+/home/kobe/linux-sgx/sdk/trts
+/home/kobe/linux-sgx/sdk/tlibcrypto/ipp/ipp_disp/intel64
+/home/kobe/linux-sgx/sdk/tlibc/string
+/home/kobe/linux-sgx/sdk/tlibc/gdtoa
+/home/kobe/linux-sgx/sdk/cpprt/linux/libunwind/src/setjmp
+/home/kobe/linux-sgx/sdk/tlibc/locale
+/home/kobe/linux-sgx/sdk/tlibc/gen
+/home/kobe/linux-sgx/sdk/tlibcrypto/ipp

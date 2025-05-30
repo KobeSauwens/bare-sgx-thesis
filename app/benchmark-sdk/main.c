@@ -15,14 +15,23 @@
 #include <sys/mman.h>
 /* SGX untrusted runtime */
 #include <sgx_urts.h>
-#include "./Enclave/encl_u.h"
+#include "./Enclave_crypto/encl_u.h"
+//#include "return_Enclave/encl_u.h"
+
+#define DIGEST_LEN      32
+#define KEY_LEN_AEAD    32
+#define KEY_LEN_HMAC    16
+#define MAC_LEN         16
+#define KEY_LEN_AES     16
+#define NONCE_LEN       12
+#define TAG_LEN 32  // 256 bits
 
 #define NUM_SAMPLES     1000
 #define DELAY           1
 #define ITERATIONS      100000
 #define DEBUG           0
 #define ENCLAVE_DBG     1
-#define ENCLAVE_PATH            "Enclave/encl.so"
+#define ENCLAVE_PATH            "Enclave_crypto/encl.so"
 #define DIGEST_LEN 32  // 256 bits
 
 uint64_t diff[NUM_SAMPLES];
@@ -30,6 +39,39 @@ void *encl_page = NULL;
 uint64_t *pte_encl = 0;
 int step_cnt = 0;
 
+void print_args(
+    sgx_enclave_id_t eid,
+    int* allowed,
+    const uint8_t* ciphertext, size_t ciphertext_len,
+    const uint8_t* mac,
+    const uint8_t* m, size_t mlen,
+    const uint8_t* aad, size_t aadlen,
+    const uint8_t* nonce, size_t noncelen
+) {
+    printf("=== ChaCha20-Poly1305 Enclave Call Arguments ===\n");
+    printf("Enclave ID:\t\t0x%lx\n", eid);
+    printf("Allowed flag addr:\t%p\n\n", (void*)allowed);
+
+    printf("Plaintext [len: %zu]:\t", mlen);
+    for (size_t i = 0; i < mlen; i++) printf("%02x ", m[i]);
+    printf("\n");
+
+    printf("AAD [len: %zu]:\t\t", aadlen);
+    for (size_t i = 0; i < aadlen; i++) printf("%02x ", aad[i]);
+    printf("\n");
+
+    printf("Nonce [len: %zu]:\t", noncelen);
+    for (size_t i = 0; i < noncelen; i++) printf("%02x ", nonce[i]);
+    printf("\n");
+
+    printf("Ciphertext [len: %zu]:\t", ciphertext_len);
+    for (size_t i = 0; i < ciphertext_len; i++) printf("%02x ", ciphertext[i]);
+    printf("\n");
+
+    printf("MAC [len: 16]:\t\t");
+    for (size_t i = 0; i < 16; i++) printf("%02x ", mac[i]);
+    printf("\n");
+}
 
 /* define untrusted OCALL functions here */
 void aep_cb_func(void)
@@ -139,75 +181,98 @@ int compare(const void * a, const void * b) {
    return ( *(uint64_t*)a - *(uint64_t*)b );
 }
 
-
-// int benchmark_timing() 
-// {
-//     sgx_enclave_id_t eid = create_enclave();
-//     int j, tsc1, tsc2, med, allowed = 0;
-//     int rv = 1, secret = 0;
-//     struct tm *timeinfo;
-//     char filename[100];
-//     time_t rawtime;
-
     
+int benchmark_timing() 
+{
+    sgx_enclave_id_t eid = create_enclave();
+    char filename[100];
+    time_t rawtime;
+    struct tm *timeinfo;
 
-//     time(&rawtime);
-//     timeinfo = localtime(&rawtime);
-//     strftime(filename, sizeof(filename), "../../data/benchmark-sdk/timing/enclave_timing_return_%Y-%m-%d_%H-%M-%S.csv", timeinfo);
+    time(&rawtime);
+    timeinfo = localtime(&rawtime);
+    strftime(filename, sizeof(filename), "../../data/benchmark-sdk/timing/enclave_timing_return_%Y-%m-%d_%H-%M-%S.csv", timeinfo);
 
-//     // Open file with timestamped name
-//     FILE *fp = fopen(filename, "w");
-//     if (!fp) {
-//         printf("Error opening file %s!\n", filename);
-//         return 1;
-//     }
-//     fprintf(fp, "Iteration,ElapsedCycles\n");
-
-//     // Buffer results to reduce I/O overhead
-//     uint64_t *cycles = malloc(ITERATIONS * sizeof(uint64_t));
-//     if (!cycles) {
-//         printf("Memory allocation failed\n");
-//         fclose(fp);
-//         return 1;
-//     }
-
-//     // Write CSV header
-//     fprintf(fp, "Iteration,ElapsedCycles\n");
-
-//     int result = prepare_system_for_benchmark(100);
-//     if (result == 0) {
-//         printf("System prepared successfully\n");
-//     } else {
-//         printf("Failed to prepare system\n");
-//     }
-
-//     for(uint32_t i = 0; i < 100000; ++i)
-//     {
-//         SGX_ASSERT( ecall_return(eid) );
-
-//         uint64_t start = rdtsc_begin();
-
-//         SGX_ASSERT( ecall_return(eid) );
-
-//         uint64_t end = rdtsc_end();
-        
-//         uint64_t elapsed_clocks = end - start;
-
-//         fprintf(fp, "%u,%lu\n", i, elapsed_clocks);
-//     }
-
-//     fclose(fp);
-
-
-
-//     info_event("destroying SGX enclave");
+    // Allocate buffer for elapsed cycles
+    uint64_t *cycles = malloc(ITERATIONS * sizeof(uint64_t));
+    if (!cycles) {
+        printf("Memory allocation failed\n");
+        return 1;
+    }
     
-//     SGX_ASSERT( sgx_destroy_enclave( eid ) );
+    int allowed = 0;
+    uint8_t nonce[NONCE_LEN] = {0x0};
 
-//     info("all is well; exiting..");
 
-//     return 0;
-// }
+    char *aad = "TCB should be minimized!";
+    uint32_t aadlen = strlen(aad);
+   
+
+    char *message = "Bare-SGX rocks!";
+    uint32_t message_len = strlen(message);
+    uint8_t digest[TAG_LEN] = {0x0};
+    
+    char *m = "Bare-SGX rocks!";
+    uint32_t mlen = strlen(m);
+	
+	uint8_t mac[MAC_LEN] = {0x0};
+    
+    uint8_t *ciphertext = malloc(mlen);
+    uint8_t *decrypted = malloc(mlen);
+
+    if (ciphertext == NULL || decrypted == NULL) {
+        fprintf(stderr, "Memory allocation failed\n");
+        return -1;
+    }
+
+    int result = prepare_system_for_benchmark(100);
+    if (result == 0) {
+        printf("System prepared successfully\n");
+    } else {
+        printf("Failed to prepare system\n");
+    }
+
+    // Perform benchmark and store results
+    for (uint32_t i = 0; i < ITERATIONS; ++i) {
+        //ecall_return(eid);
+        //encl_op_chacha20poly1305_enc(eid, &allowed, ciphertext, mac, m, mlen, aad, aadlen, nonce);
+        //encl_op_chacha20poly1305_dec(eid, &allowed, ciphertext, mac, decrypted, mlen, aad, aadlen, nonce);
+        //encl_op_hmac(eid, &allowed, digest, (uint8_t*) message, message_len);
+        uint64_t start = rdtsc_begin();
+        //ecall_return(eid);
+        //encl_op_chacha20poly1305_enc(eid, &allowed, ciphertext, mac, m, mlen, aad, aadlen, nonce);
+        //encl_op_chacha20poly1305_dec(eid, &allowed, ciphertext, mac, decrypted, mlen, aad, aadlen, nonce);
+        //encl_op_hmac(eid, &allowed, digest, (uint8_t*) message, message_len);
+        uint64_t end = rdtsc_end();
+
+        cycles[i] = end - start;
+    }
+
+    print_args(eid, &allowed, ciphertext, mlen, mac, decrypted, mlen, aad, aadlen, nonce, NONCE_LEN);
+    // Write all results to file after measurements
+    FILE *fp = fopen(filename, "w");
+    if (!fp) {
+        printf("Error opening file %s!\n", filename);
+        free(cycles);
+        return 1;
+    }
+
+    fprintf(fp, "Iteration,ElapsedCycles\n");
+    for (uint32_t i = 0; i < ITERATIONS; ++i) {
+        fprintf(fp, "%u,%lu\n", i, cycles[i]);
+    }
+
+    fclose(fp);
+    free(cycles);
+    printf("Data written to %s",filename);
+
+    info_event("destroying SGX enclave");
+    SGX_ASSERT(sgx_destroy_enclave(eid));
+
+    info("all is well; exiting..");
+    return 0;
+}
+
 
 int benchmark_instructions()
 {
@@ -222,13 +287,37 @@ int benchmark_instructions()
     print_enclave_info();
 
     info("dry run");
-    uint8_t digest[DIGEST_LEN] = {0x0};
+
+    uint8_t nonce[NONCE_LEN] = {0x0};
+
+
+    char *aad = "TCB should be minimized!";
+    uint32_t aadlen = strlen(aad);
+   
 
     char *message = "Bare-SGX rocks!";
     uint32_t message_len = strlen(message);
+    uint8_t digest[TAG_LEN] = {0x0};
     
-    /* =========================== START SOLUTION =========================== */
-    SGX_ASSERT(ecall_get_secret(eid, &allowed, digest, (uint8_t*) message, message_len));
+    char *m = "Bare-SGX rocks!";
+    uint32_t mlen = strlen(m);
+	
+	uint8_t mac[MAC_LEN] = {0x0};
+    
+    uint8_t *ciphertext = malloc(mlen);
+    uint8_t *decrypted = malloc(mlen);
+
+    if (ciphertext == NULL || decrypted == NULL) {
+        fprintf(stderr, "Memory allocation failed\n");
+        return -1;
+    }
+    
+    /* =========================== START SOLUTION ===========ENCLAVE              = Enclave================ */
+    //SGX_ASSERT(ecall_get_secret(eid, &allowed, digest, (uint8_t*) message, message_len));
+    //ecall_return(eid);
+    //encl_op_chacha20poly1305_enc(eid, &allowed, ciphertext, mac, m, mlen, aad, aadlen, nonce);
+    //encl_op_chacha20poly1305_dec(eid, &allowed, ciphertext, mac, decrypted, mlen, aad, aadlen, nonce);
+    encl_op_hmac(eid, &allowed, digest, (uint8_t*) message, message_len);
 
     /************************************************************************/
     info_event("configuring attacker runtime");
@@ -242,6 +331,7 @@ int benchmark_instructions()
     encl_page = get_symbol_offset("enclave_entry") + get_enclave_base();
     info("entry page at %p", encl_page);
     ASSERT(pte_encl = remap_page_table_level(encl_page, PTE));
+    info("PTE remapped to pte_encl = %p",pte_encl);
     ASSERT(PRESENT(*pte_encl));
     print_pte(pte_encl);
 
@@ -253,9 +343,16 @@ int benchmark_instructions()
     set_debug_optin();
 
     /************************************************************************/
-    info_event("single-stepping sdk enclave");
-    SGX_ASSERT(ecall_get_secret(eid, &allowed, digest, (uint8_t*) message, message_len));
+    info_event("single-stepping DECRYPT sdk enclave");
+     
+    //ecall_return(eid);
+    //encl_op_chacha20poly1305_enc(eid, &allowed, ciphertext, mac, m, mlen, aad, aadlen, nonce);
+    //encl_op_chacha20poly1305_dec(eid, &allowed, ciphertext, mac, decrypted, mlen, aad, aadlen, nonce);
+    //encl_op_hmac(eid, &allowed, digest, (uint8_t*) message, message_len);
+    
+    //SGX_ASSERT(ecall_get_secret(eid, &allowed, digest, (uint8_t*) message, message_len));
     info("enclave returned; step_cnt=%d\n", step_cnt);
+    //print_args(eid, &allowed, ciphertext, mlen, mac, decrypted, mlen, aad, aadlen, nonce, NONCE_LEN);
     printf("hmac=");
     dump_hex(digest, DIGEST_LEN);
 

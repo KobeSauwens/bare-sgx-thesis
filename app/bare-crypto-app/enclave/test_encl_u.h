@@ -20,6 +20,7 @@ extern "C" {
 sgx_status_t encl_HMAC(sgx_enclave_id_t eid, uint8_t* digest, uint8_t* message, uint32_t message_len);
 sgx_status_t encl_AEAD_enc(sgx_enclave_id_t eid, uint8_t* ciphertext, uint8_t* tag, uint8_t* plaintext, uint32_t plaintext_len, uint8_t* data, uint32_t data_len, uint8_t* nonce);
 sgx_status_t encl_AEAD_dec(sgx_enclave_id_t eid, uint8_t* plaintext, uint8_t* ciphertext, uint32_t ciphertext_len, uint8_t* data, uint32_t data_len, uint8_t* nonce, uint8_t* tag);
+sgx_status_t encl_return(sgx_enclave_id_t eid);
 
 #ifdef __cplusplus
 }

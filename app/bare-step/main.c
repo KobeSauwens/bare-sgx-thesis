@@ -18,7 +18,7 @@
 #include "../../trts/bare-trts/sgx_edger8r.h"
 
 #define ENCLAVE_PATH            "../bare-crypto-app/enclave/encl.elf"
-#define DEBUG			        1
+#define DEBUG			        0
 #define ENCLAVE_DBG             1
 
 void *encl_page = NULL;
@@ -35,6 +35,32 @@ void aep_cb_func(void)
         //dump_gprsgx_region(&gprsgx);
         //print_enclave_info();
     #endif
+}
+
+void print_hex_one_line(const char *label, const uint8_t *data, uint32_t len) {
+    printf("%-12s [len=%3u]: ", label, len);
+    for (uint32_t i = 0; i < len; i++) {
+        printf("%02x", data[i]);
+        if (i < len - 1) printf(" ");
+    }
+    printf("\n");
+}
+
+void print_hmac_args(const uint8_t *message, uint32_t message_len, const uint8_t *digest, uint32_t digest_len) {
+    printf("=== HMAC Operation ===\n");
+    print_hex_one_line("Message", message, message_len);
+    print_hex_one_line("Digest", digest, digest_len);
+}
+
+void print_aead_args(const uint8_t *nonce, const uint8_t *aad, uint32_t aadlen,
+                     const uint8_t *plaintext, const uint8_t *ciphertext,
+                     const uint8_t *mac, uint32_t mlen) {
+    printf("=== AEAD Operation ===\n");
+    print_hex_one_line("Nonce",     nonce,     NONCE_LEN);
+    print_hex_one_line("AAD",       aad,       aadlen);
+    print_hex_one_line("Message",   plaintext, mlen);
+    print_hex_one_line("Ciphertext",ciphertext,mlen);
+    print_hex_one_line("MAC",       mac,       MAC_LEN);
 }
 
 void handle_fault(int signo, siginfo_t * si, void  *ctx)
@@ -109,12 +135,26 @@ int main(void)
     char *message = "Bare-SGX rocks!";
     uint32_t message_len = strlen(message);
 
-    arg_hmac.header_hmac.type = ENCL_OP_HMAC;
-    arg_hmac.message = (uint8_t*) message;
-    arg_hmac.message_len = message_len;
-    arg_hmac.digest = digest;
 
-    //baresgx_enter_enclave(tcs, (uint64_t) &arg_hmac);
+    uint8_t nonce[NONCE_LEN] = {0};
+    const char *aad = "TCB should be minimized!";
+    uint32_t aadlen = strlen(aad);
+
+    uint32_t mlen = strlen(message);
+
+    uint8_t mac[MAC_LEN] = {0};
+    uint8_t *ciphertext = malloc(mlen);
+    uint8_t *decrypted  = malloc(mlen);
+
+    if (!ciphertext || !decrypted) {
+        fprintf(stderr, "Memory allocation failed\n");
+    }
+
+    encl_AEAD_enc(tcs, ciphertext, mac, (const uint8_t*)message, mlen, (const uint8_t*)aad, aadlen, nonce);
+    encl_AEAD_dec(tcs, decrypted, ciphertext, mlen, (const uint8_t*)aad, aadlen, nonce, mac);
+
+    //encl_return(tcs);
+
 
     /************************************************************************/
     info_event("configuring attacker runtime");
@@ -127,7 +167,31 @@ int main(void)
     ASSERT(PRESENT(*pte_encl));
     print_pte(pte_encl);
 
-    *pte_encl = MARK_EXECUTE_DISABLE(*pte_encl);
+    *pte_encl = MARK_EXECUTE_DISABLE(*pte_encl);void print_hex_one_line(const char *label, const uint8_t *data, uint32_t len) {
+    printf("%-12s [len=%3u]: ", label, len);
+    for (uint32_t i = 0; i < len; i++) {
+        printf("%02x", data[i]);
+        if (i < len - 1) printf(" ");
+    }
+    printf("\n");
+}
+
+void print_hmac_args(const uint8_t *message, uint32_t message_len, const uint8_t *digest, uint32_t digest_len) {
+    printf("=== HMAC Operation ===\n");
+    print_hex_one_line("Message", message, message_len);
+    print_hex_one_line("Digest", digest, digest_len);
+}
+
+void print_aead_args(const uint8_t *nonce, const uint8_t *aad, uint32_t aadlen,
+                     const uint8_t *plaintext, const uint8_t *ciphertext,
+                     const uint8_t *mac, uint32_t mlen) {
+    printf("=== AEAD Operation ===\n");
+    print_hex_one_line("Nonce",     nonce,     NONCE_LEN);
+    print_hex_one_line("AAD",       aad,       aadlen);
+    print_hex_one_line("Message",   plaintext, mlen);
+    print_hex_one_line("Ciphertext",ciphertext,mlen);
+    print_hex_one_line("MAC",       mac,       MAC_LEN);
+}
     print_pte(pte_encl);
 
     /* use hardware trap flag instead of timer IRQ */
@@ -136,8 +200,13 @@ int main(void)
 
     /************************************************************************/
     info_event("single-stepping baresgx enclave");
-    baresgx_enter_enclave(tcs, (uint64_t) &arg_hmac, 0);
+    encl_AEAD_dec(tcs, decrypted, ciphertext, mlen, (const uint8_t*)aad, aadlen, nonce, mac);
+    //encl_AEAD_enc(tcs, ciphertext, mac, (const uint8_t*)message, mlen, (const uint8_t*)aad, aadlen, nonce);
+    //baresgx_enter_enclave(tcs, (uint64_t) &arg_hmac, 0);
+    //encl_HMAC(tcs, digest, (const uint8_t*)message, message_len);
+    //encl_return(tcs);
     info("enclave returned; step_cnt=%d\n", step_cnt);
+    print_aead_args(nonce, (const uint8_t*)aad, aadlen, (const uint8_t*)message, ciphertext, mac, mlen);
     printf("hmac=");
     dump_hex(digest, DIGEST_LEN);
 

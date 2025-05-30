@@ -18,6 +18,26 @@ int oe_encl_op_hmac(
     uint8_t* data,
     uint32_t data_len);
 
+int oe_encl_op_chacha20poly1305_enc(
+    uint8_t* ciphertext,
+    uint8_t* tag,
+    uint8_t* plaintext,
+    uint32_t pt_len,
+    uint8_t* aad,
+    uint32_t aad_len,
+    uint8_t* nonce);
+
+int oe_encl_op_chacha20poly1305_dec(
+    uint8_t* ciphertext,
+    uint8_t* tag,
+    uint8_t* plaintext,
+    uint32_t pt_len,
+    uint8_t* aad,
+    uint32_t aad_len,
+    uint8_t* nonce);
+
+void oe_encl_op_return(void);
+
 oe_result_t oe_get_sgx_report_ecall(
     const void* opt_params,
     size_t opt_params_size,

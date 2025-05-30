@@ -6,7 +6,44 @@
 
 #define ENCLAVE_PATH "enclave/enclave.signed"  // Adjust path as needed
 #define DATA "Bare-SGX rocks!"
-#define TAG_LEN 32
+#define TAG_LEN         32
+#define DIGEST_LEN      32
+#define KEY_LEN_AEAD    32
+#define KEY_LEN_HMAC    16
+#define MAC_LEN         16
+#define KEY_LEN_AES     16
+#define NONCE_LEN       12
+
+void print_args(
+    oe_enclave_t* eid,
+    const uint8_t* ciphertext, size_t ciphertext_len,
+    const uint8_t* mac,
+    const uint8_t* m, size_t mlen,
+    const uint8_t* aad, size_t aadlen,
+    const uint8_t* nonce, size_t noncelen
+) {
+    printf("=== ChaCha20-Poly1305 Enclave Call Arguments ===\n");
+
+    printf("Plaintext [len: %zu]:\t", mlen);
+    for (size_t i = 0; i < mlen; i++) printf("%02x ", m[i]);
+    printf("\n");
+
+    printf("AAD [len: %zu]:\t\t", aadlen);
+    for (size_t i = 0; i < aadlen; i++) printf("%02x ", aad[i]);
+    printf("\n");
+
+    printf("Nonce [len: %zu]:\t", noncelen);
+    for (size_t i = 0; i < noncelen; i++) printf("%02x ", nonce[i]);
+    printf("\n");
+
+    printf("Ciphertext [len: %zu]:\t", ciphertext_len);
+    for (size_t i = 0; i < ciphertext_len; i++) printf("%02x ", ciphertext[i]);
+    printf("\n");
+
+    printf("MAC [len: 16]:\t\t");
+    for (size_t i = 0; i < 16; i++) printf("%02x ", mac[i]);
+    printf("\n");
+}
 
 int main(int argc, const char* argv[])
 {
@@ -30,12 +67,13 @@ int main(int argc, const char* argv[])
     }
 
     // Prepare data
-    uint8_t* data = (uint8_t*)DATA;
-    uint32_t data_len = (uint32_t)strlen(DATA);
+    uint8_t* message = (uint8_t*)DATA;
+    uint32_t message_len = (uint32_t)strlen(DATA);
+
 
     // Call enclave function
     int retval;
-    result = oe_encl_op_hmac(enclave, &retval, digest, data, data_len);
+    result = oe_encl_op_hmac(enclave, &retval, digest, message, message_len);
     if (result != OE_OK || retval != 1)
     {
         fprintf(stderr, "Failed to call oe_encl_op_hmac: %s\n", oe_result_str(result));
@@ -48,6 +86,33 @@ int main(int argc, const char* argv[])
     for (int i = 0; i < TAG_LEN; ++i)
         printf("%02x", digest[i]);
     printf("\n");
+
+    uint8_t nonce[NONCE_LEN] = {0x0};
+
+    char *aad = "TCB should be minimized!";
+    uint32_t aadlen = strlen(aad);
+   
+
+    char *m = "Bare-SGX rocks!";
+    uint32_t mlen = strlen(message);
+	
+	uint8_t mac[MAC_LEN] = {0x0};
+    
+    uint8_t *ciphertext = malloc(mlen);
+    uint8_t *decrypted = malloc(mlen);
+
+    if (ciphertext == NULL || decrypted == NULL) {
+        fprintf(stderr, "Memory allocation failed\n");
+        return -1;
+    }
+
+    oe_encl_op_chacha20poly1305_enc(enclave, &retval, ciphertext, mac, m, mlen, aad, aadlen, nonce);
+    print_args(enclave, ciphertext, mlen, mac, m, mlen, aad, aadlen, nonce, NONCE_LEN);
+
+    oe_encl_op_chacha20poly1305_dec(enclave, &retval, ciphertext, mac, decrypted, mlen, aad, aadlen, nonce);
+    print_args(enclave, ciphertext, mlen, mac, decrypted, mlen, aad, aadlen, nonce, NONCE_LEN);
+
+
 
     // Cleanup
     oe_terminate_enclave(enclave);

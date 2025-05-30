@@ -46,6 +46,11 @@ int fprintf(FILE *stream, const char *format, ...) {
     return 0;
 }
 
+int printf(const char *format, ...) {
+    (void)format;
+    return 0;
+}
+
 extern const struct {
     size_t nr_ecall;
     struct {
@@ -55,24 +60,9 @@ extern const struct {
     } ecall_table[];
 } g_ecall_table;
 
-
-
-static void do_encl_op_add(void *_op)
+void encl_return()
 {
-	struct encl_op_math op;
-
-	SAFE_COPY_STRUCT(_op,&op);
-        /* TODO *insecure* ptr dereference: needs a check */
-	*op.rv_pt = op.val1 + op.val2;
-}
-
-static void do_encl_op_sub(void *_op)
-{
-	struct encl_op_math op;
-
-	SAFE_COPY_STRUCT(_op,&op);
-        /* TODO *insecure* ptr dereference: needs a check */
-	*op.rv_pt = op.val1 - op.val2;
+	return;
 }
 
 void encl_HMAC(uint8_t *digest, uint8_t *message, uint32_t message_len)
@@ -83,19 +73,6 @@ void encl_HMAC(uint8_t *digest, uint8_t *message, uint32_t message_len)
     };
     Hacl_HMAC_compute_sha2_256(digest, key, KEY_LEN_HMAC, message, message_len);
 }
-
-/*
-void do_encl_op_hmac(void * op)
-{
-	struct encl_op_hmac *op = _op;
-
-    uint8_t key[KEY_LEN_HMAC] = {
-        0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
-        0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F
-    };
-    Hacl_HMAC_compute_sha2_256(op->digest, key, KEY_LEN_HMAC, op->message, (*op).message_len);
-}
-*/
 
 void encl_AEAD_enc(
   uint8_t *ciphertext,
@@ -141,46 +118,6 @@ void encl_AEAD_dec(
 		tag
 	);
 }
-
-/*
-static void encl_AEAD_dec(void *_op)
-{
-	struct encl_op_AEAD *op = _op;
-	Hacl_AEAD_Chacha20Poly1305_decrypt(
-		op->m,
-		op->cipher,
-		op->mlen,
-		op->aad,
-		op->aadlen,
-		AEAD_key,
-		op->n,
-		op->mac
-	);
-}
-*/
-
-// static void do_encl_op_AES_GCM_128_encrypt(void *_op)
-// {
-	
-// 	struct encl_op_AEAD *op = _op;
-// 	EverCrypt_AEAD_state_s *dst;
-// 	EverCrypt_AEAD_create_in(Spec_Agile_AEAD_AES128_GCM, &dst, AES_key);
-
-// 	EverCrypt_AEAD_encrypt(
-// 		dst,
-// 		op->n,
-// 		NONCE_LEN,
-// 		op->aad,
-// 		op->aadlen,
-// 		op->m,
-// 		op->mlen,
-// 		op->cipher,
-// 		op->mac
-// 	);
-
-// 	EverCrypt_AEAD_free(dst);
-// }
-
 
 
 /*

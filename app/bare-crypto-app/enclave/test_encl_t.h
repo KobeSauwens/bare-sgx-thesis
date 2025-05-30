@@ -18,6 +18,7 @@ extern "C" {
 void encl_HMAC(uint8_t* digest, uint8_t* message, uint32_t message_len);
 void encl_AEAD_enc(uint8_t* ciphertext, uint8_t* tag, uint8_t* plaintext, uint32_t plaintext_len, uint8_t* data, uint32_t data_len, uint8_t* nonce);
 void encl_AEAD_dec(uint8_t* plaintext, uint8_t* ciphertext, uint32_t ciphertext_len, uint8_t* data, uint32_t data_len, uint8_t* nonce, uint8_t* tag);
+void encl_return(void);
 
 
 #ifdef __cplusplus
